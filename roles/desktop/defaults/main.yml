@@ -1,0 +1,26 @@
+packages:
+  # browser
+  - google-chrome-stable
+  # multimedia
+  - mpv
+  - lollypop
+  # messengers
+  - skypeforlinux
+  - telegram-desktop
+  # clouds
+  - dropbox
+  # fonts
+  - mozilla-fira-mono-fonts
+  # themes
+  - arc-theme
+  # icons
+  - numix-icon-theme-circle
+  # gnome
+  - gnome-tweak-tool
+  - gnome-shell-extension-user-theme
+  - chrome-gnome-shell
+  - gnome-multi-writer
+  - gnome-mpv
+  - nautilus-dropbox
+  - gnome-terminal-nautilus
+  - dconf-editor

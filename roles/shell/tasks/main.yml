@@ -1,0 +1,28 @@
+- name: Install common packages
+  become: yes
+  become_user: root
+  become_method: sudo
+  dnf: name="{{ item }}" state=latest
+  with_items: "{{ common_packages }}"
+
+- name: Install bash
+  become: yes
+  become_user: root
+  become_method: sudo
+  dnf: name="{{ item }}" state=latest
+  with_items: "{{ bash_packages }}"
+  when: default_shell == bash
+
+# - name: Configure bash
+
+# - name: Configure bash prompt
+
+- name: Install zsh
+  become: yes
+  become_user: root
+  become_method: sudo
+  dnf: name="{{ item }}" state=latest
+  with_items: "{{ zsh_packages }}"
+  when: default_shell == zsh
+
+# - name: Configure zsh

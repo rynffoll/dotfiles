@@ -1,0 +1,4 @@
+# basic settings
+envy:
+  fedora_version: 25
+  default_shell: bash # bash or zsh

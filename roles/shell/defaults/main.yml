@@ -1,0 +1,9 @@
+common_packages:
+  - tmux
+
+bash_packages:
+  - bash
+  - bach-completion
+
+zsh_packages:
+  - zsh

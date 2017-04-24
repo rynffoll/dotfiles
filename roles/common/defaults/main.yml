@@ -1,0 +1,11 @@
+rpm_repos:
+  - name: "rpmfusion-free"
+    url: "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ envy.fedora_version }}.noarch.rpm"
+  - name: "rpmfusion-nonfree"
+    url: "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ envy.fedora_version }}.noarch.rpm"
+  - name: "russianfedora-free"
+    url: "http://mirror.yandex.ru/fedora/russianfedora/russianfedora/free/fedora/russianfedora-free-release-stable.noarch.rpm"
+  - name: "russianfedora-nonfree"
+    url: "http://mirror.yandex.ru/fedora/russianfedora/russianfedora/nonfree/fedora/russianfedora-nonfree-release-stable.noarch.rpm"
+  - name: "russianfedora-fixes"
+    url: "http://mirror.yandex.ru/fedora/russianfedora/russianfedora/fixes/fedora/russianfedora-fixes-release-stable.noarch.rpm"

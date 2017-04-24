@@ -1,0 +1,5 @@
+- hosts: all
+  name: Run envy
+  roles:
+    - common
+    - desktop

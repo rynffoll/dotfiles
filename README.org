@@ -1,2 +1,9 @@
-* Envy
+* Envy (WIP)
 Ansible scripts for deployment local environment
+
+** Requirements
+- ansible
+- python-dnf (Fedora)
+
+** How-to use
+ansible-playbook -i local.inventory envy.yml

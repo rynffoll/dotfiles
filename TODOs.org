@@ -1,0 +1,55 @@
+* TODO roles [1/8]
+:PROPERTIES:
+:CREATED:  [2017-04-15 Сб 03:27]
+:END:
+** DONE common
+CLOSED: [2017-04-24 Пн 21:07]
+:PROPERTIES:
+:CREATED:  [2017-04-15 Сб 03:28]
+:END:
+
+- State "STARTED"    from "TODO"       [2017-04-15 Сб 16:40]
+install extras repos
+install base packages
+** TODO shell
+:PROPERTIES:
+:CREATED:  [2017-04-15 Сб 03:28]
+:END:
+
+bash, zsh, tmux, htop
+** TODO laptop
+:PROPERTIES:
+:CREATED:  [2017-04-15 Сб 03:31]
+:END:
+
+acpi, powertop
+** TODO desktop
+:PROPERTIES:
+:CREATED:  [2017-04-15 Сб 03:28]
+:END:
+
+gnome-shell-extentions, google-chrome and other desktop apps
+** TODO dev
+:PROPERTIES:
+:CREATED:  [2017-04-15 Сб 03:28]
+:END:
+
+git, curl, httpie, docker
+** TODO java
+:PROPERTIES:
+:CREATED:  [2017-04-15 Сб 03:28]
+:END:
+
+java, sdkman, mvn, gradle, jetbrains toolbox/yatta toolbox
+** TODO js
+:PROPERTIES:
+:CREATED:  [2017-04-15 Сб 03:28]
+:END:
+
+nodejs, npm, yarn
+** TODO emacs
+:PROPERTIES:
+:CREATED:  [2017-04-15 Сб 03:31]
+:END:
+
+emacs, spacemacs, user's config
