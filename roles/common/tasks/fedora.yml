@@ -1,0 +1,24 @@
+- name: Import variables
+  include_vars:
+    file: fedora.yml
+    name: fedora
+
+- name: Install repositories
+  become: yes
+  become_user: root
+  become_method: sudo
+  dnf: name="{{ item.url }}" disable_gpg_check=yes state=present
+  with_items: "{{ fedora.repos }}"
+  when: fedora.repos is defined
+  tags:
+    - repo
+
+- name: Install packages
+  become: yes
+  become_user: root
+  become_method: sudo
+  dnf: name="{{ item }}" state=present
+  with_items: "{{ fedora.packages }}"
+  when: fedora.packages is defined
+  tags:
+    - pkg

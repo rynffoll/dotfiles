@@ -1,0 +1,2 @@
+java_version: 1.8.0
+java_dist: both # oracle or openjdk or both

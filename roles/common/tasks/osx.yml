@@ -1,0 +1,13 @@
+- name: Import variables
+  include_vars:
+    file: osx.yml
+    name: osx
+
+- name: Install packages
+  # become: yes
+  # become_user: root
+  # become_method: sudo
+  homebrew: name="{{ item }}" state=present
+  with_items: "{{ osx.packages }}"
+  tags:
+    - pkg

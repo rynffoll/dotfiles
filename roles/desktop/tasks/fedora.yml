@@ -1,0 +1,13 @@
+- name: Import variables
+  include_vars:
+    file: fedora.yml
+    name: fedora
+
+- name: Install packages
+  become: yes
+  become_user: root
+  become_method: sudo
+  dnf: name="{{ item }}" state=present
+  with_items: "{{ fedora.packages }}"
+  tags:
+    - pkg

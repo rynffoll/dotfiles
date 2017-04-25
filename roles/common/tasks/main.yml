@@ -1,17 +1,5 @@
-- name: Enable repositories
-  become: yes
-  become_user: root
-  become_method: sudo
-  dnf: name="{{ item.url }}" disable_gpg_check=yes state=present
-  with_items: "{{ rpm_repos }}"
-  tags:
-    - repo
+- include: fedora.yml
+  when: ansible_distribution == "Fedora"
 
-- name: Install packages
-  become: yes
-  become_user: root
-  become_method: sudo
-  dnf: name="{{ item }}" state=present
-  with_items: "{{ packages }}"
-  tags:
-    - pkg
+- include: osx.yml
+  when: ansible_distribution == "MacOSX"
