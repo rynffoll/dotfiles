@@ -13,6 +13,7 @@ packages:
   - mozilla-fira-mono-fonts
   # themes
   - arc-theme
+  # - adapta-gtk-themes # TODO: use copr repo (heikoada/gtk-themes)
   # icons
   - numix-icon-theme-circle
   # gnome
@@ -24,3 +25,7 @@ packages:
   - nautilus-dropbox
   - gnome-terminal-nautilus
   - dconf-editor
+  # torrents
+  - transmission
+  # rdp
+  - remmina

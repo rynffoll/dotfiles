@@ -7,7 +7,7 @@
   become: yes
   become_user: root
   become_method: sudo
-  dnf: name="{{ item }}" state=present
+  dnf: name="{{ item }}" state=latest
   with_items: "{{ fedora.oracle }}"
   when: (java_dist == "both" or java_dist == "oracle")
   tags:
@@ -17,7 +17,7 @@
   become: yes
   become_user: root
   become_method: sudo
-  dnf: name="{{ item }}" state=present
+  package: name="{{ item }}" state=latest
   with_items: "{{ fedora.openjdk }}"
   when: (java_dist == "both" or java_dist == "openjdk")
   tags:

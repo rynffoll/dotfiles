@@ -1,13 +1,13 @@
-- name: Import variables
+- name: Import variables (Fedora)
   include_vars:
     file: fedora.yml
-    name: fedora
+  when: ansible_distribution == "Fedora"
 
 - name: Install packages
   become: yes
   become_user: root
   become_method: sudo
   package: name="{{ item }}" state=latest
-  with_items: "{{ fedora.packages }}"
+  with_items: "{{ packages }}"
   tags:
     - pkg

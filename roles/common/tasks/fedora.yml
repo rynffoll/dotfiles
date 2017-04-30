@@ -7,7 +7,7 @@
   become: yes
   become_user: root
   become_method: sudo
-  dnf: name="{{ item.url }}" disable_gpg_check=yes state=present
+  package: name="{{ item.url }}" disable_gpg_check=yes state=latest
   with_items: "{{ fedora.repos }}"
   when: fedora.repos is defined
   tags:
@@ -17,7 +17,7 @@
   become: yes
   become_user: root
   become_method: sudo
-  dnf: name="{{ item }}" state=present
+  package: name="{{ item }}" state=latest
   with_items: "{{ fedora.packages }}"
   when: fedora.packages is defined
   tags:
