@@ -4,6 +4,7 @@ packages:
   # multimedia
   - mpv
   - lollypop
+  - gimp
   # messengers
   - skypeforlinux
   - telegram-desktop
@@ -13,7 +14,7 @@ packages:
   - mozilla-fira-mono-fonts
   # themes
   - arc-theme
-  # - adapta-gtk-themes # TODO: use copr repo (heikoada/gtk-themes)
+  - adapta-gtk-themes
   # icons
   - numix-icon-theme-circle
   # gnome
