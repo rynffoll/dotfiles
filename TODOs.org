@@ -1,4 +1,4 @@
-* TODO roles [1/8]
+* TODO roles [1/10]
 :PROPERTIES:
 :CREATED:  [2017-04-15 Сб 03:27]
 :END:
@@ -57,3 +57,16 @@ nodejs, npm, yarn
 :END:
 
 emacs, spacemacs, user's config
+** STARTED go
+:PROPERTIES:
+:CREATED:  [2017-05-02 Вт 00:47]
+:END:
+
+- State "STARTED"    from "TODO"       [2017-05-08 Пн 22:26]
+golang
+** TODO clojure
+:PROPERTIES:
+:CREATED:  [2017-05-02 Вт 00:47]
+:END:
+
+lein from sdkman
