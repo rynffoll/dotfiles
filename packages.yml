@@ -1,0 +1,72 @@
+- hosts: all
+  vars:
+    laptop_packages:
+      - acpi
+      - powertop
+      - tlp
+    dev_packages:
+      - bash
+      - bash-completion
+      - emacs
+      - vim
+      - tmux
+      - git
+      - htop
+      - curl
+      - httpie
+      - nodejs
+      - java-1.8.0-oracle
+      - java-1.8.0-oracle-devel
+      - java-1.8.0-openjdk
+      - java-1.8.0-openjdk-devel
+    npm_packages:
+      - yarn
+      - create-react-app
+    sdkman_packages:
+      - { candidate: gradle, version: "4.1" }
+      - { candidate: groovy, version: "2.4.12" }
+      - { candidate: leiningen, version: "2.7.1" }
+      - { candidate: maven, version: "3.5.0" }
+  tasks:
+    - name: Update all packages
+      become: yes
+      package: name="*" state=latest
+      tags:
+        - packages
+
+    - name: Install laptop packages
+      become: yes
+      package: name="{{ item }}" state=latest
+      with_items: "{{ laptop_packages }}"
+      when: ansible_distribution == "Fedora"
+      tags:
+        - packages
+
+    - name: Install dev packages
+      become: yes
+      package: name="{{ item }}" state=latest
+      with_items: "{{ dev_packages }}"
+      when: ansible_distribution == "Fedora"
+      tags:
+        - packages
+        - dev
+
+    - name: Install npm packages
+      become: yes
+      npm: name="{{ item }}" state=latest global=yes
+      with_items: "{{ npm_packages }}"
+      tags:
+        - packages
+        - npm
+        - dev
+
+    - name: Install sdkman packages
+      include_role: name="Comcast.sdkman"
+      vars:
+        sdkman_auto_answer: true
+        sdkman_update: true
+        sdkman_install_packages: "{{ sdkman_packages }}"
+      tags:
+        - packages
+        - java
+        - dev

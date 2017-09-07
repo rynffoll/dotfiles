@@ -1,8 +1,5 @@
-- hosts: all
-  name: Run envy
-  roles:
-    # - repos
-    # - packages
-    # - spacemacs
-    # - dotfiles
-    - gnome
+- include: "repos.yml"
+- include: "packages.yml"
+- include: "desktop.yml"
+- include: "dotfiles.yml"
+- include: "spacemacs.yml"

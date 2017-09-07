@@ -1,0 +1,34 @@
+- hosts: all
+  vars:
+    base_repos:
+      - name: "rpmfusion-free"
+        url: "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ envy.os_version }}.noarch.rpm"
+      - name: "rpmfusion-nonfree"
+        url: "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ envy.os_version }}.noarch.rpm"
+      - name: "russianfedora-free"
+        url: "http://mirror.yandex.ru/fedora/russianfedora/russianfedora/free/fedora/russianfedora-free-release-stable.noarch.rpm"
+      - name: "russianfedora-nonfree"
+        url: "http://mirror.yandex.ru/fedora/russianfedora/russianfedora/nonfree/fedora/russianfedora-nonfree-release-stable.noarch.rpm"
+      - name: "russianfedora-fixes"
+        url: "http://mirror.yandex.ru/fedora/russianfedora/russianfedora/fixes/fedora/russianfedora-fixes-release-stable.noarch.rpm"
+    extra_repos:
+      - name: "skypeforlinux"
+        url: "https://repo.skype.com/rpm/stable/skype-stable.repo"
+      - name: "google-chrome"
+        url: "https://github.com/RussianFedora/fedora-extra-repos/raw/master/google-chrome.repo"
+  tasks:
+    - name: Install base repos
+      become: yes
+      package: name="{{ item.url }}" state=latest disable_gpg_check=yes
+      with_items: "{{ base_repos }}"
+      when: ansible_distribution == "Fedora"
+      tags:
+        - repos
+
+    - name: Install extra repos
+      become: yes
+      get_url: url="{{ item.url }}" dest="/etc/yum.repos.d/"
+      with_items: "{{ extra_repos }}"
+      when: ansible_distribution == "Fedora"
+      tags:
+        - repos

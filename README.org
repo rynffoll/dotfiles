@@ -3,7 +3,7 @@ Ansible scripts for deployment local environment
 
 ** Requirements
 - ansible
-- python-dnf (Fedora)
 
 ** How to Use
+ansible-galaxy install -r requirements.yml -p .
 ansible-playbook -i local.inventory main.yml

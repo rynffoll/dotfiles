@@ -1,5 +1,4 @@
 # basic settings
 envy:
   os_version: 26
-  home_dir: "~"
   projects_dir: "~/Projects"

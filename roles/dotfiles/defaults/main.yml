@@ -1,8 +1,8 @@
 dotfiles_repo: "https://github.com/rynffoll/dotfiles"
 dotfiles_name: "dotfiles"
 dotfiles_branch: "master"
-dotfiles_dest: "{{ envy.projects_dir }}"
-dotfiles_home: "{{ envy.home_dir }}"
+dotfiles_dest: "~/Projects"
+dotfiles_home: "~"
 dotfiles_files:
   - ".bashrc"
   - ".tmux.conf"

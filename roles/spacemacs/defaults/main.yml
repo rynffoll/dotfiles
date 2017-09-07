@@ -1,6 +1,6 @@
 spacemacs_repo: "https://github.com/syl20bnr/spacemacs"
 spacemacs_branch: "develop"
-spacemacs_dest: "{{ envy.home_dir }}/.emacs.d"
+spacemacs_dest: "~/.emacs.d"
 spacemacs_conf_repo: "https://github.com/rynffoll/.spacemacs.d"
 spacemacs_conf_branch: "master"
-spacemacs_conf_dest: "{{ envy.home_dir }}/.spacemacs.d"
+spacemacs_conf_dest: "~/.spacemacs.d"

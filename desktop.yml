@@ -1,0 +1,43 @@
+- hosts: all
+  vars:
+    desktop_packages:
+      - mozilla-fira-mono-fonts
+      - gimp
+      - google-chrome-stable
+      - gnome-tweak-tool
+      - gnome-shell-extension-user-theme
+      - chrome-gnome-shell
+      - gnome-multi-writer
+      - mpv
+      - gnome-mpv
+      - dropbox
+      - nautilus-dropbox
+      - gnome-terminal-nautilus
+      - gnome-sound-recorder
+      - dconf-editor
+      - transmission
+      - remmina
+      - keepassxc
+      - firewall-config
+      - skypeforlinux
+      - telegram-desktop
+    gnome_extentions:
+      - name: "window-navigator"
+        branch: "master"
+        url: "https://github.com/rynffoll/window-navigator"
+  tasks:
+    - name: Install desktop packages
+      become: yes
+      package: name="{{ item }}" state=latest
+      with_items: "{{ desktop_packages }}"
+      tags:
+        - packages
+
+    - name: Install gnome extentions
+      git:
+        repo: "{{ item.url }}"
+        version: "{{ item.branch }}"
+        dest: "~/.local/share/gnome-shell/extensions"
+      with_items: "{{ gnome_extentions }}"
+      tags:
+        - desktop

@@ -1,0 +1,38 @@
+- hosts: all
+  vars:
+    dotfiles_repo: "https://github.com/rynffoll/dotfiles"
+    dotfiles_name: "dotfiles"
+    dotfiles_branch: "master"
+    dotfiles_dest: "{{ envy.projects_dir }}"
+    dotfiles_home: "~"
+    dotfiles_files:
+      - ".bashrc"
+      - ".tmux.conf"
+      - ".config/mpv/config"
+      - ".config/gtk-3.0/gtk.css"
+      - "bin"
+  tasks:
+    - name: Clone dotfiles
+      git:
+        repo: "{{ dotfiles_repo }}"
+        version: "{{ dotfiles_branch }}"
+        dest: "{{ dotfiles_dest }}/{{ dotfiles_name }}"
+      tags:
+        - dotfiles
+
+    - name: Prepare dotfiles destination
+      file:
+        path: "{{ (dotfiles_home ~ '/' ~ item) | dirname }}"
+        state: directory
+      with_items: "{{ dotfiles_files }}"
+      tags:
+        - dotfiles
+
+    - name: Install dotfiles
+      file:
+        src: "{{ dotfiles_dest }}/{{ dotfiles_name }}/{{ item }}"
+        dest: "{{ dotfiles_home }}/{{ item }}"
+        state: link
+      with_items: "{{ dotfiles_files }}"
+      tags:
+        - dotfiles
