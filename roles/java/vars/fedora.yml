@@ -1,7 +1,0 @@
-oracle:
-  - "java-{{ java_version }}-oracle"
-  - "java-{{ java_version }}-oracle-devel"
-
-openjdk:
-  - "java-{{ java_version }}-openjdk"
-  - "java-{{ java_version }}-openjdk-devel"

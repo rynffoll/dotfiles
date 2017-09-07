@@ -1,6 +1,0 @@
-packages:
-  - acpi
-  - powertop
-  - tlp
-  - gnome-power-manager
-  - modem-manager-gui

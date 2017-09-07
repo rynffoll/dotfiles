@@ -1,0 +1,53 @@
+os_packages:
+  - google-chrome-stable
+  - mpv
+  - gimp
+  # - skypeforlinux
+  # - telegram-desktop
+  - dropbox
+  - mozilla-fira-mono-fonts
+  # - arc-theme
+  # - adapta-gtk-themes
+  # - numix-icon-theme-circle
+  - gnome-tweak-tool
+  - gnome-shell-extension-user-theme
+  - chrome-gnome-shell
+  - gnome-multi-writer
+  - gnome-mpv
+  - nautilus-dropbox
+  - gnome-terminal-nautilus
+  - dconf-editor
+  - gnome-sound-recorder
+  - transmission
+  - remmina
+  - keepassxc
+  - firewall-config
+  - git
+  - htop
+  - curl
+  - httpie
+  - bash
+  - bash-completion
+  - acpi
+  - powertop
+  - tlp
+  - emacs
+  - vim
+  - tmux
+  - nodejs
+  - java-1.8.0-oracle
+  - java-1.8.0-oracle-devel
+  - java-1.8.0-openjdk
+  - java-1.8.0-openjdk-devel
+
+npm_packages:
+  - yarn
+  - webpack
+  - webpack-dev-server
+  - create-react-app
+
+sdkman_packages:
+  - groovy
+  - gradle
+  - maven
+  - leiningen

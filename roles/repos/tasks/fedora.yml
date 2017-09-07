@@ -1,0 +1,22 @@
+- name: Install base repos
+  become: yes
+  become_user: root
+  become_method: sudo
+  package:
+    name: "{{ item.url }}"
+    disable_gpg_check: yes
+    state: latest
+  with_items: "{{ base_repos }}"
+  tags:
+    - repos
+
+- name: Install extra repos
+  become: yes
+  become_user: root
+  become_method: sudo
+  get_url:
+    url: "{{ item.url }}"
+    dest: /etc/yum.repos.d/
+  with_items: "{{ extra_repos }}"
+  tags:
+    - repos

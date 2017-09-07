@@ -1,5 +1,0 @@
-- include: fedora.yml
-  when: ansible_distribution == "Fedora"
-    
-- include: osx.yml
-  when: ansible_distribution == "MacOSX"

@@ -1,9 +1,0 @@
-- name: Import variables
-  include_vars:
-    file: osx.yml
-    name: osx
-
-- name: Install Java
-  homebrew_cask: name="java" state=present
-  tags:
-    - pkg

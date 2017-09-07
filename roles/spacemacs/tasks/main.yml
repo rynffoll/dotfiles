@@ -1,0 +1,28 @@
+- name: Install emacs
+  become: yes
+  become_user: root
+  become_method: sudo
+  package:
+    name: emacs
+    state: latest
+  tags:
+    - emacs
+    - editors
+
+- name: Install spacemacs
+  git:
+    repo: "{{ spacemacs_repo }}"
+    version: "{{ spacemacs_branch }}"
+    dest: "{{ spacemacs_dest }}"
+  tags:
+    - emacs
+    - editors
+
+- name: Install spacemacs config
+  git:
+    repo: "{{ spacemacs_conf_repo }}"
+    version: "{{ spacemacs_conf_branch }}"
+    dest: "{{ spacemacs_conf_dest }}"
+  tags:
+    - emacs
+    - editors

@@ -1,0 +1,9 @@
+- name: Install gnome extentions
+  git:
+    repo: "{{ item }}"
+    dest: "{{ envy.home_dir }}/.local/share/gnome-shell/extensions"
+  with_items:
+    -  "https://github.com/rynffoll/window-navigator"
+  tags:
+    - gnome
+    - desktop
