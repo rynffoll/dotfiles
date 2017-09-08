@@ -21,6 +21,7 @@
       - firewall-config
       - skypeforlinux
       - telegram-desktop
+      - kdeconnectd
     gnome_extentions:
       - name: "window-navigator"
         branch: "master"

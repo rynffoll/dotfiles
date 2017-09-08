@@ -5,5 +5,12 @@ Ansible scripts for deployment local environment
 - ansible
 
 ** How to Use
+#+BEGIN_SRC shell-script
+sudo dnf install ansible -y
 ansible-galaxy install -r requirements.yml -p .
-ansible-playbook -i local.inventory main.yml
+ansible-playbook -i local.inv envy.yml -K
+#+END_SRC
+or just
+#+BEGIN_SRC shell-script
+make
+#+END_SRC

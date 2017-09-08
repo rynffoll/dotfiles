@@ -19,6 +19,8 @@
       - java-1.8.0-oracle-devel
       - java-1.8.0-openjdk
       - java-1.8.0-openjdk-devel
+      - docker
+      - VirtualBox
     npm_packages:
       - yarn
       - create-react-app
