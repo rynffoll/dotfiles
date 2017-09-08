@@ -27,6 +27,9 @@
       - { candidate: groovy, version: "2.4.12" }
       - { candidate: leiningen, version: "2.7.1" }
       - { candidate: maven, version: "3.5.0" }
+    jb_toolbox:
+      name: jetbrains-toolbox
+      version: "1.4.2492"
   tasks:
     - name: Update all packages
       become: yes
@@ -70,3 +73,43 @@
         - packages
         - java
         - dev
+
+    - name: Check existing JetBrains Toolbox
+      stat: path="~/.local/share/applications/{{ jb_toolbox.name }}.desktop"
+      register: jb_app
+      tags:
+        - dev
+        - jb
+
+    - name: Create temp directory for installing JetBrains Toolbox
+      tempfile: state=directory suffix="{{ jb_toolbox.name }}"
+      register: jb_tmpdir
+      when: jb_app.stat.exists == False
+      tags:
+        - dev
+        - jb
+
+    - name: Download JetBrains Toolbox
+      get_url:
+        url: "https://download.jetbrains.com/toolbox/{{ jb_toolbox.name }}-{{ jb_toolbox.version }}.tar.gz"
+        dest: "{{ jb_tmpdir.path }}"
+      when: jb_app.stat.exists == False
+      tags:
+        - dev
+        - jb
+
+    - name: Uncompress JetBrains Toolbox
+      unarchive:
+        src: "{{ jb_tmpdir.path }}/{{ jb_toolbox.name }}-{{ jb_toolbox.version }}.tar.gz"
+        dest: "{{ jb_tmpdir.path }}"
+      when: jb_app.stat.exists == False
+      tags:
+        - dev
+        - jb
+
+    - name: Install JetBrains Toolbox
+      shell: "{{ jb_tmpdir.path }}/{{ jb_toolbox.name }}-{{ jb_toolbox.version }}/jetbrains-toolbox &"
+      when: jb_app.stat.exists == False
+      tags:
+        - dev
+        - jb
