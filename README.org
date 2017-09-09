@@ -1,4 +1,4 @@
-* Envy (WIP)
+* Envy
 Ansible scripts for deployment local environment
 
 ** Requirements
