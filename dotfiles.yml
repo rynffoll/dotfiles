@@ -17,6 +17,7 @@
         repo: "{{ dotfiles_repo }}"
         version: "{{ dotfiles_branch }}"
         dest: "{{ dotfiles_dest }}/{{ dotfiles_name }}"
+        clone: no
       tags:
         - dotfiles
 

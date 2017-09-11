@@ -26,6 +26,18 @@
       - name: "window-navigator"
         branch: "master"
         url: "https://github.com/rynffoll/window-navigator"
+    kbd_options:
+      - { key: "/org/gnome/desktop/input-sources/sources", value: "[('xkb', 'us'), ('xkb', 'ru')]" }
+      - { key: "/org/gnome/desktop/input-sources/xkb-options", value: "['ctrl:nocaps']" }
+      - { key: "/org/gnome/desktop/input-sources/per-window", value: "true" }
+    ui_options:
+      - { key: "/org/gnome/desktop/interface/show-battery-percentage", value: "true" }
+      - { key: "/org/gnome/desktop/interface/monospace-font-name", value: "'Fira Mono Medium 11'" }
+      - { key: "/org/gnome/desktop/interface/clock-show-date", value: "true" }
+      - { key: "/org/gnome/desktop/wm/preferences/auto-raise", value: "true" }
+      - { key: "/org/gnome/desktop/wm/preferences/mouse-button-modifier", value: "'<Alt>'" }
+      - { key: "/org/gnome/desktop/wm/preferences/resize-with-right-button", value: "true" }
+      - { key: "/org/gnome/settings-daemon/plugins/color/night-light-temperature", value: "5800" }
   tasks:
     - name: Install desktop packages
       become: yes
@@ -39,37 +51,32 @@
         repo: "{{ item.url }}"
         version: "{{ item.branch }}"
         dest: "~/.local/share/gnome-shell/extensions"
+        clone: no
       with_items: "{{ gnome_extentions }}"
       tags:
         - desktop
 
-    - name: Configure keyboard layouts
-      shell: dconf write "/org/gnome/desktop/input-sources/sources" "[('xkb', 'us'), ('xkb', 'ru')]"
+    - name: Configure keyboard
+      shell: dconf write "{{ item.key }}" "{{ item.value }}"
+      with_items: "{{ kbd_options }}"
       tags:
         - desktop
         - kbd
 
-    - name: Configure keyboard options
-      shell: dconf write "/org/gnome/desktop/input-sources/xkb-options" "['ctrl:nocaps']"
+    - name: Configure UI
+      shell: dconf write "{{ item.key }}" "{{ item.value }}"
+      with_items: "{{ ui_options }}"
       tags:
         - desktop
-        - kbd
+        - ui
 
     # since ansible 2.4
-    # - name: Configure keyboard layouts
+    # - name: Configure keyboard
     #   dconf:
-    #     key: "/org/gnome/desktop/input-sources/sources"
-    #     value: "[('xkb', 'us'), ('xkb', 'ru')]"
+    #     key: "{{ item.key }}"
+    #     value: "{{ item.value }}"
     #     state: present
-    #   tags:
-    #       - desktop
-    #       - kbd
-
-    # - name: Configure keyboard options
-    #   dconf:
-    #     key: "/org/gnome/desktop/input-sources/xkb-options"
-    #     value: "['ctrl:nocaps']"
-    #     state: present
+    #   with_items: "{{ kbd_options }}"
     #   tags:
     #       - desktop
     #       - kbd

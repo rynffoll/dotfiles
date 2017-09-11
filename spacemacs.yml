@@ -19,6 +19,7 @@
         repo: "{{ spacemacs_repo }}"
         version: "{{ spacemacs_branch }}"
         dest: "{{ spacemacs_dest }}"
+        clone: no
       tags:
         - emacs
         - editors
@@ -28,6 +29,7 @@
         repo: "{{ spacemacs_conf_repo }}"
         version: "{{ spacemacs_conf_branch }}"
         dest: "{{ spacemacs_conf_dest }}"
+        clone: no
       tags:
         - emacs
         - editors
