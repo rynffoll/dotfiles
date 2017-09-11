@@ -11,6 +11,8 @@
       - ".config/mpv/config"
       - ".config/gtk-3.0/gtk.css"
       - "bin"
+      - ".local/share/applications/emacsclient.desktop"
+      - ".local/share/applications/org-protocol.desktop"
   tasks:
     - name: Clone dotfiles
       git:
