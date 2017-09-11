@@ -42,3 +42,34 @@
       with_items: "{{ gnome_extentions }}"
       tags:
         - desktop
+
+    - name: Configure keyboard layouts
+      shell: dconf write "/org/gnome/desktop/input-sources/sources" "[('xkb', 'us'), ('xkb', 'ru')]"
+      tags:
+        - desktop
+        - kbd
+
+    - name: Configure keyboard options
+      shell: dconf write "/org/gnome/desktop/input-sources/xkb-options" "['ctrl:nocaps']"
+      tags:
+        - desktop
+        - kbd
+
+    # since ansible 2.4
+    # - name: Configure keyboard layouts
+    #   dconf:
+    #     key: "/org/gnome/desktop/input-sources/sources"
+    #     value: "[('xkb', 'us'), ('xkb', 'ru')]"
+    #     state: present
+    #   tags:
+    #       - desktop
+    #       - kbd
+
+    # - name: Configure keyboard options
+    #   dconf:
+    #     key: "/org/gnome/desktop/input-sources/xkb-options"
+    #     value: "['ctrl:nocaps']"
+    #     state: present
+    #   tags:
+    #       - desktop
+    #       - kbd
