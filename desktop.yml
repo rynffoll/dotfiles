@@ -38,6 +38,7 @@
       - { key: "/org/gnome/desktop/wm/preferences/mouse-button-modifier", value: "'<Alt>'" }
       - { key: "/org/gnome/desktop/wm/preferences/resize-with-right-button", value: "true" }
       - { key: "/org/gnome/settings-daemon/plugins/color/night-light-temperature", value: "5800" }
+    favorite_apps: "['google-chrome.desktop', 'org.gnome.Terminal.desktop', 'emacsclient.desktop', 'jetbrains-idea-ce.desktop']"
   tasks:
     - name: Install desktop packages
       become: yes
@@ -66,6 +67,12 @@
     - name: Configure UI
       shell: dconf write "{{ item.key }}" "{{ item.value }}"
       with_items: "{{ ui_options }}"
+      tags:
+        - desktop
+        - ui
+
+    - name: Configure favorite apps
+      shell: dconf write "/org/gnome/shell/favorite-apps" "{{ favorite_apps }}"
       tags:
         - desktop
         - ui
