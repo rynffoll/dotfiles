@@ -9,11 +9,7 @@
   tasks:
     - name: Install emacs
       become: yes
-      become_user: root
-      become_method: sudo
-      package:
-        name: emacs
-        state: latest
+      package: name=emacs state=latest
       tags:
         - emacs
         - editors

@@ -6,10 +6,8 @@
       - tlp
     dev_packages:
       - bash-completion
-      - emacs
-      - vim
+      - vim-enhanced
       - tmux
-      - git
       - htop
       - curl
       - httpie
@@ -20,6 +18,7 @@
       - java-1.8.0-openjdk-devel
       - docker
       - VirtualBox
+      - ansible-lint
     npm_packages:
       - yarn
       - create-react-app
