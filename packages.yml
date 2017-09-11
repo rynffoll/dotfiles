@@ -6,7 +6,7 @@
       - tlp
     dev_packages:
       - bash-completion
-      - vim-enhanced
+      - vim
       - tmux
       - htop
       - curl
@@ -31,6 +31,12 @@
       name: jetbrains-toolbox
       version: "1.4.2492"
   tasks:
+    - name: Update all packages
+      become: yes
+      package: name="*" state=latest
+      tags:
+        - packages
+
     - name: Install laptop packages
       become: yes
       package: name="{{ item }}" state=latest
