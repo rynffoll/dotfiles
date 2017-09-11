@@ -24,7 +24,9 @@
       copy:
         src: "{{ dotfiles_home }}/{{ item }}"
         dest: "{{ dotfiles_home }}/{{ item }}.backup"
+        force: no
       with_items: "{{ dotfiles_files }}"
+      ignore_errors: yes
       tags:
         - dotfiles
         - backup
