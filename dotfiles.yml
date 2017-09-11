@@ -20,6 +20,15 @@
       tags:
         - dotfiles
 
+    - name: Backup default dotfiles
+      copy:
+        src: "{{ dotfiles_home }}/{{ item }}"
+        dest: "{{ dotfiles_home }}/{{ item }}.backup"
+      with_items: "{{ dotfiles_files }}"
+      tags:
+        - dotfiles
+        - backup
+
     - name: Prepare dotfiles destination
       file:
         path: "{{ (dotfiles_home ~ '/' ~ item) | dirname }}"
@@ -33,6 +42,7 @@
         src: "{{ dotfiles_dest }}/{{ dotfiles_name }}/{{ item }}"
         dest: "{{ dotfiles_home }}/{{ item }}"
         state: link
+        force: yes
       with_items: "{{ dotfiles_files }}"
       tags:
         - dotfiles
