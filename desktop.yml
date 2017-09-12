@@ -66,6 +66,7 @@
       tags:
         - desktop
 
+    # TODO: rewrite to use dconf module, which will be able to available since ansible 2.4
     - name: Configure keyboard
       shell: dconf write "{{ item.key }}" "{{ item.value }}"
       with_items: "{{ kbd_options }}"
@@ -98,14 +99,3 @@
       tags:
         - desktop
         - exts
-
-    # since ansible 2.4
-    # - name: Configure keyboard
-    #   dconf:
-    #     key: "{{ item.key }}"
-    #     value: "{{ item.value }}"
-    #     state: present
-    #   with_items: "{{ kbd_options }}"
-    #   tags:
-    #       - desktop
-    #       - kbd
