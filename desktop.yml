@@ -52,7 +52,6 @@
         repo: "{{ item.url }}"
         version: "{{ item.branch }}"
         dest: "~/.local/share/gnome-shell/extensions"
-        clone: no
       with_items: "{{ gnome_extentions }}"
       tags:
         - desktop

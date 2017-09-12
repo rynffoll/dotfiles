@@ -19,20 +19,19 @@
         repo: "{{ dotfiles_repo }}"
         version: "{{ dotfiles_branch }}"
         dest: "{{ dotfiles_dest }}/{{ dotfiles_name }}"
-        clone: no
       tags:
         - dotfiles
 
-    - name: Backup default dotfiles
-      copy:
-        src: "{{ dotfiles_home }}/{{ item }}"
-        dest: "{{ dotfiles_home }}/{{ item }}.backup"
-        force: no
-      with_items: "{{ dotfiles_files }}"
-      ignore_errors: yes
-      tags:
-        - dotfiles
-        - backup
+    # - name: Backup default dotfiles
+    #   copy:
+    #     src: "{{ dotfiles_home }}/{{ item }}"
+    #     dest: "{{ dotfiles_home }}/{{ item }}.backup"
+    #     force: no
+    #   with_items: "{{ dotfiles_files }}"
+    #   ignore_errors: yes
+    #   tags:
+    #     - dotfiles
+    #     - backup
 
     - name: Prepare dotfiles destination
       file:
