@@ -32,12 +32,40 @@
       - { key: "/org/gnome/desktop/input-sources/per-window", value: "true" }
     ui_options:
       - { key: "/org/gnome/desktop/interface/show-battery-percentage", value: "true" }
-      - { key: "/org/gnome/desktop/interface/monospace-font-name", value: "'Fira Mono Medium 11'" }
       - { key: "/org/gnome/desktop/interface/clock-show-date", value: "true" }
+      - { key: "/org/gnome/desktop/wm/preferences/titlebar-font", value: "'Cantarell Bold 10'" }
+      - { key: "/org/gnome/desktop/interface/font-name", value: "'Cantarell 10'" }
+      - { key: "/org/gnome/desktop/interface/document-font-name", value: "'Sans 10'" }
+      - { key: "/org/gnome/desktop/interface/monospace-font-name", value: "'Fira Mono Medium 11'" }
+      - { key: "/org/gnome/settings-daemon/plugins/xsettings/hinting", value: "'slight'" }
+      - { key: "/org/gnome/settings-daemon/plugins/xsettings/antialiasing", value: "'rgba'" }
       - { key: "/org/gnome/desktop/wm/preferences/auto-raise", value: "true" }
       - { key: "/org/gnome/desktop/wm/preferences/mouse-button-modifier", value: "'<Alt>'" }
       - { key: "/org/gnome/desktop/wm/preferences/resize-with-right-button", value: "true" }
-      - { key: "/org/gnome/settings-daemon/plugins/color/night-light-temperature", value: "5800" }
+      - { key: "/org/gnome/settings-daemon/plugins/color/night-light-enabled", value: "true" }
+      - { key: "/org/gnome/settings-daemon/plugins/color/night-light-temperature", value: "uint32 5000" }
+    exts_options:
+      - { key: "/org/gnome/shell/window-switcher/current-workspace-only", value: "false" }
+      # TODO: dconf dump / dconf load
+      # - { key: "/org/gnome/shell/extensions/no-title-bar/button-position", value: "'after-app-menu'" }
+      # - { key: "/org/gnome/shell/extensions/topicons/icon-size", value: "18" }
+      # - { key: "/org/gnome/shell/extensions/dash-to-dock/background-color", value: "'#000000'" }
+      # - { key: "/org/gnome/shell/extensions/dash-to-dock/click-action", value: "'cycle-windows'" }
+      # - { key: "/org/gnome/shell/extensions/dash-to-dock/custom-background-color", value: "true" }
+      # - { key: "/org/gnome/shell/extensions/dash-to-dock/custom-theme-customize-running-dots", value: "true" }
+      # - { key: "/org/gnome/shell/extensions/dash-to-dock/custom-theme-running-dots", value: "true" }
+      # - { key: "/org/gnome/shell/extensions/dash-to-dock/custom-theme-running-dots-color", value: "'#469ef1'" }
+      # - { key: "/org/gnome/shell/extensions/dash-to-dock/custom-theme-shrink", value: "true" }
+      # - { key: "/org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size", value: "28" }
+      # - { key: "/org/gnome/shell/extensions/dash-to-dock/force-straight-corner", value: "false" }
+      # - { key: "/org/gnome/shell/extensions/dash-to-dock/opaque-background", value: "true" }
+      # - { key: "/org/gnome/shell/extensions/dash-to-dock/hotkeys-overlay", value: "false" }
+      # - { key: "/org/gnome/shell/extensions/dash-to-dock/intellihide-mode", value: "'ALL_WINDOWS'" }
+      # - { key: "/org/gnome/shell/extensions/dash-to-dock/shift-click-action", value: "'launch'" }
+      # - { key: "/org/gnome/shell/extensions/dash-to-dock/show-show-apps-button", value: "false" }
+      # - { key: "/org/gnome/shell/extensions/mconnect/device-automount", value: "true" }
+      # - { key: "/org/gnome/shell/extensions/mconnect/nautilus-integration", value: "true" }
+      # - { key: "/org/gnome/shell/extensions/mconnect/service-autostart", value: "true" }
     favorite_apps: "['google-chrome.desktop', 'org.gnome.Terminal.desktop', 'emacsclient.desktop', 'jetbrains-idea-ce.desktop']"
   tasks:
     - name: Install desktop packages
@@ -76,6 +104,13 @@
       tags:
         - desktop
         - ui
+
+    - name: Configure extentions
+      shell: dconf write "{{ item.key }}" "{{ item.value }}"
+      with_items: "{{ exts_options }}"
+      tags:
+        - desktop
+        - exts
 
     # since ansible 2.4
     # - name: Configure keyboard
