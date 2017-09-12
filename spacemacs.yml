@@ -3,7 +3,7 @@
     spacemacs_repo: "https://github.com/syl20bnr/spacemacs"
     spacemacs_branch: "develop"
     spacemacs_dest: "~/.emacs.d"
-    spacemacs_conf_repo: "https://github.com/rynffoll/.spacemacs.d"
+    spacemacs_conf_repo: "git@github.com:rynffoll/.spacemacs.d.git"
     spacemacs_conf_branch: "master"
     spacemacs_conf_dest: "~/.spacemacs.d"
   tasks:
@@ -19,6 +19,7 @@
         repo: "{{ spacemacs_repo }}"
         version: "{{ spacemacs_branch }}"
         dest: "{{ spacemacs_dest }}"
+        accept_hostkey: yes
       tags:
         - emacs
         - editors
@@ -28,6 +29,7 @@
         repo: "{{ spacemacs_conf_repo }}"
         version: "{{ spacemacs_conf_branch }}"
         dest: "{{ spacemacs_conf_dest }}"
+        accept_hostkey: yes
       tags:
         - emacs
         - editors

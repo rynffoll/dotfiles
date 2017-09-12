@@ -1,6 +1,6 @@
 - hosts: all
   vars:
-    dotfiles_repo: "https://github.com/rynffoll/dotfiles"
+    dotfiles_repo: "git@github.com:rynffoll/dotfiles.git"
     dotfiles_name: "dotfiles"
     dotfiles_branch: "master"
     dotfiles_dest: "~/Projects"
@@ -19,6 +19,7 @@
         repo: "{{ dotfiles_repo }}"
         version: "{{ dotfiles_branch }}"
         dest: "{{ dotfiles_dest }}/{{ dotfiles_name }}"
+        accept_hostkey: yes
       tags:
         - dotfiles
 
