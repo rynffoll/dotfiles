@@ -44,6 +44,7 @@
       - { key: "/org/gnome/desktop/wm/preferences/resize-with-right-button", value: "true" }
       - { key: "/org/gnome/settings-daemon/plugins/color/night-light-enabled", value: "true" }
       - { key: "/org/gnome/settings-daemon/plugins/color/night-light-temperature", value: "uint32 5000" }
+      - { key: "/org/gnome/desktop/sound/event-sounds", value: "false" }
     exts_options:
       - { key: "/org/gnome/shell/window-switcher/current-workspace-only", value: "false" }
       # TODO: dconf dump / dconf load
