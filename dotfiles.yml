@@ -20,27 +20,12 @@
         version: "{{ dotfiles_branch }}"
         dest: "{{ dotfiles_dest }}/{{ dotfiles_name }}"
         accept_hostkey: yes
-      tags:
-        - dotfiles
-
-    # - name: Backup default dotfiles
-    #   copy:
-    #     src: "{{ dotfiles_home }}/{{ item }}"
-    #     dest: "{{ dotfiles_home }}/{{ item }}.backup"
-    #     force: no
-    #   with_items: "{{ dotfiles_files }}"
-    #   ignore_errors: yes
-    #   tags:
-    #     - dotfiles
-    #     - backup
 
     - name: Prepare dotfiles destination
       file:
         path: "{{ (dotfiles_home ~ '/' ~ item) | dirname }}"
         state: directory
       with_items: "{{ dotfiles_files }}"
-      tags:
-        - dotfiles
 
     - name: Install dotfiles
       file:
@@ -49,5 +34,8 @@
         state: link
         force: yes
       with_items: "{{ dotfiles_files }}"
+
+    - name: Update desktop database
+      shell: update-desktop-database ~/.local/share/applications/
       tags:
-        - dotfiles
+        - desktop

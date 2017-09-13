@@ -11,8 +11,7 @@
       become: yes
       package: name=emacs state=latest
       tags:
-        - emacs
-        - editors
+        - packages
 
     - name: Install spacemacs
       git:
@@ -20,9 +19,6 @@
         version: "{{ spacemacs_branch }}"
         dest: "{{ spacemacs_dest }}"
         accept_hostkey: yes
-      tags:
-        - emacs
-        - editors
 
     - name: Install spacemacs config
       git:
@@ -30,6 +26,3 @@
         version: "{{ spacemacs_conf_branch }}"
         dest: "{{ spacemacs_conf_dest }}"
         accept_hostkey: yes
-      tags:
-        - emacs
-        - editors

@@ -23,13 +23,9 @@
       package: name="{{ item.url }}" state=latest disable_gpg_check=yes
       with_items: "{{ base_repos }}"
       when: ansible_distribution == "Fedora"
-      tags:
-        - repos
 
     - name: Install extra repos
       become: yes
       get_url: url="{{ item.url }}" dest="/etc/yum.repos.d/"
       with_items: "{{ extra_repos }}"
       when: ansible_distribution == "Fedora"
-      tags:
-        - repos
