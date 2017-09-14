@@ -1,11 +1,10 @@
 - hosts: all
   vars:
-    os_version: 26
     base_repos:
       - name: "rpmfusion-free"
-        url: "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ os_version }}.noarch.rpm"
+        url: "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ releasever }}.noarch.rpm"
       - name: "rpmfusion-nonfree"
-        url: "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ os_version }}.noarch.rpm"
+        url: "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ releasever }}.noarch.rpm"
       - name: "russianfedora-free"
         url: "http://mirror.yandex.ru/fedora/russianfedora/russianfedora/free/fedora/russianfedora-free-release-stable.noarch.rpm"
       - name: "russianfedora-nonfree"
@@ -18,6 +17,16 @@
       - name: "google-chrome"
         url: "https://github.com/RussianFedora/fedora-extra-repos/raw/master/google-chrome.repo"
   tasks:
+    - name: Get release version
+      shell: rpm -E %fedora
+      register: fedora_version
+      tags:
+        - always
+
+    - set_fact: releasever="{{ fedora_version.stdout }}"
+      tags:
+        - always
+
     - name: Install base repos
       become: yes
       package: name="{{ item.url }}" state=present disable_gpg_check=yes
