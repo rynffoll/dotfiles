@@ -121,7 +121,7 @@
         - jb
 
     - name: Check installed VirtualBox Extension Packs
-      shell: vboxmanage list extpacks | tail -1 | sed 's/.*:\ //'
+      shell: "vboxmanage list extpacks | grep Extension\\ Packs: | sed 's/Extension\\ Packs:\\ //'"
       register: vbox_extpack_exists
       tags:
         - vbox
