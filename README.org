@@ -10,7 +10,7 @@ sudo dnf install ansible -y
 ansible-galaxy install -r requirements.yml -p .
 ansible-playbook -i local.inv envy.yml -K
 #+END_SRC
-or just
+or
 #+BEGIN_SRC shell-script
-make
+make install_deps install_roles all
 #+END_SRC

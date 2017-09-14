@@ -20,7 +20,7 @@
   tasks:
     - name: Install base repos
       become: yes
-      package: name="{{ item.url }}" state=latest disable_gpg_check=yes
+      package: name="{{ item.url }}" state=present disable_gpg_check=yes
       with_items: "{{ base_repos }}"
       when: ansible_distribution == "Fedora"
 

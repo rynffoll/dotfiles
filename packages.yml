@@ -39,7 +39,7 @@
 
     - name: Install laptop packages
       become: yes
-      package: name="{{ item }}" state=latest
+      package: name="{{ item }}" state=present
       with_items: "{{ laptop_packages }}"
       when: ansible_distribution == "Fedora"
       tags:
@@ -47,7 +47,7 @@
 
     - name: Install dev packages
       become: yes
-      package: name="{{ item }}" state=latest
+      package: name="{{ item }}" state=present
       with_items: "{{ dev_packages }}"
       when: ansible_distribution == "Fedora"
       tags:
@@ -56,7 +56,7 @@
 
     - name: Install npm packages
       become: yes
-      npm: name="{{ item }}" state=latest global=yes
+      npm: name="{{ item }}" state=present global=yes
       with_items: "{{ npm_packages }}"
       tags:
         - packages

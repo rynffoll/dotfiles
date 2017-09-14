@@ -51,7 +51,7 @@
   tasks:
     - name: Install desktop packages
       become: yes
-      package: name="{{ item }}" state=latest
+      package: name="{{ item }}" state=present
       with_items: "{{ desktop_packages }}"
       tags:
         - packages

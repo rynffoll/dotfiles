@@ -9,7 +9,7 @@
   tasks:
     - name: Install emacs
       become: yes
-      package: name=emacs state=latest
+      package: name=emacs state=present
       tags:
         - packages
 
