@@ -56,6 +56,11 @@
       tags:
         - packages
 
+    - name: Configure dropbox
+      shell: dropbox start -i &
+      tags:
+        - dropbox
+
     - name: Install gnome extentions
       git:
         repo: "{{ item.url }}"
