@@ -19,6 +19,9 @@
       - docker
       - VirtualBox
       - ansible-lint
+    redundant_packages:
+      - libreoffice-core
+      - rhythmbox
     npm_packages:
       - yarn
       - create-react-app
@@ -31,9 +34,11 @@
       name: jetbrains-toolbox
       version: "1.4.2492"
   tasks:
-    - name: Update all packages
+    - name: Remove redundant packages
       become: yes
-      package: name="*" state=latest
+      package: name="{{ item }}" state=absent
+      with_items: "{{ redundant_packages }}"
+      when: ansible_distribution == "Fedora"
       tags:
         - packages
 
@@ -113,3 +118,37 @@
       tags:
         - dev
         - jb
+
+    - name: Check installed VirtualBox Extension Packs
+      shell: vboxmanage list extpacks | tail -1 | sed 's/.*:\ //'
+      register: vbox_extpack_exists
+      tags:
+        - vbox
+
+    - name: Get VirtualBox version
+      shell: vboxmanage --version | tail -1 | sed 's/r.*//'
+      register: vbox_version
+      tags:
+        - vbox
+
+    - name: Create temp directory for installing JetBrains Toolbox
+      tempfile: state=directory suffix="vbox-extpack"
+      register: vbox_extpack_tmpdir
+      when: vbox_extpack_exists.stdout == "0"
+      tags:
+        - vbox
+
+    - name: Download VirtualBox Extension Pack
+      get_url:
+        url: "http://download.virtualbox.org/virtualbox/{{ vbox_version.stdout }}/Oracle_VM_VirtualBox_Extension_Pack-{{ vbox_version.stdout }}.vbox-extpack"
+        dest: "{{ vbox_extpack_tmpdir.path }}"
+      when: vbox_extpack_exists.stdout == "0"
+      tags:
+        - vbox
+
+    - name: Install VirtualBox Extension Pack
+      shell: "virtualbox {{ vbox_extpack_tmpdir.path }}/Oracle_VM_VirtualBox_Extension_Pack-{{ vbox_version.stdout }}.vbox-extpack &"
+      when: vbox_extpack_exists.stdout == "0"
+      tags:
+        - vbox
+
