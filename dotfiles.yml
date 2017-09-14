@@ -8,6 +8,7 @@
     dotfiles_files:
       - ".bashrc"
       - ".tmux.conf"
+      - ".gitconfig"
       - ".config/mpv/config"
       - ".config/gtk-3.0/gtk.css"
       - "bin"
@@ -20,6 +21,8 @@
         version: "{{ dotfiles_branch }}"
         dest: "{{ dotfiles_dest }}/{{ dotfiles_name }}"
         accept_hostkey: yes
+      tags:
+        - clone
 
     - name: Prepare dotfiles destination
       file:
@@ -34,6 +37,8 @@
         state: link
         force: yes
       with_items: "{{ dotfiles_files }}"
+      tags:
+        - install
 
     - name: Update desktop database
       shell: update-desktop-database ~/.local/share/applications/
