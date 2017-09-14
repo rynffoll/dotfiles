@@ -19,6 +19,7 @@
       - docker
       - VirtualBox
       - ansible-lint
+      - nmon
     redundant_packages:
       - libreoffice-core
       - rhythmbox
