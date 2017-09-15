@@ -70,7 +70,7 @@
         - dev
 
     - name: Install sdkman packages
-      include_role: name="Comcast.sdkman"
+      include_role: name="sdkman"
       vars:
         sdkman_auto_answer: true
         sdkman_update: true

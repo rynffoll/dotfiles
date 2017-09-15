@@ -2,9 +2,9 @@
   vars:
     base_repos:
       - name: "rpmfusion-free"
-        url: "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ releasever }}.noarch.rpm"
+        url: "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedora_version.stdout }}.noarch.rpm"
       - name: "rpmfusion-nonfree"
-        url: "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ releasever }}.noarch.rpm"
+        url: "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ fedora_version.stdout }}.noarch.rpm"
       - name: "russianfedora-free"
         url: "http://mirror.yandex.ru/fedora/russianfedora/russianfedora/free/fedora/russianfedora-free-release-stable.noarch.rpm"
       - name: "russianfedora-nonfree"
@@ -20,10 +20,6 @@
     - name: Get release version
       shell: rpm -E %fedora
       register: fedora_version
-      tags:
-        - always
-
-    - set_fact: releasever="{{ fedora_version.stdout }}"
       tags:
         - always
 

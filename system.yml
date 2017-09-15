@@ -1,0 +1,92 @@
+- hosts: all
+  vars:
+    selinux: permissive # enforcing, permissive, disabled
+    selinuxtype: targeted # targeted, minimum, mls
+  tasks:
+    - name: Change policy and state of SELinux
+      become: yes
+      selinux:
+        state: "{{ selinux }}"
+        policy: "{{ selinuxtype }}"
+      tags:
+        - selinux
+
+    - name: Configure TLP
+      include_role: name="tlp"
+      vars:
+        tlp_enable: true
+
+        tlp_default_mode: "AC"
+
+        tlp_cpu_scaling_governor:
+          ac: "powersave"
+          bat: "powersave"
+
+        tlp_cpu_min_perf:
+          ac: 0
+          bat: 0
+        tlp_cpu_max_perf:
+          ac: 100
+          bat: 80
+
+        tlp_energy_perf_policy:
+          ac: "performance"
+          bat: "powersave"
+
+        tlp_disk_devices: "sda"
+
+        tlp_disk_apm_level:
+          ac: "254"
+          bat: "254"
+
+        tlp_ahci_runtime_pm:
+          ac: "on"
+          bat: "on"
+
+        tlp_pcie_aspm:
+          ac: "performance"
+          bat: "powersave"
+
+        tlp_wifi_pwr:
+          ac: "off"
+          bat: "on"
+
+        tlp_wol_disable: "Y"
+
+        tlp_sound_power_save:
+          ac: 0
+          bat: 1
+        tlp_sound_power_save_controller: "Y"
+
+        tlp_runtime_pm:
+          ac: "on"
+          bat: "auto"
+
+        tlp_usb_autosuspend: 0
+
+        tlp_devices_to_disable:
+          startup: "bluetooth wwan"
+      tags:
+        - laptop
+
+    - name: Configure LVM for SSD
+      become: yes
+      lineinfile:
+        dest: /etc/lvm/lvm.conf
+        state: present
+        regexp: "^(\\s*)issue_discards = 0"
+        line: "\\1issue_discards = 1"
+        backrefs: yes
+      tags:
+        - lvm
+        - ssd
+
+    - name: Enable fstrim timer for SSD
+      become: yes
+      service:
+        name: fstrim.timer
+        enabled: yes
+        state: started
+      tags:
+        - services
+        - ssd

@@ -1,5 +1,6 @@
 - include: "repos.yml"
 - include: "packages.yml"
+- include: "system.yml"
 - include: "desktop.yml"
 - include: "dotfiles.yml"
 - include: "spacemacs.yml"
