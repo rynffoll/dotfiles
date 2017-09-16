@@ -90,3 +90,12 @@
       tags:
         - services
         - ssd
+
+    - name: Configure dnf - fastestmirror
+      become: yes
+      lineinfile:
+        dest: /etc/dnf/dnf.conf
+        regexp: "fastestmirror="
+        line: "fastestmirror=True"
+      tags:
+        - dnf
