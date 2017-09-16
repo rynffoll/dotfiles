@@ -5,13 +5,14 @@
     dotfiles_branch: "master"
     dotfiles_dest: "~/Projects"
     dotfiles_home: "~"
-    dotfiles_files:
+    dotfiles_configs:
       - ".bashrc"
       - ".tmux.conf"
       - ".gitconfig"
       - ".config/mpv/config"
       - ".config/gtk-3.0/gtk.css"
       - "bin"
+    dotfiles_desktop_files:
       - ".local/share/applications/emacsclient.desktop"
       - ".local/share/applications/org-protocol.desktop"
   tasks:
@@ -30,17 +31,30 @@
         state: directory
       with_items: "{{ dotfiles_files }}"
 
-    - name: Install dotfiles
+    - name: Install configs
       file:
         src: "{{ dotfiles_dest }}/{{ dotfiles_name }}/{{ item }}"
         dest: "{{ dotfiles_home }}/{{ item }}"
         state: link
         force: yes
-      with_items: "{{ dotfiles_files }}"
+      with_items: "{{ dotfiles_configs }}"
       tags:
         - install
 
+    - name: Install desktop files
+      file:
+        src: "{{ dotfiles_dest }}/{{ dotfiles_name }}/{{ item }}"
+        dest: "{{ dotfiles_home }}/{{ item }}"
+        state: link
+        force: yes
+      with_items: "{{ dotfiles_desktop_files }}"
+      register: desktop_files
+      tags:
+        - install
+        - desktop
+
     - name: Update desktop database
       shell: update-desktop-database ~/.local/share/applications/
+      when: desktop_files.changed
       tags:
         - desktop
