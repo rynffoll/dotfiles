@@ -26,6 +26,8 @@ middle-click-action='launch'
 
 [no-title-bar]
 button-position='after-app-menu'
+hide-buttons=true
 
 [topicons]
 icon-size=18
+tray-pos='right'
