@@ -6,6 +6,7 @@
       - tlp
     dev_packages:
       - bash-completion
+      - sqlite # fix dnf completion, see https://trivialfis.github.io/linux/2017/07/28/Fix-Fedora-DNF-bash-completion.html
       - vim
       - tmux
       - htop
