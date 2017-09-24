@@ -28,7 +28,7 @@
       - yarn
       - create-react-app
     sdkman_packages:
-      - { candidate: gradle, version: "4.1" }
+      - { candidate: gradle, version: "4.2" }
       - { candidate: groovy, version: "2.4.12" }
       - { candidate: leiningen, version: "2.7.1" }
       - { candidate: maven, version: "3.5.0" }
