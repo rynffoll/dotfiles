@@ -14,6 +14,10 @@
     extra_repos:
       - name: "skypeforlinux"
         url: "https://repo.skype.com/rpm/stable/skype-stable.repo"
+      - name: "skypeforlinux preview"
+        url: "https://github.com/rynffoll/fedora-extra-repos/raw/master/skype-unstable.repo"
+      - name: "vscode"
+        url: "https://github.com/rynffoll/fedora-extra-repos/raw/master/vscode.repo"
       - name: "google-chrome"
         url: "https://github.com/RussianFedora/fedora-extra-repos/raw/master/google-chrome.repo"
   tasks:

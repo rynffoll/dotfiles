@@ -23,6 +23,7 @@
       - VirtualBox
       - ansible-lint
       - nmon
+      - code
     redundant_packages:
       - libreoffice-core
       - rhythmbox
