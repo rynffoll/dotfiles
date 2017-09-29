@@ -99,19 +99,11 @@
         - dev
         - jb
 
-    - name: Download JetBrains Toolbox
-      get_url:
-        url: "https://download.jetbrains.com/toolbox/{{ jb_toolbox.name }}-{{ jb_toolbox.version }}.tar.gz"
-        dest: "{{ jb_tmpdir.path }}"
-      when: jb_app.stat.exists == False
-      tags:
-        - dev
-        - jb
-
     - name: Uncompress JetBrains Toolbox
       unarchive:
-        src: "{{ jb_tmpdir.path }}/{{ jb_toolbox.name }}-{{ jb_toolbox.version }}.tar.gz"
+        src: "https://download.jetbrains.com/toolbox/{{ jb_toolbox.name }}-{{ jb_toolbox.version }}.tar.gz"
         dest: "{{ jb_tmpdir.path }}"
+        remote_src: yes
       when: jb_app.stat.exists == False
       tags:
         - dev
