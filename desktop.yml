@@ -29,6 +29,9 @@
       - { key: "/org/gnome/desktop/input-sources/sources", value: "[('xkb', 'us'), ('xkb', 'ru')]" }
       - { key: "/org/gnome/desktop/input-sources/xkb-options", value: "['ctrl:nocaps']" }
       - { key: "/org/gnome/desktop/input-sources/per-window", value: "true" }
+    term_options:
+      - { key: "/org/gnome/terminal/legacy/default-show-menubar", value: "false" }
+      - { key: "/org/gnome/terminal/legacy/menu-accelerator-enabled", value: "false"}
     ui_options:
       - { key: "/org/gnome/desktop/interface/show-battery-percentage", value: "true" }
       - { key: "/org/gnome/desktop/interface/clock-show-date", value: "true" }
@@ -60,13 +63,13 @@
       tags:
         - dropbox
 
-    - name: Install gnome extentions
-      git:
-        repo: "{{ item.url }}"
-        version: "{{ item.branch }}"
-        dest: "~/.local/share/gnome-shell/extensions"
-        accept_hostkey: yes
-      with_items: "{{ gnome_extentions }}"
+    # - name: Install gnome extentions
+    #   git:
+    #     repo: "{{ item.url }}"
+    #     version: "{{ item.branch }}"
+    #     dest: "~/.local/share/gnome-shell/extensions"
+    #     accept_hostkey: yes
+    #   with_items: "{{ gnome_extentions }}"
 
     # TODO: rewrite to use dconf module, which will be able to available since ansible 2.4
     - name: Configure keyboard
@@ -74,6 +77,12 @@
       with_items: "{{ kbd_options }}"
       tags:
         - kbd
+
+    - name: Configure terminal
+      shell: dconf write "{{ item.key }}" "{{ item.value }}"
+      with_items: "{{ term_options }}"
+      tags:
+        - term
 
     - name: Configure UI
       shell: dconf write "{{ item.key }}" "{{ item.value }}"
