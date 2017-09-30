@@ -31,6 +31,8 @@ icon-size-fixed=false
 transparency-mode='ADAPTIVE'
 
 [no-title-bar]
+only-main-monitor=false
+change-appmenu=true
 button-position='after-app-menu'
 hide-buttons=true
 
