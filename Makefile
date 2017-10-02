@@ -23,4 +23,4 @@ install_roles:
 	ansible-galaxy install -r requirements.yml -p galaxy_roles
 
 install_deps:
-	sudo dnf install ansible -y
+	sudo dnf install -y ansible python2-psutil

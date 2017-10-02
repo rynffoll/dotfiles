@@ -71,32 +71,31 @@
     #     accept_hostkey: yes
     #   with_items: "{{ gnome_extentions }}"
 
-    # TODO: rewrite to use dconf module, which will be able to available since ansible 2.4
     - name: Configure keyboard
-      shell: dconf write "{{ item.key }}" "{{ item.value }}"
+      dconf: key="{{ item.key }}" value="{{ item.value }}" state=present
       with_items: "{{ kbd_options }}"
       tags:
         - kbd
 
     - name: Configure terminal
-      shell: dconf write "{{ item.key }}" "{{ item.value }}"
+      dconf: key="{{ item.key }}" value="{{ item.value }}" state=present
       with_items: "{{ term_options }}"
       tags:
         - term
 
     - name: Configure UI
-      shell: dconf write "{{ item.key }}" "{{ item.value }}"
+      dconf: key="{{ item.key }}" value="{{ item.value }}" state=present
       with_items: "{{ ui_options }}"
       tags:
         - ui
 
     - name: Configure favorite apps
-      shell: dconf write "/org/gnome/shell/favorite-apps" "{{ favorite_apps }}"
+      dconf: key="/org/gnome/shell/favorite-apps" value="{{ favorite_apps }}" state=present
       tags:
         - ui
 
     - name: Configure extentions
-      shell: dconf write "{{ item.key }}" "{{ item.value }}"
+      dconf: key="{{ item.key }}" value="{{ item.value }}" state=present
       with_items: "{{ exts_options }}"
       tags:
         - exts
