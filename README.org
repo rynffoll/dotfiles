@@ -3,14 +3,9 @@ Ansible scripts for deployment local environment
 
 ** Requirements
 - ansible
+- python2-psutil (for dconf module)
 
 ** How to Use
-#+BEGIN_SRC shell-script
-sudo dnf install ansible -y
-ansible-galaxy install -r requirements.yml -p .
-ansible-playbook -i local.inv envy.yml -K
-#+END_SRC
-or
 #+BEGIN_SRC shell-script
 make install_deps install_roles all
 #+END_SRC
