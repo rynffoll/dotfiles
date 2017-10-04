@@ -12,6 +12,7 @@
       - ".config/mpv/config"
       - ".config/gtk-3.0/gtk.css"
       - "bin"
+      - ".toolboxrc"
     dotfiles_desktop_files:
       - ".local/share/applications/emacsclient.desktop"
       - ".local/share/applications/org-protocol.desktop"
