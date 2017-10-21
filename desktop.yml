@@ -26,7 +26,6 @@
         branch: "master"
         url: "https://github.com/rynffoll/window-navigator"
     kbd_options:
-      - { key: "/org/gnome/desktop/input-sources/sources", value: "[('xkb', 'us'), ('xkb', 'ru')]" }
       - { key: "/org/gnome/desktop/input-sources/xkb-options", value: "['ctrl:nocaps']" }
       - { key: "/org/gnome/desktop/input-sources/per-window", value: "true" }
     term_options:
@@ -70,6 +69,14 @@
     #     dest: "~/.local/share/gnome-shell/extensions"
     #     accept_hostkey: yes
     #   with_items: "{{ gnome_extentions }}"
+
+    - name: Configure input sources
+      dconf:
+        key: "/org/gnome/desktop/input-sources/sources"
+        value: "[('xkb', 'us'), ('xkb', 'ru')]"
+        state: present
+      tags:
+        - kbd
 
     - name: Configure keyboard
       dconf: key="{{ item.key }}" value="{{ item.value }}" state=present
