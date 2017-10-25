@@ -22,6 +22,7 @@
       - java-9-openjdk
       - java-9-openjdk-devel
       - java-9-openjdk-src
+      - java-9-openjdk-jmods
       - docker
       - VirtualBox
       - ansible-lint
