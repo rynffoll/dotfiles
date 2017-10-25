@@ -41,7 +41,7 @@
       - { key: "/org/gnome/settings-daemon/plugins/xsettings/hinting", value: "'slight'" }
       - { key: "/org/gnome/settings-daemon/plugins/xsettings/antialiasing", value: "'greyscale'" }
       - { key: "/org/gnome/desktop/wm/preferences/auto-raise", value: "true" }
-      - { key: "/org/gnome/desktop/wm/preferences/mouse-button-modifier", value: "'<Alt>'" }
+      - { key: "/org/gnome/desktop/wm/preferences/mouse-button-modifier", value: "'<Super>'" } # do not use <Alt>, because it conflicts with IDEA shortcuts
       - { key: "/org/gnome/desktop/wm/preferences/resize-with-right-button", value: "true" }
       - { key: "/org/gnome/settings-daemon/plugins/color/night-light-enabled", value: "true" }
       - { key: "/org/gnome/settings-daemon/plugins/color/night-light-temperature", value: "uint32 5000" }
