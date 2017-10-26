@@ -39,7 +39,7 @@
       - { key: "/org/gnome/desktop/interface/document-font-name", value: "'Sans 11'" }
       - { key: "/org/gnome/desktop/interface/monospace-font-name", value: "'Fira Mono Medium 11'" }
       - { key: "/org/gnome/settings-daemon/plugins/xsettings/hinting", value: "'slight'" }
-      - { key: "/org/gnome/settings-daemon/plugins/xsettings/antialiasing", value: "'greyscale'" }
+      - { key: "/org/gnome/settings-daemon/plugins/xsettings/antialiasing", value: "'grayscale'" }
       - { key: "/org/gnome/desktop/wm/preferences/auto-raise", value: "true" }
       - { key: "/org/gnome/desktop/wm/preferences/mouse-button-modifier", value: "'<Super>'" } # do not use <Alt>, because it conflicts with IDEA shortcuts
       - { key: "/org/gnome/desktop/wm/preferences/resize-with-right-button", value: "true" }
