@@ -46,6 +46,10 @@
       - { key: "/org/gnome/settings-daemon/plugins/color/night-light-enabled", value: "true" }
       - { key: "/org/gnome/settings-daemon/plugins/color/night-light-temperature", value: "uint32 5000" }
       - { key: "/org/gnome/desktop/sound/event-sounds", value: "false" }
+      - { key: "/org/gnome/desktop/wm/keybindings/begin-resize", value: "['']" }
+      - { key: "/org/gnome/desktop/wm/keybindings/begin-move", value: "['']" }
+      - { key: "/org/gnome/desktop/wm/keybindings/cycle-group", value: "['']" }
+      - { key: "/org/gnome/desktop/wm/keybindings/cycle-group-backward", value: "['']" }
     exts_options:
       - { key: "/org/gnome/shell/window-switcher/current-workspace-only", value: "false" }
     favorite_apps: "['google-chrome.desktop', 'org.gnome.Terminal.desktop', 'emacsclient.desktop', 'jetbrains-idea-ce.desktop']"
