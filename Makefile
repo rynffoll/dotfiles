@@ -24,3 +24,6 @@ install_roles:
 
 install_deps:
 	sudo dnf install -y ansible python2-psutil
+
+update_dconf_dump:
+	dconf dump /org/gnome/shell/extensions/ > files/extensions.dconf
