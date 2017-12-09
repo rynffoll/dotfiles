@@ -28,6 +28,7 @@
       - ansible-lint
       - nmon
       - code
+      - fbless
     redundant_packages:
       - libreoffice-core
       - rhythmbox
