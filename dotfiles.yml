@@ -12,7 +12,6 @@
       - ".config/mpv/config"
       - ".config/gtk-3.0/gtk.css"
       - "bin"
-      - ".toolboxrc"
       - ".ideavimrc"
     dotfiles_desktop_files:
       - ".local/share/applications/emacsclient.desktop"
