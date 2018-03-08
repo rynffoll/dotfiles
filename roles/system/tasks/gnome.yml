@@ -1,0 +1,30 @@
+- name: Configure dropbox
+  shell: dropbox start -i &
+
+- name: Configure input sources
+  dconf:
+    key: "/org/gnome/desktop/input-sources/sources"
+    value: "[('xkb', 'us'), ('xkb', 'ru')]"
+    state: present
+
+- name: Configure keyboard
+  dconf: key="{{ item.key }}" value="{{ item.value }}" state=present
+  with_items: "{{ kbd_options }}"
+
+- name: Configure terminal
+  dconf: key="{{ item.key }}" value="{{ item.value }}" state=present
+  with_items: "{{ term_options }}"
+
+- name: Configure UI
+  dconf: key="{{ item.key }}" value="{{ item.value }}" state=present
+  with_items: "{{ ui_options }}"
+
+- name: Configure favorite apps
+  dconf: key="/org/gnome/shell/favorite-apps" value="{{ favorite_apps }}" state=present
+
+- name: Configure extentions
+  dconf: key="{{ item.key }}" value="{{ item.value }}" state=present
+  with_items: "{{ exts_options }}"
+
+- name: Load extentions configuration
+  shell: dconf load /org/gnome/shell/extensions/ < "{{ role_path }}/files/extensions.dconf"

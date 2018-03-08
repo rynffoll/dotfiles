@@ -1,0 +1,17 @@
+- name: Install emacs
+  become: yes
+  package: name=emacs state=present
+
+- name: Install spacemacs
+  git:
+    repo: "{{ spacemacs_repo }}"
+    version: "{{ spacemacs_branch }}"
+    dest: "{{ spacemacs_dest }}"
+    accept_hostkey: yes
+
+- name: Install spacemacs config
+  git:
+    repo: "{{ spacemacs_conf_repo }}"
+    version: "{{ spacemacs_conf_branch }}"
+    dest: "{{ spacemacs_conf_dest }}"
+    accept_hostkey: yes

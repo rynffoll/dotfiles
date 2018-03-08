@@ -1,0 +1,18 @@
+base_repos:
+  - name: "rpmfusion-free"
+    url: "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedora_version.stdout }}.noarch.rpm"
+  - name: "rpmfusion-nonfree"
+    url: "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ fedora_version.stdout }}.noarch.rpm"
+  - name: "russianfedora-free"
+    url: "http://mirror.yandex.ru/fedora/russianfedora/russianfedora/free/fedora/russianfedora-free-release-stable.noarch.rpm"
+  - name: "russianfedora-nonfree"
+    url: "http://mirror.yandex.ru/fedora/russianfedora/russianfedora/nonfree/fedora/russianfedora-nonfree-release-stable.noarch.rpm"
+  - name: "russianfedora-fixes"
+    url: "http://mirror.yandex.ru/fedora/russianfedora/russianfedora/fixes/fedora/russianfedora-fixes-release-stable.noarch.rpm"
+extra_repos:
+  - name: "skypeforlinux"
+    url: "https://repo.skype.com/rpm/stable/skype-stable.repo"
+  - name: "vscode"
+    url: "https://github.com/rynffoll/fedora-extra-repos/raw/master/vscode.repo"
+  - name: "google-chrome"
+    url: "https://github.com/RussianFedora/fedora-extra-repos/raw/master/google-chrome.repo"

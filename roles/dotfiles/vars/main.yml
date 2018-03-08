@@ -1,0 +1,8 @@
+dotfiles_home: "~"
+dotfiles_configs:
+  - { src: "bash_profile", dest: ".bash_profile" }
+  - { src: "tmux.conf", dest: ".tmux.conf" }
+  - { src: "gitconfig", dest: ".gitconfig" }
+  - { src: "ideavimrc", dest: ".ideavimrc" }
+  - { src: "ssh/config", dest: ".ssh/config" }
+  - { src: "gnupg/gpg-agent.conf", dest: ".gnupg/gpg-agent.conf" }

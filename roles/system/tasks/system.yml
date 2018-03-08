@@ -1,0 +1,32 @@
+- name: Change policy and state of SELinux
+  become: yes
+  selinux:
+    state: permissive
+    policy: targeted
+  when: ansible_distribution == "Fedora"
+
+- name: Configure LVM for SSD
+  become: yes
+  lineinfile:
+    dest: /etc/lvm/lvm.conf
+    state: present
+    regexp: "^(\\s*)issue_discards = 0"
+    line: "\\1issue_discards = 1"
+    backrefs: yes
+  when: ansible_distribution == "Fedora"
+
+- name: Enable fstrim timer for SSD
+  become: yes
+  service:
+    name: fstrim.timer
+    enabled: yes
+    state: started
+  when: ansible_distribution == "Fedora"
+
+- name: Configure dnf - fastestmirror
+  become: yes
+  lineinfile:
+    dest: /etc/dnf/dnf.conf
+    regexp: "fastestmirror="
+    line: "fastestmirror=True"
+  when: ansible_distribution == "Fedora"

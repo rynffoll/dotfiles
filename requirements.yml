@@ -1,4 +1,0 @@
-- src: Comcast.sdkman
-  name: sdkman
-- src: "https://github.com/rynffoll/ansible-role-tlp"
-  name: tlp

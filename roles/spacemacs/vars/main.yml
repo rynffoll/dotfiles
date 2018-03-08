@@ -1,0 +1,6 @@
+spacemacs_repo: "https://github.com/syl20bnr/spacemacs"
+spacemacs_branch: "develop"
+spacemacs_dest: "~/.emacs.d"
+spacemacs_conf_repo: "git@github.com:rynffoll/.spacemacs.d.git"
+spacemacs_conf_branch: "master"
+spacemacs_conf_dest: "~/.spacemacs.d"

@@ -1,0 +1,11 @@
+- name: Prepare dotfiles destination
+  file:
+    path: "{{ (dotfiles_home ~ '/' ~ item.dest) | dirname }}"
+    state: directory
+  with_items: "{{ dotfiles_configs }}"
+
+- name: Install configs
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ dotfiles_home }}/{{ item.dest }}"
+  with_items: "{{ dotfiles_configs }}"

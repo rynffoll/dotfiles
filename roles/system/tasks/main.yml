@@ -1,0 +1,4 @@
+- include: repos.yml
+- include: packages.yml
+- include: system.yml
+- include: gnome.yml

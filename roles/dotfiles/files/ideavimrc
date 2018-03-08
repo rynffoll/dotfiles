@@ -1,0 +1,27 @@
+" integrate with system clipboard
+set clipboard+=unnamed
+set hls
+set ignorecase smartcase
+set incsearch
+set showmode
+" enable vim-surround extension
+set surround
+
+" override surround shortcuts
+vmap s S
+
+" nnoremap / :action Find<CR>
+" nnoremap n :action FindNext<CR>
+" nnoremap N :action FindPrevious<CR>
+
+nnoremap <Space>n :action GotoClass<CR>
+nnoremap <Space>e :action RecentFiles<CR>
+nnoremap <Space>bb :action RecentFiles<CR>
+nnoremap <Space>rr :action RenameElement<CR>
+nnoremap ,rr :action RenameElement<CR>
+
+nnoremap <Space>wd :action CloseContent<CR>
+nnoremap <Space>w/ :vsplit<CR>
+nnoremap <Space>w- :split<CR>
+nnoremap <Space>wv :vsplit<CR>
+nnoremap <Space>ws :split<CR>
