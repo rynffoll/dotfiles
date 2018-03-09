@@ -1,1 +1,1 @@
-- include: spacemacs.yml
+- include_tasks: spacemacs.yml
