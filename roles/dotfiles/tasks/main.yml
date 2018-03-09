@@ -1,1 +1,7 @@
+- include_vars: fedora.yml
+  when: ansible_distribution == "Fedora"
+
+- include_vars: macos.yml
+  when: ansible_distribution == "MacOSX"
+
 - include_tasks: dotfiles.yml
