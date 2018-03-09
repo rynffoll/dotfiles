@@ -1,5 +1,5 @@
-hosts: all
-roles:
-  - system
-  - dotfiles
-  - spacemacs
+- hosts: all
+  roles:
+    # - system
+    - dotfiles
+    - spacemacs

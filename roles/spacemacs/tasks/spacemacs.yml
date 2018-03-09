@@ -1,7 +1,3 @@
-- name: Install emacs
-  become: yes
-  package: name=emacs state=present
-
 - name: Install spacemacs
   git:
     repo: "{{ spacemacs_repo }}"

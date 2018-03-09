@@ -1,1 +1,1 @@
-- include: dotfiles.yml
+- include_tasks: dotfiles.yml
