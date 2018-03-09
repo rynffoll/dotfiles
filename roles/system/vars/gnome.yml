@@ -1,28 +1,29 @@
-kbd_options:
-  - { key: "/org/gnome/desktop/input-sources/xkb-options", value: "['ctrl:nocaps']" }
-  - { key: "/org/gnome/desktop/input-sources/per-window", value: "true" }
-term_options:
-  - { key: "/org/gnome/terminal/legacy/default-show-menubar", value: "false" }
-  - { key: "/org/gnome/terminal/legacy/menu-accelerator-enabled", value: "false"}
-ui_options:
-  - { key: "/org/gnome/desktop/interface/show-battery-percentage", value: "true" }
-  - { key: "/org/gnome/desktop/interface/clock-show-date", value: "true" }
-  - { key: "/org/gnome/desktop/wm/preferences/titlebar-font", value: "'Cantarell Bold 11'" }
-  - { key: "/org/gnome/desktop/interface/font-name", value: "'Cantarell 11'" }
-  - { key: "/org/gnome/desktop/interface/document-font-name", value: "'Sans 11'" }
-  - { key: "/org/gnome/desktop/interface/monospace-font-name", value: "'Fira Mono Medium 11'" }
-  - { key: "/org/gnome/settings-daemon/plugins/xsettings/hinting", value: "'slight'" }
-  - { key: "/org/gnome/settings-daemon/plugins/xsettings/antialiasing", value: "'grayscale'" }
-  - { key: "/org/gnome/desktop/wm/preferences/auto-raise", value: "true" }
-  - { key: "/org/gnome/desktop/wm/preferences/mouse-button-modifier", value: "'<Super>'" } # do not use <Alt>, because it conflicts with IDEA shortcuts
-  - { key: "/org/gnome/desktop/wm/preferences/resize-with-right-button", value: "true" }
-  - { key: "/org/gnome/settings-daemon/plugins/color/night-light-enabled", value: "true" }
-  - { key: "/org/gnome/settings-daemon/plugins/color/night-light-temperature", value: "uint32 5000" }
-  - { key: "/org/gnome/desktop/sound/event-sounds", value: "false" }
-  - { key: "/org/gnome/desktop/wm/keybindings/begin-resize", value: "['']" }
-  - { key: "/org/gnome/desktop/wm/keybindings/begin-move", value: "['']" }
-  - { key: "/org/gnome/desktop/wm/keybindings/cycle-group", value: "['']" }
-  - { key: "/org/gnome/desktop/wm/keybindings/cycle-group-backward", value: "['']" }
-exts_options:
-  - { key: "/org/gnome/shell/window-switcher/current-workspace-only", value: "false" }
-favorite_apps: "['google-chrome.desktop', 'org.gnome.Terminal.desktop', 'emacsclient.desktop', 'jetbrains-idea-ce.desktop']"
+gnome:
+  kbd_options:
+    - { key: "/org/gnome/desktop/input-sources/xkb-options", value: "['ctrl:nocaps']" }
+    - { key: "/org/gnome/desktop/input-sources/per-window", value: "true" }
+  term_options:
+    - { key: "/org/gnome/terminal/legacy/default-show-menubar", value: "false" }
+    - { key: "/org/gnome/terminal/legacy/menu-accelerator-enabled", value: "false"}
+  ui_options:
+    - { key: "/org/gnome/desktop/interface/show-battery-percentage", value: "true" }
+    - { key: "/org/gnome/desktop/interface/clock-show-date", value: "true" }
+    - { key: "/org/gnome/desktop/wm/preferences/titlebar-font", value: "'Cantarell Bold 11'" }
+    - { key: "/org/gnome/desktop/interface/font-name", value: "'Cantarell 11'" }
+    - { key: "/org/gnome/desktop/interface/document-font-name", value: "'Sans 11'" }
+    - { key: "/org/gnome/desktop/interface/monospace-font-name", value: "'Fira Mono Medium 11'" }
+    - { key: "/org/gnome/settings-daemon/plugins/xsettings/hinting", value: "'slight'" }
+    - { key: "/org/gnome/settings-daemon/plugins/xsettings/antialiasing", value: "'grayscale'" }
+    - { key: "/org/gnome/desktop/wm/preferences/auto-raise", value: "true" }
+    - { key: "/org/gnome/desktop/wm/preferences/mouse-button-modifier", value: "'<Super>'" } # do not use <Alt>, because it conflicts with IDEA shortcuts
+    - { key: "/org/gnome/desktop/wm/preferences/resize-with-right-button", value: "true" }
+    - { key: "/org/gnome/settings-daemon/plugins/color/night-light-enabled", value: "true" }
+    - { key: "/org/gnome/settings-daemon/plugins/color/night-light-temperature", value: "uint32 5000" }
+    - { key: "/org/gnome/desktop/sound/event-sounds", value: "false" }
+    - { key: "/org/gnome/desktop/wm/keybindings/begin-resize", value: "['']" }
+    - { key: "/org/gnome/desktop/wm/keybindings/begin-move", value: "['']" }
+    - { key: "/org/gnome/desktop/wm/keybindings/cycle-group", value: "['']" }
+    - { key: "/org/gnome/desktop/wm/keybindings/cycle-group-backward", value: "['']" }
+  exts_options:
+    - { key: "/org/gnome/shell/window-switcher/current-workspace-only", value: "false" }
+  favorite_apps: "['google-chrome.desktop', 'org.gnome.Terminal.desktop', 'emacsclient.desktop', 'jetbrains-idea-ce.desktop']"

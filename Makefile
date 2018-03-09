@@ -1,5 +1,5 @@
 all:
-	ansible-playbook envy.yml -vv #-K
+	ansible-playbook envy.yml -vv -Kk
 
 install_deps_fedora:
 	sudo dnf install -y ansible python2-psutil

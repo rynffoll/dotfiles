@@ -1,0 +1,7 @@
+- include_vars: fedora.yml
+
+- include_tasks: repos.yml
+- include_tasks: packages.yml
+- include_tasks: gnome.yml
+- include_tasks: jb-toolbox.yml
+- include_tasks: vbox.yml

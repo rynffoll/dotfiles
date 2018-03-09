@@ -2,72 +2,13 @@
   become: yes
   package: name="{{ item }}" state=absent
   with_items: "{{ redundant_packages }}"
-  when: ansible_distribution == "Fedora"
 
-- name: Install laptop packages
+- name: Install packages
   become: yes
   package: name="{{ item }}" state=present
-  with_items: "{{ packages }}"
-  when: ansible_distribution == "Fedora"
+  with_items: "{{ system_packages }}"
 
 - name: Install npm packages
   become: yes
   npm: name="{{ item }}" state=present global=yes
   with_items: "{{ npm_packages }}"
-
-- name: Check existing JetBrains Toolbox
-  stat: path="~/.local/share/applications/jetbrains-toolbox.desktop"
-  register: jb_app
-
-- name: Get link to latest version of JetBrains Toolbox
-  uri:
-    url: "https://data.services.jetbrains.com//products/releases?code=TBA&latest=true&type=release"
-    return_content: yes
-  register: jb_response
-  when: jb_app.stat.exists == False
-
-- name: Parse link and checksum for latest Jetbrains Toolbox from resposne
-  set_fact:
-    jb_toolbox_link: "{{ jb_response.json.TBA.0.downloads.linux.link }}"
-    jb_toolbox_checksum_link: "{{ jb_response.json.TBA.0.downloads.linux.checksumLink }}"
-  when: jb_app.stat.exists == False
-
-- name: Create temp directory for installing JetBrains Toolbox
-  tempfile: state=directory suffix="jetbrains-toolbox"
-  register: jb_tmpdir
-  when: jb_app.stat.exists == False
-
-- name: Uncompress JetBrains Toolbox
-  unarchive:
-    src: "{{ jb_toolbox_link }}"
-    dest: "{{ jb_tmpdir.path }}"
-    remote_src: yes
-  when: jb_app.stat.exists == False
-
-- name: Install JetBrains Toolbox
-  shell: "{{ jb_tmpdir.path }}/jetbrains-toolbox-*/jetbrains-toolbox &"
-  when: jb_app.stat.exists == False
-
-- name: Check installed VirtualBox Extension Packs
-  shell: "vboxmanage list extpacks | grep Extension\\ Packs: | sed 's/Extension\\ Packs:\\ //'"
-  register: vbox_extpack_exists
-
-- name: Get VirtualBox version
-  shell: vboxmanage --version | tail -1 | sed 's/r.*//'
-  register: vbox_version
-
-- name: Create temp directory for installing JetBrains Toolbox
-  tempfile: state=directory suffix="vbox-extpack"
-  register: vbox_extpack_tmpdir
-  when: vbox_extpack_exists.stdout == "0"
-
-- name: Download VirtualBox Extension Pack
-  get_url:
-    url: "http://download.virtualbox.org/virtualbox/{{ vbox_version.stdout }}/Oracle_VM_VirtualBox_Extension_Pack-{{ vbox_version.stdout }}.vbox-extpack"
-    dest: "{{ vbox_extpack_tmpdir.path }}"
-  when: vbox_extpack_exists.stdout == "0"
-
-- name: Install VirtualBox Extension Pack
-  shell: "virtualbox {{ vbox_extpack_tmpdir.path }}/Oracle_VM_VirtualBox_Extension_Pack-{{ vbox_version.stdout }}.vbox-extpack &"
-  when: vbox_extpack_exists.stdout == "0"
-

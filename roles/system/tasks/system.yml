@@ -3,7 +3,6 @@
   selinux:
     state: permissive
     policy: targeted
-  when: ansible_distribution == "Fedora"
 
 - name: Configure LVM for SSD
   become: yes
@@ -13,7 +12,6 @@
     regexp: "^(\\s*)issue_discards = 0"
     line: "\\1issue_discards = 1"
     backrefs: yes
-  when: ansible_distribution == "Fedora"
 
 - name: Enable fstrim timer for SSD
   become: yes
@@ -21,7 +19,6 @@
     name: fstrim.timer
     enabled: yes
     state: started
-  when: ansible_distribution == "Fedora"
 
 - name: Configure dnf - fastestmirror
   become: yes
@@ -29,4 +26,3 @@
     dest: /etc/dnf/dnf.conf
     regexp: "fastestmirror="
     line: "fastestmirror=True"
-  when: ansible_distribution == "Fedora"
