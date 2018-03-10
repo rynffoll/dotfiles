@@ -29,7 +29,7 @@ bind 'set show-all-if-unmodified on'
 
 bind 'TAB:menu-complete'
 
-export EDITOR="emasclient -n -c -a ''"
+export EDITOR="emacsclient -c || vim"
 
 if [ -f "/usr/share/git-core/contrib/completion/git-prompt.sh" ]; then
     source "/usr/share/git-core/contrib/completion/git-prompt.sh"
