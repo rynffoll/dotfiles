@@ -27,7 +27,7 @@ bind 'set colored-completion-prefix on'
 bind 'set show-all-if-ambiguous on'
 bind 'set show-all-if-unmodified on'
 
-bind 'TAB:menu-complete'
+# bind 'TAB:menu-complete'
 
 export EDITOR="emacsclient -c || vim"
 
