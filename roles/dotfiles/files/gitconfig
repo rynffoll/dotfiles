@@ -1,3 +1,5 @@
 [user]
-	name = Ruslan Kamashev
-	email = rynffoll@gmail.com
+  name = Ruslan Kamashev
+  email = rynffoll@gmail.com
+[core]
+  excludesfile = ~/.gitignore

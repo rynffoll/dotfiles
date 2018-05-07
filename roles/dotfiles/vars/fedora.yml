@@ -2,6 +2,7 @@ dotfiles_configs:
   - { src: "bash_profile", dest: ".bash_profile" }
   - { src: "tmux.conf", dest: ".tmux.conf" }
   - { src: "gitconfig", dest: ".gitconfig" }
+  - { src: "gitignore", dest: ".gitignore" }
   - { src: "ideavimrc", dest: ".ideavimrc" }
   - { src: "ssh/config", dest: ".ssh/config" }
   - { src: "applications/emacsclient.desktop", dest: ".local/share/applications/emacsclient.desktop" }
