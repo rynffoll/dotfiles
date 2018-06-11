@@ -1,0 +1,21 @@
+- name: Save original role_path
+  set_fact:
+    original_role_path: "{{ role_path }}"
+
+- name: Install Brewfile
+  include_role:
+    name: geerlingguy.homebrew
+  vars:
+    homebrew_repo: "https://github.com/Homebrew/brew"
+    homebrew_prefix: "/usr/local"
+    homebrew_install_path: "{{ homebrew_prefix }}/Homebrew"
+    homebrew_brew_bin_path: "/usr/local/bin"
+    homebrew_installed_packages: []
+    homebrew_uninstalled_packages: []
+    homebrew_upgrade_all_packages: no
+    homebrew_taps: []
+    homebrew_cask_apps: []
+    homebrew_cask_uninstalled_apps: []
+    homebrew_cask_appdir: "/Applications"
+    homebrew_use_brewfile: true
+    homebrew_brewfile_dir: "{{ original_role_path }}/files"

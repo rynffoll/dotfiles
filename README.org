@@ -6,7 +6,13 @@ Ansible scripts for deployment local environment
 - python2-psutil (for dconf module)
 
 ** How to Use
+Fedora:
 #+BEGIN_SRC shell-script
-make install_deps install_roles all
+make install_deps_fedora install_roles all
+#+END_SRC
+
+macOS:
+#+BEGIN_SRC shell-script
+make install_deps_macos install_roles all
 #+END_SRC
 
