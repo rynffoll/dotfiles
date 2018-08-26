@@ -6,6 +6,7 @@ dotfiles_configs:
   - { src: "ideavimrc", dest: ".ideavimrc" }
   - { src: "ssh/config", dest: ".ssh/config" }
   - { src: "applications/emacsclient.desktop", dest: ".local/share/applications/emacsclient.desktop" }
+  - { src: "clojure/deps.edn", dest: ".clojure/deps.edn" }
 dotfiles_scripts:
   - docker-clean
   - ecli

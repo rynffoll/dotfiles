@@ -1,0 +1,6 @@
+{:aliases
+ {:new {:extra-deps {seancorfield/clj-new
+                     {:git/url "https://github.com/seancorfield/clj-new"
+                      :sha "108f27159501f8ce12564b398b0ea50def3892b1"
+                      :tag "v0.5.3"}}
+        :main-opts ["-m" "clj-new.create"]}}}
