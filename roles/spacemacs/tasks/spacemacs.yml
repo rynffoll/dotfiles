@@ -3,6 +3,7 @@
     repo: "{{ spacemacs_repo }}"
     version: "{{ spacemacs_branch }}"
     dest: "{{ spacemacs_dest }}"
+    update: no
     accept_hostkey: yes
 
 - name: Install spacemacs config
@@ -10,4 +11,5 @@
     repo: "{{ spacemacs_conf_repo }}"
     version: "{{ spacemacs_conf_branch }}"
     dest: "{{ spacemacs_conf_dest }}"
+    update: no
     accept_hostkey: yes
