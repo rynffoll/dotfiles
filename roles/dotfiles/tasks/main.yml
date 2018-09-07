@@ -4,4 +4,24 @@
 - include_vars: macos.yml
   when: ansible_distribution == "MacOSX"
 
-- include_tasks: dotfiles.yml
+- name: Prepare dotfiles destination
+  file:
+    path: "{{ (dotfiles_home ~ '/' ~ item.dest) | dirname }}"
+    state: directory
+  with_items: "{{ dotfiles_configs }}"
+
+- name: Copy configs
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ dotfiles_home }}/{{ item.dest }}"
+  with_items: "{{ dotfiles_configs }}"
+
+- name: Prepare scripts destination
+  file: path="{{ dotfiles_home }}/bin" state=directory
+
+- name: Copy scripts
+  copy:
+    src: "bin/{{ item }}"
+    dest: "{{ dotfiles_home }}/bin"
+    mode: "u+x"
+  with_items: "{{ dotfiles_scripts }}"
