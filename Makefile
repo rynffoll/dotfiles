@@ -5,7 +5,7 @@ check:
 	ansible-playbook envy.yml -Kk --check ${OPS}
 
 install_roles:
-	ansible-galaxy install --force -r requirements.yml -p galaxy_roles
+	ansible-galaxy install --force -r requirements.yml
 
 install_deps_fedora:
 	sudo dnf install -y ansible python2-psutil
