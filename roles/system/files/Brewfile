@@ -31,7 +31,7 @@ brew "ripgrep"
 brew "texinfo"
 brew "tree"
 brew "wget"
-brew "d12frosted/emacs-plus/emacs-plus"
+brew "d12frosted/emacs-plus/emacs-plus", args: ["without-spacemacs-icon"]
 cask "dbeaver-community"
 cask "docker"
 cask "dropbox"
