@@ -1,0 +1,6 @@
+emacs_distr_repo: "https://github.com/hlissner/doom-emacs"
+emacs_distr_branch: "develop"
+emacs_distr_dest: "~/.emacs.d"
+emacs_conf_repo: "git@github.com:rynffoll/.doom.d.git"
+emacs_conf_branch: "master"
+emacs_conf_dest: "~/.doom.d"
