@@ -1,43 +1,4 @@
 # -*- mode: shell-script -*-
-PROMPT_COMMAND="history -a; $PROMPT_COMMAND" # store history immediately
-HISTCONTROL=ignoreboth # ignore dups and spaces
-HISTSIZE=1000
-HISTFILESIZE=100000
-HISTIGNORE='ls:bg:fg:history'
-PATH=$PATH:$HOME/bin
-
-shopt -s histappend
-shopt -s checkwinsize
-shopt -s cdspell
-
-if ! shopt -oq posix; then
-    if [ -f /usr/share/bash-completion/bash_completion ]; then
-        . /usr/share/bash-completion/bash_completion
-    elif [ -f /etc/bash_completion ]; then
-        . /etc/bash_completion
-    fi
+if [ -f ~/.bashrc ]; then
+  source ~/.bashrc
 fi
-
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
-fi
-
-bind 'set completion-ignore-case on'
-bind 'set colored-completion-prefix on'
-bind 'set show-all-if-ambiguous on'
-bind 'set show-all-if-unmodified on'
-
-# bind 'TAB:menu-complete'
-
-export EDITOR="emacsclient -c || vim"
-
-if [ -f "/usr/share/git-core/contrib/completion/git-prompt.sh" ]; then
-    source "/usr/share/git-core/contrib/completion/git-prompt.sh"
-fi
-
-GIT_PS1_SHOWDIRTYSTATE=1
-GIT_PS1_STATESEPARATOR=""
-PS1='\[\033[34m\]\w\[\033[1;33m\]$(__git_ps1 " %s")\[\033[00m\]\n$ '
-
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"

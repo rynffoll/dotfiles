@@ -1,5 +1,6 @@
 dotfiles_configs:
   - { src: "bash_profile", dest: ".bash_profile" }
+  - { src: "bashrc", dest: ".bashrc" }
   - { src: "tmux.conf", dest: ".tmux.conf" }
   - { src: "gitconfig", dest: ".gitconfig" }
   - { src: "gitignore", dest: ".gitignore" }
