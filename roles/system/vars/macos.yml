@@ -1,0 +1,9 @@
+defaults:
+  - domain: NSGlobalDomain
+    name: CGFontRenderingFontSmoothingDisabled
+    type: bool
+    value: false
+  - domain: NSGlobalDomain
+    name: ApplePressAndHoldEnabled
+    type: bool
+    value: false

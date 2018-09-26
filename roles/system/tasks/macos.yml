@@ -1,3 +1,5 @@
+- include_vars: macos.yml
+
 - name: Save original role_path
   set_fact:
     original_role_path: "{{ role_path }}"
@@ -9,3 +11,12 @@
     homebrew_use_brewfile: true
     homebrew_brewfile_dir: "{{ original_role_path }}/files"
     homebrew_clear_cache: true
+
+- name: Configure defaults
+  osx_defaults:
+    host: currentHost
+    domain: "{{ item.domain }}"
+    key: "{{ item.name }}"
+    type: "{{ item.type }}"
+    value: "{{ item.value }}"
+  with_items: "{{ defaults }}"
