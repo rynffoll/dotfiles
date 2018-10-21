@@ -1,0 +1,3 @@
+emacs_conf_repo: "git@github.com:rynffoll/.emacs.d.git"
+emacs_conf_branch: "master"
+emacs_conf_dest: "~/.emacs.d"
