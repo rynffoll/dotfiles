@@ -20,3 +20,12 @@
     type: "{{ item.type }}"
     value: "{{ item.value }}"
   with_items: "{{ defaults }}"
+
+- name: Download russian keyboard layout
+  become: yes
+  get_url:
+    url: "https://raw.githubusercontent.com/rynffoll/osx-russian-keyboard/master/{{ item | urlencode }}" 
+    dest: "/Library/Keyboard Layouts/{{ item }}"
+  with_items:
+    - Русская - BG46.icns
+    - Русская - BG46.keylayout
