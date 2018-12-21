@@ -1,8 +1,8 @@
 all:
-	ansible-playbook envy.yml -Kk ${OPS}
+	ansible-playbook envy.yml -K ${OPS}
 
 check:
-	ansible-playbook envy.yml -Kk --check ${OPS}
+	ansible-playbook envy.yml -K --check ${OPS}
 
 install_roles:
 	ansible-galaxy install --force -r requirements.yml
