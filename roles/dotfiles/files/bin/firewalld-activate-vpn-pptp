@@ -1,7 +1,0 @@
-#!/bin/bash
-# Activate VPN (PPTP) in firewalld
-
-firewall-cmd --permanent --direct --add-rule ipv4 filter INPUT 0 -p gre -j ACCEPT # ipv4
-firewall-cmd --permanent --direct --add-rule ipv6 filter INPUT 0 -p gre -j ACCEPT # ipv6
-
-firewall-cmd --reload
