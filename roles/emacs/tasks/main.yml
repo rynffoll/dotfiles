@@ -1,15 +1,15 @@
-- include_vars: "{{ emacs_distr_name }}.yml"
+- include_vars: "{{ emacs_dist_name }}.yml"
 
-- name: Install emacs ({{ emacs_distr_name }}) distribution
+- name: Install emacs ({{ emacs_dist_name }}) distribution
   git:
-    repo: "{{ emacs_distr_repo }}"
-    version: "{{ emacs_distr_branch }}"
-    dest: "{{ emacs_distr_dest }}"
+    repo: "{{ emacs_dist_repo }}"
+    version: "{{ emacs_dist_branch }}"
+    dest: "{{ emacs_dist_dest }}"
     update: no
     accept_hostkey: yes
-  when: emacs_distr_repo is defined
+  when: emacs_dist_repo is defined
 
-- name: Install emacs ({{ emacs_distr_name }}) config
+- name: Install emacs ({{ emacs_dist_name }}) config
   git:
     repo: "{{ emacs_conf_repo }}"
     version: "{{ emacs_conf_branch }}"
