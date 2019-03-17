@@ -1,3 +1,4 @@
 #!/bin/bash
 
-killall -SIGUSR2 emacs
+# https://irreal.org/blog/?p=4763
+pkill -SIGUSR2 -i emacs
