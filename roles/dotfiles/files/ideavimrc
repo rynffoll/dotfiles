@@ -1,27 +1,44 @@
-" integrate with system clipboard
 set clipboard+=unnamed
 set hls
 set ignorecase smartcase
 set incsearch
 set showmode
-" enable vim-surround extension
+
 set surround
+set multiple-cursors
 
-" override surround shortcuts
-vmap s S
+let mapleader = " "
 
-" nnoremap / :action Find<CR>
-" nnoremap n :action FindNext<CR>
-" nnoremap N :action FindPrevious<CR>
+nnoremap gcc :action CommentByLineComment<cr>
+vnoremap gcc :action CommentByLineComment<cr>
 
-nnoremap <Space>n :action GotoClass<CR>
-nnoremap <Space>e :action RecentFiles<CR>
-nnoremap <Space>bb :action RecentFiles<CR>
-nnoremap <Space>rr :action RenameElement<CR>
-nnoremap ,rr :action RenameElement<CR>
+nnoremap <leader><leader> :action SearchEverywhere<cr>
 
-nnoremap <Space>wd :action CloseContent<CR>
-nnoremap <Space>w/ :vsplit<CR>
-nnoremap <Space>w- :split<CR>
-nnoremap <Space>wv :vsplit<CR>
-nnoremap <Space>ws :split<CR>
+nnoremap <leader>jj :action GotoDeclaration<cr>
+
+nnoremap <leader>bb :action RecentFiles<cr>
+
+nnoremap <leader>ot :action ActivateTerminalToolWindow<cr>
+nnoremap <leader>or :action ActivateRunToolWindow<cr>
+nnoremap <leader>od :action ActivateDebugToolWindow<cr>
+
+nnoremap <leader>fR :action RenameFile<cr>
+nnoremap <leader>ft :action ActivateProjectToolWindow<cr>
+
+nnoremap <leader>ft :action ActivateProjectToolWindow<cr>
+
+nnoremap <leader>/p :action FindInPath<cr>
+
+nnoremap <leader>to :action ToggleDistractionFreeMode<cr>
+
+nnoremap <leader>ee :edit ~/.ideavimrc<cr>
+nnoremap <leader>er :source ~/.ideavimrc<cr>
+
+nnoremap <leader>gg :action ActivateVersionControlToolWindow<cr>
+nnoremap <leader>gc :action CheckinProject<cr>
+nnoremap <leader>gP :action Git.Pull<cr>
+nnoremap <leader>gb :action Git.Branches<cr>
+
+nnoremap <leader>m= :action ReformatCode<cr>
+nnoremap <leader>mee :action ChooseRunConfiguration<cr>
+nnoremap <leader>mRr :action RenameElement<cr>

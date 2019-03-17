@@ -62,4 +62,5 @@ cask "transmission"
 cask "visual-studio-code"
 cask "visualvm"
 cask "wireshark"
+mas "Apple Configurator 2", id: 1037126344
 mas "Outline", id: 1356178125
