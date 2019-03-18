@@ -1,5 +1,10 @@
 - hosts: all
   roles:
-    - system
-    - dotfiles
-    - emacs
+    - role: system
+      tags: system
+
+    - role: dotfiles
+      tags: dotfiles
+
+    - role: emacs
+      tags: emacs

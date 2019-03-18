@@ -1,6 +1,15 @@
 all:
 	ansible-playbook envy.yml -K ${OPS}
 
+system:
+	ansible-playbook envy.yml -K ${OPS} --tags "system"
+
+dotfiles:
+	ansible-playbook envy.yml ${OPS} --tags "dotfiles"
+
+emacs:
+	ansible-playbook envy.yml ${OPS} --tags "emacs"
+
 check:
 	ansible-playbook envy.yml -K --check ${OPS}
 
