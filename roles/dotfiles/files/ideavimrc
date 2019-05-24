@@ -1,3 +1,4 @@
+" -*- mode: vimrc -*-
 set clipboard+=unnamed
 set hls
 set ignorecase smartcase

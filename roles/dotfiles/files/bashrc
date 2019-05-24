@@ -1,9 +1,13 @@
 # -*- mode: shell-script -*-
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND" # store history immediately
-HISTCONTROL=ignoreboth # ignore dups and spaces
+HISTCONTROL=ignoreboth # ignore duplicates and spaces
 HISTSIZE=1000
 HISTFILESIZE=100000
 HISTIGNORE='ls:bg:fg:history'
+
+CLICOLOR=yes # enable ls colors
+GREP_OPTIONS='--color=auto'
+
 PATH=$PATH:$HOME/bin:$(go env GOPATH)/bin:/usr/local/opt/libpq/bin
 
 shopt -s histappend
