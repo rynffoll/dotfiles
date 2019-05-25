@@ -32,3 +32,15 @@
       with_items:
         - "Русская - BG46.icns"
         - "Русская - BG46.keylayout"
+
+- name: Dictionaries
+  block:
+    - name: Download dictionaries
+      get_url:
+        url:  "https://raw.githubusercontent.com/LibreOffice/dictionaries/master/{{ item }}"
+        dest: "~/Library/Spelling/{{ item | basename }}"
+      with_items:
+        - "ru_RU/ru_RU.aff"
+        - "ru_RU/ru_RU.dic"
+        - "en/en_US.aff"
+        - "en/en_US.dic"
