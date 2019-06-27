@@ -26,12 +26,14 @@
 
     - name: Download russian keyboard layout
       become: yes
-      get_url:
-        url: "https://raw.githubusercontent.com/rynffoll/osx-russian-keyboard/master/{{ item | urlencode }}" 
-        dest: "/Library/Keyboard Layouts/{{ item }}"
-      with_items:
-        - "Русская - BG46.icns"
-        - "Русская - BG46.keylayout"
+      unarchive:
+        src: "https://github.com/rynffoll/custom-russian-layout/tarball/master"
+        dest: "/Library/Keyboard Layouts"
+        remote_src: yes
+        extra_opts:
+          - "--strip-components=1"
+        exclude:
+          - "README.org"
 
 - name: Dictionaries
   block:
