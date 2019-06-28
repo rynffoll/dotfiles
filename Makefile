@@ -13,9 +13,6 @@ emacs:
 check:
 	ansible-playbook envy.yml -K --check ${OPS}
 
-install_roles:
-	ansible-galaxy install --force -r requirements.yml
-
 install_deps_fedora:
 	sudo dnf install -y ansible python2-psutil
 

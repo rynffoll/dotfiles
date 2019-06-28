@@ -6,13 +6,15 @@
       set_fact:
         original_role_path: "{{ role_path }}"
 
+    - name: Check Brewfile
+      command: "brew bundle check --file={{ original_role_path }}/files/Brewfile"
+      register: brew_bundle_check_output
+      ignore_errors: yes
+
     - name: Install Brewfile
-      include_role:
-        name: geerlingguy.homebrew
-      vars:
-        homebrew_use_brewfile: true
-        homebrew_brewfile_dir: "{{ original_role_path }}/files"
-        homebrew_clear_cache: true
+      command: "brew bundle install --file={{ original_role_path }}/files/Brewfile"
+      register: brew_bundle_check_output1
+      when: brew_bundle_check_output.failed
 
 - name: Configuration
   block:
