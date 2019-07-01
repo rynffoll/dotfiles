@@ -1,9 +1,10 @@
-- include_vars: fedora.yml
+- name: Import vars
+  include_vars: fedora.yml
 
 - name: Packages
   block:
     - name: Get release version
-      shell: rpm -E %fedora
+      command: rpm -E %fedora
       register: fedora_version
 
     - name: Install base repos
@@ -44,7 +45,7 @@
       with_items: "{{ gnome.exts_options }}"
 
     - name: Load extentions configuration
-      shell: dconf load /org/gnome/shell/extensions/ < "{{ role_path }}/files/extensions.dconf"
+      command: dconf load /org/gnome/shell/extensions/ < "{{ role_path }}/files/extensions.dconf"
 
 - name: JetBrains Toolbox
   block:
@@ -57,29 +58,29 @@
         url: "https://data.services.jetbrains.com//products/releases?code=TBA&latest=true&type=release"
         return_content: yes
       register: jb_response
-      when: jb_app.stat.exists == False
+      when: jb_app.stat.exists
 
     - name: Parse link and checksum for latest Jetbrains Toolbox from resposne
       set_fact:
         jb_toolbox_link: "{{ jb_response.json.TBA.0.downloads.linux.link }}"
         jb_toolbox_checksum_link: "{{ jb_response.json.TBA.0.downloads.linux.checksumLink }}"
-      when: jb_app.stat.exists == False
+      when: jb_app.stat.exists
 
     - name: Create temp directory for installing JetBrains Toolbox
       tempfile: state=directory suffix="jetbrains-toolbox"
       register: jb_tmpdir
-      when: jb_app.stat.exists == False
+      when: jb_app.stat.exists
 
     - name: Uncompress JetBrains Toolbox
       unarchive:
         src: "{{ jb_toolbox_link }}"
         dest: "{{ jb_tmpdir.path }}"
       remote_src: yes
-      when: jb_app.stat.exists == False
+      when: jb_app.stat.exists
 
     - name: Install JetBrains Toolbox
       shell: "{{ jb_tmpdir.path }}/jetbrains-toolbox-*/jetbrains-toolbox &"
-      when: jb_app.stat.exists == False
+      when: jb_app.stat.exists
 
 - name: VirtualBox
   block:

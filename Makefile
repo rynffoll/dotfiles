@@ -13,6 +13,9 @@ emacs:
 check:
 	ansible-playbook envy.yml -K --check ${OPS}
 
+lint:
+	ansible-lint envy.yml
+
 install_deps_fedora:
 	sudo dnf install -y ansible python2-psutil
 

@@ -1,7 +1,9 @@
-- include_vars: fedora.yml
+- name: Import vars
+  include_vars: fedora.yml
   when: ansible_distribution == "Fedora"
 
-- include_vars: macos.yml
+- name: Import vars
+  include_vars: macos.yml
   when: ansible_distribution == "MacOSX"
 
 - name: Prepare dotfiles destination
