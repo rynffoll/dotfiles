@@ -1,12 +1,13 @@
+---
 dotfiles_configs:
-  - { src: "bash_profile", dest: ".bash_profile" }
-  - { src: "bashrc", dest: ".bashrc" }
-  - { src: "tmux.conf", dest: ".tmux.conf" }
-  - { src: "gitconfig", dest: ".gitconfig" }
-  - { src: "gitignore", dest: ".gitignore" }
-  - { src: "ideavimrc", dest: ".ideavimrc" }
-  - { src: "ssh/config", dest: ".ssh/config" }
-  - { src: "clojure/deps.edn", dest: ".clojure/deps.edn" }
+  - {src: "bash_profile", dest: ".bash_profile"}
+  - {src: "bashrc", dest: ".bashrc"}
+  - {src: "tmux.conf", dest: ".tmux.conf"}
+  - {src: "gitconfig", dest: ".gitconfig"}
+  - {src: "gitignore", dest: ".gitignore"}
+  - {src: "ideavimrc", dest: ".ideavimrc"}
+  - {src: "ssh/config", dest: ".ssh/config"}
+  - {src: "clojure/deps.edn", dest: ".clojure/deps.edn"}
 dotfiles_scripts:
   - docker-clean
   - unfreeze_emacs

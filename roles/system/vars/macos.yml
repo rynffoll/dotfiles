@@ -1,3 +1,4 @@
+---
 defaults:
   - domain: NSGlobalDomain
     name: CGFontRenderingFontSmoothingDisabled

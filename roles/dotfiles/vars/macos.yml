@@ -1,14 +1,15 @@
+---
 dotfiles_configs:
-  - { src: "bash_profile", dest: ".bash_profile" }
-  - { src: "bashrc", dest: ".bashrc" }
-  - { src: "tmux.conf", dest: ".tmux.conf" }
-  - { src: "gitconfig", dest: ".gitconfig" }
-  - { src: "gitignore", dest: ".gitignore" }
-  - { src: "ideavimrc", dest: ".ideavimrc" }
-  - { src: "ssh/config", dest: ".ssh/config" }
-  - { src: "gnupg/gpg-agent.conf", dest: ".gnupg/gpg-agent.conf" }
-  - { src: "clojure/deps.edn", dest: ".clojure/deps.edn" }
-  - { src: "config/karabiner/karabiner.json", dest: ".config/karabiner/karabiner.json" }
+  - {src: "bash_profile", dest: ".bash_profile"}
+  - {src: "bashrc", dest: ".bashrc"}
+  - {src: "tmux.conf", dest: ".tmux.conf"}
+  - {src: "gitconfig", dest: ".gitconfig"}
+  - {src: "gitignore", dest: ".gitignore"}
+  - {src: "ideavimrc", dest: ".ideavimrc"}
+  - {src: "ssh/config", dest: ".ssh/config"}
+  - {src: "gnupg/gpg-agent.conf", dest: ".gnupg/gpg-agent.conf"}
+  - {src: "clojure/deps.edn", dest: ".clojure/deps.edn"}
+  - {src: "config/karabiner/karabiner.json", dest: ".config/karabiner/karabiner.json"}
 dotfiles_scripts:
   - docker-clean
   - unfreeze-emacs

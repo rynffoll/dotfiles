@@ -1,3 +1,4 @@
+---
 - name: Import vars
   include_vars: "{{ emacs_dist_name }}.yml"
 

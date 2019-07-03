@@ -1,3 +1,4 @@
+---
 - name: Import vars
   include_vars: macos.yml
 
@@ -42,7 +43,7 @@
   block:
     - name: Download dictionaries
       get_url:
-        url:  "https://raw.githubusercontent.com/LibreOffice/dictionaries/master/{{ item }}"
+        url: "https://raw.githubusercontent.com/LibreOffice/dictionaries/master/{{ item }}"
         dest: "~/Library/Spelling/{{ item | basename }}"
       with_items:
         - "ru_RU/ru_RU.aff"

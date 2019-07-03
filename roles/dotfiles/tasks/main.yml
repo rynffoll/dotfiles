@@ -1,3 +1,4 @@
+---
 - name: Import vars
   include_vars: fedora.yml
   when: ansible_distribution == "Fedora"
@@ -31,4 +32,4 @@
 - name: Create links
   file: src="{{ item.src }}" dest="{{ item.dest }}" state=link force=yes
   with_items:
-    - { src: "~/Dropbox/Org/", dest: "~/Org" }
+    - {src: "~/Dropbox/Org/", dest: "~/Org"}

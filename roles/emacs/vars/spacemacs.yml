@@ -1,3 +1,4 @@
+---
 emacs_dist_repo: "https://github.com/syl20bnr/spacemacs"
 emacs_dist_branch: "develop"
 emacs_dist_dest: "~/.emacs.d"
