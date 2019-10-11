@@ -1,0 +1,4 @@
+# -*- mode: shell-script -*-
+if [ -f ~/.zshrc ]; then
+  source ~/.zshrc
+fi
