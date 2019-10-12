@@ -11,25 +11,21 @@
   file:
     path: "{{ (dotfiles_home ~ '/' ~ item.dest) | dirname }}"
     state: directory
-  with_items: "{{ dotfiles_configs }}"
+  with_items: "{{ dotfiles_list }}"
 
-- name: Copy configs
-  copy:
-    src: "{{ item.src }}"
+- name: Create symlinks to dotfiles
+  file:
+    src: "{{ role_path }}/files/{{ item.src }}"
     dest: "{{ dotfiles_home }}/{{ item.dest }}"
-  with_items: "{{ dotfiles_configs }}"
+    state: link
+    force: yes
+  with_items: "{{ dotfiles_list }}"
 
-- name: Prepare scripts destination
-  file: path="{{ dotfiles_home }}/bin" state=directory
-
-- name: Copy scripts
-  copy:
-    src: "bin/{{ item }}"
-    dest: "{{ dotfiles_home }}/bin"
-    mode: "u+x"
-  with_items: "{{ dotfiles_scripts }}"
-
-- name: Create links
-  file: src="{{ item.src }}" dest="{{ item.dest }}" state=link force=yes
+- name: Create symlinks to directories
+  file:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    state: link
+    force: yes
   with_items:
     - {src: "~/Dropbox/Org/", dest: "~/Org"}

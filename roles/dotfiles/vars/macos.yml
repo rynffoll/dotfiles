@@ -1,5 +1,5 @@
 ---
-dotfiles_configs:
+dotfiles_list:
   - {src: "bash_profile", dest: ".bash_profile"}
   - {src: "bashrc", dest: ".bashrc"}
   - {src: "zprofile", dest: ".zprofile"}
@@ -12,6 +12,5 @@ dotfiles_configs:
   - {src: "gnupg/gpg-agent.conf", dest: ".gnupg/gpg-agent.conf"}
   - {src: "clojure/deps.edn", dest: ".clojure/deps.edn"}
   - {src: "config/karabiner/karabiner.json", dest: ".config/karabiner/karabiner.json"}
-dotfiles_scripts:
-  - docker-clean
-  - unfreeze-emacs
+  - {src: "bin/docker-clean", dest: "bin/docker-clean"}
+  - {src: "bin/unfreeze-emacs", dest: "bin/unfreeze-emacs"}

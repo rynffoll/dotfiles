@@ -1,13 +1,14 @@
 ---
-dotfiles_configs:
+dotfiles_list:
   - {src: "bash_profile", dest: ".bash_profile"}
   - {src: "bashrc", dest: ".bashrc"}
+  - {src: "zprofile", dest: ".zprofile"}
+  - {src: "zshrc", dest: ".zshrc"}
   - {src: "tmux.conf", dest: ".tmux.conf"}
   - {src: "gitconfig", dest: ".gitconfig"}
   - {src: "gitignore", dest: ".gitignore"}
   - {src: "ideavimrc", dest: ".ideavimrc"}
   - {src: "ssh/config", dest: ".ssh/config"}
   - {src: "clojure/deps.edn", dest: ".clojure/deps.edn"}
-dotfiles_scripts:
-  - docker-clean
-  - unfreeze_emacs
+  - {src: "bin/docker-clean", dest: "bin/docker-clean"}
+  - {src: "bin/unfreeze-emacs", dest: "bin/unfreeze-emacs"}

@@ -4,17 +4,13 @@
 
 - name: Packages
   block:
-    - name: Save original role_path
-      set_fact:
-        original_role_path: "{{ role_path }}"
-
     - name: Check Brewfile
-      command: "brew bundle check --file={{ original_role_path }}/files/Brewfile"
+      command: "brew bundle check --file={{ role_path }}/files/Brewfile"
       register: brew_bundle_check_output
       ignore_errors: yes
 
     - name: Install Brewfile
-      command: "brew bundle install --file={{ original_role_path }}/files/Brewfile"
+      command: "brew bundle install --file={{ role_path }}/files/Brewfile"
       register: brew_bundle_check_output1
       when: brew_bundle_check_output.failed
 
