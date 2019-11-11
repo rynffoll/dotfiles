@@ -53,6 +53,7 @@ brew "watch"
 brew "wget"
 brew "wrk"
 brew "yamllint"
+brew "yq"
 brew "zplug"
 brew "d12frosted/emacs-plus/emacs-plus", args: ["HEAD", "with-jansson", "with-no-frame-refocus", "without-spacemacs-icon"]
 brew "heroku/brew/heroku"
