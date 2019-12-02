@@ -1,3 +1,4 @@
+tap "adoptopenjdk/openjdk"
 tap "beeftornado/rmtree"
 tap "d12frosted/emacs-plus"
 tap "heroku/brew"
@@ -57,6 +58,7 @@ brew "yq"
 brew "zplug"
 brew "d12frosted/emacs-plus/emacs-plus", args: ["HEAD", "with-jansson", "with-no-frame-refocus", "without-spacemacs-icon"]
 brew "heroku/brew/heroku"
+cask "adoptopenjdk11"
 cask "bitwarden"
 cask "dbeaver-community"
 cask "docker"
