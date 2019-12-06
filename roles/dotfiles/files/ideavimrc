@@ -30,7 +30,7 @@ nnoremap <leader>ft :action ActivateProjectToolWindow<cr>
 nnoremap <leader>ft :action ActivateProjectToolWindow<cr>
 
 " project
-nnoremap <leader>pp :action GotoNewProject<cr>
+nnoremap <leader>pp :action project-opener<cr>
 
 " search
 nnoremap <leader>/p :action FindInPath<cr>
