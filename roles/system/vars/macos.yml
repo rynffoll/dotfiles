@@ -8,7 +8,3 @@ defaults:
     name: ApplePressAndHoldEnabled
     type: bool
     value: false
-  - domain: com.knollsoft.Rectangle
-    name: alternateDefaultShortcuts
-    type: bool
-    value: true
