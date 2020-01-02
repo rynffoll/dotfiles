@@ -27,25 +27,25 @@
       package: name="{{ item }}" state=present
       with_items: "{{ packages }}"
 
-- name: Gnome
-  block:
-    - name: Configure input sources
-      dconf:
-        key: "/org/gnome/desktop/input-sources/sources"
-        value: "[('xkb', 'us'), ('xkb', 'ru')]"
-        state: present
+# - name: Gnome
+#   block:
+#     - name: Configure input sources
+#       dconf:
+#         key: "/org/gnome/desktop/input-sources/sources"
+#         value: "[('xkb', 'us'), ('xkb', 'ru')]"
+#         state: present
 
-    - name: Configure keyboard
-      dconf: key="{{ item.key }}" value="{{ item.value }}" state=present
-      with_items: "{{ gnome.kbd_options }}"
+#     - name: Configure keyboard
+#       dconf: key="{{ item.key }}" value="{{ item.value }}" state=present
+#       with_items: "{{ gnome.kbd_options }}"
 
-    - name: Configure terminal
-      dconf: key="{{ item.key }}" value="{{ item.value }}" state=present
-      with_items: "{{ gnome.term_options }}"
+#     - name: Configure terminal
+#       dconf: key="{{ item.key }}" value="{{ item.value }}" state=present
+#       with_items: "{{ gnome.term_options }}"
 
-    - name: Configure UI
-      dconf: key="{{ item.key }}" value="{{ item.value }}" state=present
-      with_items: "{{ gnome.ui_options }}"
+#     - name: Configure UI
+#       dconf: key="{{ item.key }}" value="{{ item.value }}" state=present
+#       with_items: "{{ gnome.ui_options }}"
 
     # - name: Configure favorite apps
     #   dconf: key="/org/gnome/shell/favorite-apps" value="{{ gnome.favorite_apps }}" state=present
