@@ -1,35 +1,16 @@
 ---
 repos:
-  # base
   - name: "rpmfusion-free"
     url: "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedora_version.stdout }}.noarch.rpm"
   - name: "rpmfusion-nonfree"
     url: "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ fedora_version.stdout }}.noarch.rpm"
-    # extra
-  - name: "skypeforlinux"
-    url: "https://repo.skype.com/rpm/stable/skype-stable.repo"
-  - name: "vscode"
-    url: "https://github.com/rynffoll/fedora-extra-repos/raw/master/vscode.repo"
-  - name: "google-chrome"
-    url: "https://github.com/RussianFedora/fedora-extra-repos/raw/master/google-chrome.repo"
 
 packages:
   - bash-completion
   - vim
-  - tmux
   - htop
   - curl
   - httpie
-  - nodejs
-  - java-1.8.0-oracle
-  - java-1.8.0-oracle-devel
-  - java-1.8.0-oracle-src
-  - java-1.8.0-openjdk
-  - java-1.8.0-openjdk-devel
-  - java-1.8.0-openjdk-src
-  - docker
-  - ansible-lint
-  - code
   - acpi
   - powertop
   - tlp
@@ -48,11 +29,7 @@ packages:
   - gnome-sound-recorder
   - dconf-editor
   - transmission
-  - remmina
-  - keepassxc
   - firewall-config
-  - skypeforlinux
-  - telegram-desktop
 
 gnome:
   kbd_options:
