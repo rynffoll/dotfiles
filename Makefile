@@ -17,7 +17,7 @@ lint:
 	ansible-lint envy.yml
 
 install_deps_fedora:
-	sudo dnf install -y ansible python2-psutil
+	sudo dnf install -y ansible
 
 install_deps_macos:
 	brew install ansible

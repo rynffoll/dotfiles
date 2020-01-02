@@ -5,12 +5,6 @@ repos:
     url: "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedora_version.stdout }}.noarch.rpm"
   - name: "rpmfusion-nonfree"
     url: "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ fedora_version.stdout }}.noarch.rpm"
-  - name: "russianfedora-free"
-    url: "http://mirror.yandex.ru/fedora/russianfedora/russianfedora/free/fedora/russianfedora-free-release-stable.noarch.rpm"
-  - name: "russianfedora-nonfree"
-    url: "http://mirror.yandex.ru/fedora/russianfedora/russianfedora/nonfree/fedora/russianfedora-nonfree-release-stable.noarch.rpm"
-  - name: "russianfedora-fixes"
-    url: "http://mirror.yandex.ru/fedora/russianfedora/russianfedora/fixes/fedora/russianfedora-fixes-release-stable.noarch.rpm"
     # extra
   - name: "skypeforlinux"
     url: "https://repo.skype.com/rpm/stable/skype-stable.repo"
@@ -21,7 +15,6 @@ repos:
 
 packages:
   - bash-completion
-  - sqlite # fix dnf completion, see https://trivialfis.github.io/linux/2017/07/28/Fix-Fedora-DNF-bash-completion.html
   - vim
   - tmux
   - htop
@@ -34,16 +27,9 @@ packages:
   - java-1.8.0-openjdk
   - java-1.8.0-openjdk-devel
   - java-1.8.0-openjdk-src
-  - java-9-openjdk
-  - java-9-openjdk-devel
-  - java-9-openjdk-src
-  - java-9-openjdk-jmods
   - docker
-  - VirtualBox
   - ansible-lint
-  - nmon
   - code
-  - fbless
   - acpi
   - powertop
   - tlp
