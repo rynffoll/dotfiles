@@ -1,21 +1,8 @@
 ---
-- name: Import vars
-  include_vars: "{{ emacs_dist_name }}.yml"
-
-- name: Install emacs ({{ emacs_dist_name }}) distribution
+- name: Install emacs config
   git:
-    repo: "{{ emacs_dist_repo }}"
-    version: "{{ emacs_dist_branch }}"
-    dest: "{{ emacs_dist_dest }}"
+    repo: "git@github.com:rynffoll/.emacs.d.git"
+    version: "master"
+    dest: "~/.emacs.d"
     update: no
     accept_hostkey: yes
-  when: emacs_dist_repo is defined
-
-- name: Install emacs ({{ emacs_dist_name }}) config
-  git:
-    repo: "{{ emacs_conf_repo }}"
-    version: "{{ emacs_conf_branch }}"
-    dest: "{{ emacs_conf_dest }}"
-    update: no
-    accept_hostkey: yes
-  when: emacs_conf_repo is defined
