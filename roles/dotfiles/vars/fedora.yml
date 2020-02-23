@@ -10,5 +10,6 @@ dotfiles_list:
   - {src: "ideavimrc", dest: ".ideavimrc"}
   - {src: "ssh/config", dest: ".ssh/config"}
   - {src: "clojure/deps.edn", dest: ".clojure/deps.edn"}
+  - {src: "mbsyncrc", dest: ".mbsyncrc"}
   - {src: "bin/docker-clean", dest: "bin/docker-clean"}
   - {src: "bin/unfreeze-emacs", dest: "bin/unfreeze-emacs"}

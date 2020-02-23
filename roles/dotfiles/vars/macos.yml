@@ -12,5 +12,6 @@ dotfiles_list:
   - {src: "gnupg/gpg-agent.conf", dest: ".gnupg/gpg-agent.conf"}
   - {src: "clojure/deps.edn", dest: ".clojure/deps.edn"}
   - {src: "config/karabiner/karabiner.json", dest: ".config/karabiner/karabiner.json"}
+  - {src: "mbsyncrc", dest: ".mbsyncrc"}
   - {src: "bin/docker-clean", dest: "bin/docker-clean"}
   - {src: "bin/unfreeze-emacs", dest: "bin/unfreeze-emacs"}
