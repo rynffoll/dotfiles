@@ -8,11 +8,11 @@ Ansible scripts for deployment local environment
 ** How to Use
 Fedora:
 #+BEGIN_SRC shell-script
-make install_deps_fedora install_roles all
+make install_deps_fedora all
 #+END_SRC
 
 macOS:
 #+BEGIN_SRC shell-script
-make install_deps_macos install_roles all
+make install_deps_macos all
 #+END_SRC
 
