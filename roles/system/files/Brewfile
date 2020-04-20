@@ -61,6 +61,7 @@ brew "wrk"
 brew "yamllint"
 brew "yq"
 brew "zplug"
+brew "borkdude/brew/babashka"
 brew "borkdude/brew/clj-kondo"
 brew "clojure/tools/clojure", args: ["devel"]
 brew "d12frosted/emacs-plus/emacs-plus", args: ["HEAD", "with-emacs-27-branch", "with-jansson", "with-no-frame-refocus", "with-xwidgets", "without-spacemacs-icon"]
