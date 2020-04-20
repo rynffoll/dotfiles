@@ -38,3 +38,16 @@ fi
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_STATESEPARATOR=""
 PS1='\[\033[34m\]\w\[\033[1;33m\]$(__git_ps1 " %s")\[\033[00m\]\n$ '
+
+# functions
+jdk() {
+    version=$1
+    if [ -z $version ]; then
+        echo "$(tput bold)Available JDK version:$(tput sgr0)"
+        /usr/libexec/java_home -V
+    else
+        export JAVA_HOME=$(/usr/libexec/java_home -v"$version");
+    fi
+    echo "$(tput bold)Current JDK version:$(tput sgr0)"
+    java -version
+}
