@@ -1,9 +1,0 @@
-* TODO test roles on Fedora
-:PROPERTIES:
-:CREATED:  <2018-03-25 Sun 01:43>
-:END:
-* DONE add tasks for installing packages on MacOS
-CLOSED: [2018-06-11 Mon 18:35]
-:PROPERTIES:
-:CREATED:  <2018-03-25 Sun 01:44>
-:END:

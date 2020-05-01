@@ -15,10 +15,12 @@ brew "ansible"
 brew "ansible-lint"
 brew "automake"
 brew "bash-completion"
+brew "cmake"
 brew "confluent-platform"
 brew "coreutils"
 brew "docker-completion"
 brew "docker-compose-completion"
+brew "editorconfig"
 brew "exa"
 brew "git"
 brew "gnupg"
@@ -39,7 +41,7 @@ brew "leiningen"
 brew "libpq"
 brew "mas"
 brew "maven"
-brew "mu"
+brew "mu", args: ["HEAD"]
 brew "ncdu"
 brew "ngrep"
 brew "nmap"
@@ -101,5 +103,7 @@ cask "visualvm"
 cask "wireshark"
 cask "zoomus"
 mas "Apple Configurator 2", id: 1037126344
+mas "Octotree Pro", id: 1457450145
 mas "Outline", id: 1356178125
+mas "Vimari", id: 1480933944
 mas "WireGuard", id: 1451685025

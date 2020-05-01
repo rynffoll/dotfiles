@@ -1,29 +1,45 @@
+ANSIBLE_EXTRA_ARGS =
+ANSIBLE_PLAYBOOK_CMD = ANSIBLE_CONFIG=ansible/ansible.cfg ansible-playbook ansible/envy.yml $(ANSIBLE_EXTRA_ARGS)
+
+.ONESHELL:
+
+.PHONY:
+
 all:
-	ansible-playbook envy.yml -K ${OPS}
 
-system:
-	ansible-playbook envy.yml -K ${OPS} --tags "system"
-
-dotfiles:
-	ansible-playbook envy.yml ${OPS} --tags "dotfiles"
-
-emacs:
-	ansible-playbook envy.yml ${OPS} --tags "emacs"
-
-check:
-	ansible-playbook envy.yml -K --check ${OPS}
-
-lint:
-	ansible-lint envy.yml
-
-install_deps_fedora:
+# Deps
+fedora_deps:
 	sudo dnf install -y ansible
 
-install_deps_macos:
+macos_deps:
 	brew install ansible
 
-update_dconf_dump:
-	dconf dump /org/gnome/shell/extensions/ > roles/system/files/extensions.dconf
+# Ansible
+roles:
+	$(ANSIBLE_PLAYBOOK_CMD) -K
 
-update_brewfile:
-	brew bundle dump --force --file=roles/system/files/Brewfile
+system:
+	$(ANSIBLE_PLAYBOOK_CMD) -K --tags "system"
+
+dotfiles:
+	$(ANSIBLE_PLAYBOOK_CMD) --tags "dotfiles"
+
+emacs:
+	$(ANSIBLE_PLAYBOOK_CMD) --tags "emacs"
+
+check:
+	$(ANSIBLE_PLAYBOOK_CMD) -K --check
+
+lint:
+	ansible-lint ansible/envy.yml
+
+# Helpers
+dconf_dump:
+	(echo "# -*- mode: conf -*-" && dconf dump /org/gnome/shell/extensions/) > ansible/roles/system/files/extensions.dconf
+
+brewfile:
+	brew bundle dump --force --file=ansible/roles/system/files/Brewfile
+
+# Themes
+iterm:
+	for theme in themes/iterm/*.itermcolors; do open "$$theme"; done

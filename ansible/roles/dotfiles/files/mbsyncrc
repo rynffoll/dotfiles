@@ -18,7 +18,7 @@ Subfolders Verbatim
 Channel gmail
 Master :gmail-remote:
 Slave :gmail-local:
-Patterns * "![Gmail]*" "[Gmail]/Drafts" "[Gmail]/Sent Mail" "[Gmail]/Trash"
+Patterns "INBOX" "![Gmail]*" "[Gmail]/Drafts" "[Gmail]/Sent Mail" "[Gmail]/Trash" "!ML*" "ML/*"
 Expunge Both
 CopyArrivalDate yes
 Sync All

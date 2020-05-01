@@ -1,18 +1,18 @@
 * Envy
-Ansible scripts for deployment local environment
+Scripts for local environment deployment
 
 ** Requirements
-- ansible
-- python2-psutil (for dconf module)
+- ~ansible~
+- ~python2-psutil~ (for dconf module)
 
 ** How to Use
 Fedora:
-#+BEGIN_SRC shell-script
-make install_deps_fedora all
-#+END_SRC
+#+begin_src sh
+make fedora_deps roles
+#+end_src
 
 macOS:
-#+BEGIN_SRC shell-script
-make install_deps_macos all
-#+END_SRC
+#+begin_src sh
+make macos_deps roles
+#+end_src
 

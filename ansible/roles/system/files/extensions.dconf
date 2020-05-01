@@ -1,3 +1,4 @@
+# -*- mode: conf -*-
 [dash-to-dock]
 middle-click-action='launch'
 custom-theme-running-dots-border-color='#ffffff'
