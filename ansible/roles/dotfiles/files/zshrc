@@ -23,8 +23,6 @@ zplug load
 export CLICOLOR=true
 export GREP_OPTIONS='--color=auto'
 
-export PATH=$PATH:$HOME/bin:$(go env GOPATH)/bin:/usr/local/opt/libpq/bin
-
 # options
 setopt correct
 setopt autocd

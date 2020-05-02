@@ -8,8 +8,6 @@ HISTIGNORE='ls:bg:fg:history'
 export CLICOLOR=true
 export GREP_OPTIONS='--color=auto'
 
-export PATH=$PATH:$HOME/bin:$(go env GOPATH)/bin:/usr/local/opt/libpq/bin
-
 shopt -s histappend
 shopt -s checkwinsize
 shopt -s cdspell

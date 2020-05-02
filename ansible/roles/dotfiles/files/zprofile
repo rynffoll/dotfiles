@@ -1,4 +1,2 @@
-# -*- mode: shell-script -*-
-if [ -f ~/.zshrc ]; then
-  source ~/.zshrc
-fi
+# -*- mode: sh -*-
+export PATH=$PATH:$HOME/bin:$(go env GOPATH)/bin:/usr/local/opt/libpq/bin
