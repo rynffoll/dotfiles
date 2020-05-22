@@ -41,7 +41,7 @@ brew "leiningen"
 brew "libpq"
 brew "mas"
 brew "maven"
-brew "mu", args: ["HEAD"]
+brew "mu"
 brew "ncdu"
 brew "ngrep"
 brew "nmap"
@@ -71,6 +71,7 @@ brew "heroku/brew/heroku"
 cask "adoptopenjdk11"
 cask "authy"
 cask "bitwarden"
+cask "coconutbattery"
 cask "dbeaver-community"
 cask "docker"
 cask "dropbox"
@@ -78,10 +79,12 @@ cask "firefox"
 cask "font-fira-mono"
 cask "gimp"
 cask "google-chrome"
+cask "haptickey"
 cask "iina"
 cask "iterm2"
 cask "jetbrains-toolbox"
 cask "karabiner-elements"
+cask "keepassxc"
 cask "keka"
 cask "keybase"
 cask "keyboardcleantool"
@@ -89,6 +92,8 @@ cask "macpass"
 cask "microsoft-remote-desktop-beta"
 cask "ngrok"
 cask "outline-manager"
+cask "pock"
+cask "rectangle"
 cask "sampler"
 cask "shadowsocksx-ng"
 cask "skype"
@@ -103,7 +108,12 @@ cask "visualvm"
 cask "wireshark"
 cask "zoomus"
 mas "Apple Configurator 2", id: 1037126344
+mas "GarageBand", id: 682658836
+mas "iMovie", id: 408981434
+mas "Keynote", id: 409183694
+mas "Numbers", id: 409203825
 mas "Octotree Pro", id: 1457450145
 mas "Outline", id: 1356178125
+mas "Pages", id: 409201541
 mas "Vimari", id: 1480933944
 mas "WireGuard", id: 1451685025
