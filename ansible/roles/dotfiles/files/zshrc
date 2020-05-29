@@ -27,6 +27,7 @@ export GREP_OPTIONS='--color=auto'
 setopt correct
 setopt autocd
 setopt shwordsplit
+setopt interactivecomments
 
 setopt NO_BEEP
 
