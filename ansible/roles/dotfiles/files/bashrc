@@ -49,3 +49,6 @@ jdk() {
     echo "$(tput bold)Current JDK version:$(tput sgr0)"
     java -version
 }
+
+# direnv
+eval "$(direnv hook bash)"
