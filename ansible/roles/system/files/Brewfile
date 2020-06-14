@@ -68,7 +68,7 @@ brew "zplug"
 brew "borkdude/brew/babashka"
 brew "borkdude/brew/clj-kondo"
 brew "clojure/tools/clojure"
-brew "d12frosted/emacs-plus/emacs-plus", args: ["HEAD", "with-emacs-27-branch", "with-jansson", "with-xwidgets", "without-spacemacs-icon"]
+brew "d12frosted/emacs-plus/emacs-plus@27", args: ["with-jansson", "with-xwidgets"]
 brew "heroku/brew/heroku"
 cask "adoptopenjdk11"
 cask "authy"
