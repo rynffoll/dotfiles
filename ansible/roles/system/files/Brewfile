@@ -22,7 +22,6 @@ brew "direnv"
 brew "docker-completion"
 brew "docker-compose-completion"
 brew "editorconfig"
-brew "exa"
 brew "git"
 brew "gnupg"
 brew "gnu-tar"
@@ -95,12 +94,10 @@ cask "keybase"
 cask "keyboardcleantool"
 cask "macpass"
 cask "microsoft-remote-desktop-beta"
+cask "mtmr"
 cask "ngrok"
-cask "openconnect-gui"
 cask "outline-manager"
-cask "pock"
 cask "rectangle"
-cask "sampler"
 cask "shadowsocksx-ng"
 cask "skype"
 cask "slack"
@@ -123,3 +120,4 @@ mas "Outline", id: 1356178125
 mas "Pages", id: 409201541
 mas "Vimari", id: 1480933944
 mas "WireGuard", id: 1451685025
+mas "Xcode", id: 497799835

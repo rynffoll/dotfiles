@@ -27,5 +27,4 @@
     dest: "{{ item.dest }}"
     state: link
     force: yes
-  with_items:
-    - {src: "~/Dropbox/Org/", dest: "~/Org"}
+  with_items: "{{ symlinks_list }}"
