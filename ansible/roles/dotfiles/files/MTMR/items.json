@@ -33,6 +33,12 @@
     "align": "center"
   },
   {
+    "type": "play",
+    "align": "right",
+    "background": "#000000",
+    "width": 40
+  },
+  {
     "type": "brightnessDown",
     "align": "right",
     "background": "#000000",
@@ -40,12 +46,6 @@
   },
   {
     "type": "brightnessUp",
-    "align": "right",
-    "background": "#000000",
-    "width": 40
-  },
-  {
-    "type": "play",
     "align": "right",
     "background": "#000000",
     "width": 40
