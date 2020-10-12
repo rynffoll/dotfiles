@@ -37,8 +37,11 @@ lint:
 dconf_dump:
 	(echo "# -*- mode: conf -*-" && dconf dump /org/gnome/shell/extensions/) > ansible/roles/system/files/extensions.dconf
 
-brewfile:
+brewfile_dump:
 	brew bundle dump --force --file=ansible/roles/system/files/Brewfile
+
+brewfile_cleanup:
+	brew bundle cleanup --force --file=ansible/roles/system/files/Brewfile
 
 # Themes
 iterm:

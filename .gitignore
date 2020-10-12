@@ -1,2 +1,3 @@
 *.retry
 galaxy_roles/
+Brewfile.lock.json
