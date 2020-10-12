@@ -13,7 +13,6 @@ dotfiles_list:
   - {src: "clojure/deps.edn", dest: ".clojure/deps.edn"}
   - {src: "config/karabiner/karabiner.json", dest: ".config/karabiner/karabiner.json"}
   - {src: "mbsyncrc", dest: ".mbsyncrc"}
-  - {src: "MTMR/items.json", dest: "Library/Application Support/MTMR/items.json"}
 
 symlinks_list:
   - {src: "~/Dropbox/Org/", dest: "~/Org"}
