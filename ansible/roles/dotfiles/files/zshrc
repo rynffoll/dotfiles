@@ -83,3 +83,7 @@ jdk() {
 
 # direnv
 eval "$(direnv hook zsh)"
+
+# k8s
+[[ $(command -v kubectl) ]] && source <(kubectl completion zsh)
+[[ $(command -v kustomize) ]] && complete -o nospace -C /usr/local/bin/kustomize kustomize
