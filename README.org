@@ -6,13 +6,7 @@ Scripts for local environment deployment
 - ~python2-psutil~ (for dconf module)
 
 ** How to Use
-Fedora:
 #+begin_src sh
-make fedora_deps roles
-#+end_src
-
-macOS:
-#+begin_src sh
-make macos_deps roles
+make roles
 #+end_src
 

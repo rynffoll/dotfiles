@@ -1,8 +1,0 @@
----
-- name: Install emacs config
-  git:
-    repo: "git@github.com:rynffoll/.emacs.d.git"
-    version: "master"
-    dest: "~/.emacs.d"
-    update: no
-    accept_hostkey: yes

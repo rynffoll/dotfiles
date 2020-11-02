@@ -6,6 +6,3 @@
 
     - role: dotfiles
       tags: dotfiles
-
-    - role: emacs
-      tags: emacs

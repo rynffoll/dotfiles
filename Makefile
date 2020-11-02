@@ -3,16 +3,9 @@ ANSIBLE_PLAYBOOK_CMD = ANSIBLE_CONFIG=ansible/ansible.cfg ansible-playbook ansib
 
 .ONESHELL:
 
-.PHONY:
+.PHONY: all roles system dotfiles check lint dconf_dump brewfile_dump brewfile_cleanup iterm
 
 all:
-
-# Deps
-fedora_deps:
-	sudo dnf install -y ansible
-
-macos_deps:
-	brew install ansible
 
 # Ansible
 roles:
@@ -23,9 +16,6 @@ system:
 
 dotfiles:
 	$(ANSIBLE_PLAYBOOK_CMD) --tags "dotfiles"
-
-emacs:
-	$(ANSIBLE_PLAYBOOK_CMD) --tags "emacs"
 
 check:
 	$(ANSIBLE_PLAYBOOK_CMD) -K --check
