@@ -1,9 +1,9 @@
 ---
 dotfiles_list:
-  - {src: "bash_profile", dest: ".bash_profile"}
-  - {src: "bashrc", dest: ".bashrc"}
-  - {src: "zprofile", dest: ".zprofile"}
-  - {src: "zshrc", dest: ".zshrc"}
+  # - {src: "bash_profile", dest: ".bash_profile"}
+  # - {src: "bashrc", dest: ".bashrc"}
+  # - {src: "zprofile", dest: ".zprofile"}
+  # - {src: "zshrc", dest: ".zshrc"}
   - {src: "tmux.conf", dest: ".tmux.conf"}
   - {src: "gitconfig", dest: ".gitconfig"}
   - {src: "gitignore", dest: ".gitignore"}

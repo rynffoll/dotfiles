@@ -69,19 +69,17 @@ setopt HIST_NO_STORE
 setopt SHARE_HISTORY
 
 # functions
-if [ -f /usr/libexec/java_home ]; then
-    jdk() {
-        version=$1
-        if [ -z $version ]; then
-            echo "$(tput bold)Available JDK version:$(tput sgr0)"
-            /usr/libexec/java_home -V
-        else
-            export JAVA_HOME=$(/usr/libexec/java_home -v"$version");
-        fi
-        echo "$(tput bold)Current JDK version:$(tput sgr0)"
-        java -version
-    }
-fi
+jdk() {
+    version=$1
+    if [ -z $version ]; then
+        echo "$(tput bold)Available JDK version:$(tput sgr0)"
+        /usr/libexec/java_home -V
+    else
+        export JAVA_HOME=$(/usr/libexec/java_home -v"$version");
+    fi
+    echo "$(tput bold)Current JDK version:$(tput sgr0)"
+    java -version
+}
 
 # direnv
 [[ $(command -v direnv) ]] && eval "$(direnv hook zsh)"

@@ -12,14 +12,6 @@ shopt -s histappend
 shopt -s checkwinsize
 shopt -s cdspell
 
-if ! shopt -oq posix; then
-    if [ -f /usr/share/bash-completion/bash_completion ]; then
-        . /usr/share/bash-completion/bash_completion
-    elif [ -f /etc/bash_completion ]; then
-        . /etc/bash_completion
-    fi
-fi
-
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
@@ -29,28 +21,22 @@ bind 'set colored-completion-prefix on'
 bind 'set show-all-if-ambiguous on'
 bind 'set show-all-if-unmodified on'
 
-if [ -f "/usr/share/git-core/contrib/completion/git-prompt.sh" ]; then
-    source "/usr/share/git-core/contrib/completion/git-prompt.sh"
-fi
-
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_STATESEPARATOR=""
 PS1='\[\033[34m\]\w\[\033[1;33m\]$(__git_ps1 " %s")\[\033[00m\]\n$ '
 
 # functions
-if [ -f /usr/libexec/java_home ]; then
-    jdk() {
-        version=$1
-        if [ -z $version ]; then
-            echo "$(tput bold)Available JDK version:$(tput sgr0)"
-            /usr/libexec/java_home -V
-        else
-            export JAVA_HOME=$(/usr/libexec/java_home -v"$version");
-        fi
-        echo "$(tput bold)Current JDK version:$(tput sgr0)"
-        java -version
-    }
-fi
+jdk() {
+    version=$1
+    if [ -z $version ]; then
+        echo "$(tput bold)Available JDK version:$(tput sgr0)"
+        /usr/libexec/java_home -V
+    else
+        export JAVA_HOME=$(/usr/libexec/java_home -v"$version");
+    fi
+    echo "$(tput bold)Current JDK version:$(tput sgr0)"
+    java -version
+}
 
 # direnv
 [[ $(command -v direnv) ]] && eval "$(direnv hook bash)"
