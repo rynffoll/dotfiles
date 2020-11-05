@@ -121,6 +121,7 @@ cask "visual-studio-code"
 cask "visualvm"
 cask "vnc-viewer"
 cask "wireshark"
+cask "zerotier-one"
 cask "zoomus"
 mas "Apple Configurator 2", id: 1037126344
 mas "GarageBand", id: 682658836
