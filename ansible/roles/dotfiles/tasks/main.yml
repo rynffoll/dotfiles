@@ -8,7 +8,7 @@
   when: ansible_distribution == "MacOSX"
 
 - name: Import vars
-  include_vars: macos.yml
+  include_vars: ubuntu.yml
   when: ansible_distribution == "Ubuntu"
 
 - name: Prepare dotfiles destination
