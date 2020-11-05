@@ -7,12 +7,8 @@ dotfiles_list:
   - {src: "tmux.conf", dest: ".tmux.conf"}
   - {src: "gitconfig", dest: ".gitconfig"}
   - {src: "gitignore", dest: ".gitignore"}
-  - {src: "ideavimrc", dest: ".ideavimrc"}
   - {src: "ssh/config", dest: ".ssh/config"}
-  - {src: "gnupg/gpg-agent.conf", dest: ".gnupg/gpg-agent.conf"}
   - {src: "clojure/deps.edn", dest: ".clojure/deps.edn"}
-  - {src: "config/karabiner/karabiner.json", dest: ".config/karabiner/karabiner.json"}
-  - {src: "mbsyncrc", dest: ".mbsyncrc"}
 
 symlinks_list:
   - {src: "~/Sync/Org/", dest: "~/Org"}

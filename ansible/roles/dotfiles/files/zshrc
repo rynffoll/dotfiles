@@ -69,20 +69,22 @@ setopt HIST_NO_STORE
 setopt SHARE_HISTORY
 
 # functions
-jdk() {
-    version=$1
-    if [ -z $version ]; then
-        echo "$(tput bold)Available JDK version:$(tput sgr0)"
-        /usr/libexec/java_home -V
-    else
-        export JAVA_HOME=$(/usr/libexec/java_home -v"$version");
-    fi
-    echo "$(tput bold)Current JDK version:$(tput sgr0)"
-    java -version
-}
+if [ -f /usr/libexec/java_home ]; then
+    jdk() {
+        version=$1
+        if [ -z $version ]; then
+            echo "$(tput bold)Available JDK version:$(tput sgr0)"
+            /usr/libexec/java_home -V
+        else
+            export JAVA_HOME=$(/usr/libexec/java_home -v"$version");
+        fi
+        echo "$(tput bold)Current JDK version:$(tput sgr0)"
+        java -version
+    }
+fi
 
 # direnv
-eval "$(direnv hook zsh)"
+[[ $(command -v direnv) ]] && eval "$(direnv hook zsh)"
 
 # k8s
 [[ $(command -v kubectl) ]] && source <(kubectl completion zsh)

@@ -7,6 +7,10 @@
   include_vars: macos.yml
   when: ansible_distribution == "MacOSX"
 
+- name: Import vars
+  include_vars: macos.yml
+  when: ansible_distribution == "Ubuntu"
+
 - name: Prepare dotfiles destination
   file:
     path: "{{ (dotfiles_home ~ '/' ~ item.dest) | dirname }}"
@@ -18,7 +22,7 @@
     src: "{{ role_path }}/files/{{ item.src }}"
     dest: "{{ dotfiles_home }}/{{ item.dest }}"
     state: link
-    force: yes
+    # force: yes
   with_items: "{{ dotfiles_list }}"
 
 - name: Create symlinks to directories
@@ -26,5 +30,5 @@
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
     state: link
-    force: yes
+    # force: yes
   with_items: "{{ symlinks_list }}"
