@@ -34,8 +34,6 @@ ln -sv "$(pwd)/clojure/deps.edn" ~/.clojure/deps.edn
 mkdir -pv ~/.config/karabiner
 ln -sv "$(pwd)/config/karabiner/karabiner.json" ~/.config/karabiner/karabiner.json
 
-ln -sv "$(pwd)/mbsyncrc" ~/.mbsyncrc
-
 # directories
 read -r -p "directories?"
 [ ! -d ~/Org ] && ln -sv ~/Sync/Org ~/Org
