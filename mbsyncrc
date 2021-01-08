@@ -1,0 +1,26 @@
+# -*- mode: conf -*-
+IMAPAccount gmail
+Host imap.gmail.com
+Port 993
+User rynffoll@gmail.com
+PassCmd "LANG=C gpg -q -d ~/.authinfo.gpg | awk '/imap\.gmail/ { print $8 }'"
+SSLType IMAPS
+AuthMechs LOGIN
+
+IMAPStore gmail-remote
+Account gmail
+
+MaildirStore gmail-local
+Path ~/Maildir/
+Inbox ~/Maildir/INBOX
+Subfolders Verbatim
+
+Channel gmail
+Master :gmail-remote:
+Slave :gmail-local:
+Patterns "INBOX" "![Gmail]*" "[Gmail]/Drafts" "[Gmail]/Sent Mail" "[Gmail]/Trash" "!ML*" "ML/*"
+Expunge Both
+CopyArrivalDate yes
+Sync All
+Create Slave
+SyncState *

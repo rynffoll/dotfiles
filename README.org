@@ -1,12 +1,3 @@
 * Envy
 Scripts for local environment deployment
 
-** Requirements
-- ~ansible~
-- ~python2-psutil~ (for dconf module)
-
-** How to Use
-#+begin_src sh
-make roles
-#+end_src
-

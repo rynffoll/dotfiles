@@ -1,0 +1,11 @@
+# -*- mode: ssh-config -*-
+Host *
+  IdentityFile ~/.ssh/id_rsa
+  ServerAliveInterval 300
+  ServerAliveCountMax 2
+  IdentitiesOnly yes
+  AddKeysToAgent yes
+  IgnoreUnknown UseKeychain
+  UseKeychain yes
+
+Include config.d/*
