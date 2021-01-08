@@ -1,8 +1,0 @@
----
-- hosts: all
-  roles:
-    - role: system
-      tags: system
-
-    - role: dotfiles
-      tags: dotfiles
