@@ -8,6 +8,7 @@ set showmode
 set surround
 set multiple-cursors
 set commentary
+set NERDTree
 
 let mapleader = " "
 
@@ -26,8 +27,7 @@ nnoremap <leader>od :action ActivateDebugToolWindow<cr>
 
 " file
 nnoremap <leader>fR :action RenameFile<cr>
-nnoremap <leader>ft :action ActivateProjectToolWindow<cr>
-nnoremap <leader>ft :action ActivateProjectToolWindow<cr>
+nnoremap <leader>ft :NERDTree<cr>
 
 " project
 nnoremap <leader>pp :action project-opener<cr>
