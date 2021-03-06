@@ -1,8 +1,6 @@
 .ONESHELL:
 
-.PHONY: all brewfile_dump brewfile_cleanup iterm_themes
-
-all:
+.PHONY: all $(MAKECMDGOALS)
 
 # Homebrew
 brewfile_dump:
