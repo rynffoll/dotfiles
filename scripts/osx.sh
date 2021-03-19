@@ -26,6 +26,9 @@ defaults write com.knollsoft.Rectangle topHalf         '{ keyCode = 126; modifie
 defaults write com.knollsoft.Rectangle topLeft         '{}'
 defaults write com.knollsoft.Rectangle topRight        '{}'
 
+# reload Rectangle
+pkill Rectangle && open -a Rectangle
+
 # dictionaries
 wget -c -O ~/Library/Spelling/ru_RU.aff "https://raw.githubusercontent.com/LibreOffice/dictionaries/master/ru_RU/ru_RU.aff"
 wget -c -O ~/Library/Spelling/ru_RU.dic "https://raw.githubusercontent.com/LibreOffice/dictionaries/master/ru_RU/ru_RU.dic"

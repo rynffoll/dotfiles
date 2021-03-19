@@ -2,6 +2,8 @@
 
 .PHONY: all $(MAKECMDGOALS)
 
+all:
+
 # Homebrew
 brewfile_dump:
 	brew bundle dump --force --file=Brewfile
