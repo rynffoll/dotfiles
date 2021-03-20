@@ -118,5 +118,6 @@ mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
+mas "Tailscale", id: 1475387142
 mas "Vimari", id: 1480933944
 mas "WireGuard", id: 1451685025
