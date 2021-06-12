@@ -2,6 +2,6 @@
  {:new {:extra-deps {seancorfield/clj-new {:mvn/version "RELEASE"}}
         :exec-fn clj-new/create}
 
-  :outdated {:extra-deps {antq/antq {:mvn/version "RELEASE"}}
+  :outdated {:extra-deps {com.github.liquidz/antq {:mvn/version "RELEASE"}}
              :main-opts ["-m" "antq.core"]}
   }}
