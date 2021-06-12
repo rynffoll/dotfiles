@@ -25,4 +25,4 @@ ln -sv "$(pwd)/clojure/deps.edn" ~/.clojure/deps.edn
 mkdir -pv ~/.config/karabiner
 ln -sv "$(pwd)/config/karabiner/karabiner.json" ~/.config/karabiner/karabiner.json
 
-[ ! -d ~/Org ] && ln -sv ~/Sync/Org ~/Org
+[ ! -d ~/Org ] && ln -sv ~/Library/Mobile\ Documents/iCloud\~com\~appsonthemove\~beorg/Documents/org ~/Org
