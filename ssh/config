@@ -1,11 +1,14 @@
 # -*- mode: ssh-config -*-
 Host *
   IdentityFile ~/.ssh/id_rsa
-  ServerAliveInterval 300
+  ServerAliveInterval 60
   ServerAliveCountMax 2
   IdentitiesOnly yes
   AddKeysToAgent yes
   IgnoreUnknown UseKeychain
   UseKeychain yes
+  ControlMaster auto
+  ControlPath /tmp/ssh-%r@%h-%p
+  ControlPersist 1h
 
 Include config.d/*
