@@ -3,6 +3,7 @@
 .PHONY: all $(MAKECMDGOALS)
 
 all:
+	./bootstrap.sh
 
 # Homebrew
 brewfile_dump:

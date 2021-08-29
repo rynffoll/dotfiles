@@ -4,6 +4,8 @@
 defaults write NSGlobalDomain CGFontRenderingFontSmoothingDisabled -bool false
 defaults write NSGlobalDomain ApplePressAndHoldEnabled             -bool false
 
+defaults write com.googlecode.iterm2 JiggleTTYSizeOnClearBuffer -bool true
+
 defaults write com.knollsoft.Rectangle bottomHalf      '{ keyCode = 125; modifierFlags = 1835008; }'
 defaults write com.knollsoft.Rectangle bottomLeft      '{}'
 defaults write com.knollsoft.Rectangle bottomRight     '{}'

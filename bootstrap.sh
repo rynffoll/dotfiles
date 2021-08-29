@@ -2,4 +2,4 @@
 
 source scripts/homebrew.sh
 source scripts/dotfiles.sh
-source scripts/osx.sh
+source scripts/macos.sh
