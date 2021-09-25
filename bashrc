@@ -43,4 +43,4 @@ jdk() {
 
 # k8s
 [[ $(command -v kubectl) ]] && source <(kubectl completion bash)
-[[ $(command -v kustomize) ]] && complete -C /usr/local/bin/kustomize kustomize
+[[ $(command -v kustomize) ]] && complete -C $(brew --prefix)/bin/kustomize kustomize

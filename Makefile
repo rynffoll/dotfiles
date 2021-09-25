@@ -7,10 +7,10 @@ all:
 
 # Homebrew
 brewfile_dump:
-	arch -x86_64 brew bundle dump --force --file=Brewfile
+	brew bundle dump --force
 
 brewfile_cleanup:
-	arch -x86_64 brew bundle cleanup --force --file=Brewfile
+	brew bundle cleanup --force
 
 # Themes
 iterm_themes:

@@ -1,7 +1,7 @@
 # -*- mode: shell-script -*-
 
 # plugins
-export ZPLUG_HOME=/usr/local/opt/zplug
+export ZPLUG_HOME=$(brew --prefix)/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
@@ -86,4 +86,4 @@ jdk() {
 
 # k8s
 [[ $(command -v kubectl) ]] && source <(kubectl completion zsh)
-[[ $(command -v kustomize) ]] && complete -o nospace -C /usr/local/bin/kustomize kustomize
+[[ $(command -v kustomize) ]] && complete -o nospace -C $(brew --prefix)/bin/kustomize kustomize
