@@ -68,6 +68,7 @@ brew "clojure/tools/clojure"
 brew "d12frosted/emacs-plus/emacs-plus@28", args: ["with-imagemagick", "with-native-comp", "with-xwidgets"]
 brew "heroku/brew/heroku"
 brew "mvndaemon/mvnd/mvnd"
+cask "airbuddy"
 cask "anki"
 cask "authy"
 cask "coconutbattery"
@@ -105,6 +106,7 @@ cask "wireshark"
 cask "zoom"
 cask "zulu"
 cask "zulu11"
+cask "zulu17"
 cask "zulu8"
 mas "AdGuard for Safari", id: 1440147259
 mas "Bitwarden", id: 1352778147
