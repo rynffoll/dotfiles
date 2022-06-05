@@ -65,7 +65,7 @@ brew "zplug"
 brew "borkdude/brew/babashka"
 brew "borkdude/brew/clj-kondo"
 brew "clojure/tools/clojure"
-brew "d12frosted/emacs-plus/emacs-plus@28", args: ["with-imagemagick", "with-native-comp", "with-xwidgets"]
+brew "d12frosted/emacs-plus/emacs-plus@28", args: ["with-imagemagick", "with-native-comp"]
 brew "heroku/brew/heroku"
 brew "mvndaemon/mvnd/mvnd"
 cask "airbuddy"
