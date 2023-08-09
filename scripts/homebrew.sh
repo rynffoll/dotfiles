@@ -2,4 +2,6 @@
 
 [[ ! $(command -v brew) ]] && /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-brew bundle install -v
+ln -sv "$(pwd)/Brewfile" ~/.Brewfile
+
+brew bundle install --global -v

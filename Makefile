@@ -7,10 +7,10 @@ all:
 
 # Homebrew
 brewfile_dump:
-	brew bundle dump --force
+	brew bundle dump --force --global
 
 brewfile_cleanup:
-	brew bundle cleanup --force
+	brew bundle cleanup --force --global
 
 # Themes
 iterm_themes:
