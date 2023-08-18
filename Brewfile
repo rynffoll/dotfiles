@@ -42,6 +42,7 @@ brew "kustomize"
 brew "languagetool", link: false
 brew "leiningen"
 brew "libgccjit"
+brew "lua-language-server"
 brew "mas"
 brew "maven"
 brew "mosh"
