@@ -1,13 +1,13 @@
 .ONESHELL:
 
-.PHONY: all $(MAKECMDGOALS)
+MAKEFLAGS += --always-make
 
 all:
 	./bootstrap.sh
 
 # Homebrew
 brewfile_dump:
-	brew bundle dump --force --global
+	brew bundle dump --force --global --formula --casks --taps --mas
 
 brewfile_cleanup:
 	brew bundle cleanup --force --global

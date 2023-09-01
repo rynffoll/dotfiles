@@ -4,4 +4,4 @@
 
 ln -sv "$(pwd)/Brewfile" ~/.Brewfile
 
-brew bundle install --global -v
+brew bundle check --global || brew bundle install --global -v
