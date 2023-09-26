@@ -99,9 +99,9 @@ cask "visualvm"
 cask "wireshark"
 cask "yandex"
 cask "zoom"
-cask "zulu"
 cask "zulu11"
 cask "zulu17"
+cask "zulu21"
 cask "zulu8"
 mas "AdGuard for Safari", id: 1440147259
 mas "Bitwarden", id: 1352778147
