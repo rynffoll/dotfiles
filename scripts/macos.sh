@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# https://macos-defaults.com/
+
 # defaults
 defaults write NSGlobalDomain CGFontRenderingFontSmoothingDisabled -bool false
 defaults write NSGlobalDomain ApplePressAndHoldEnabled             -bool false
@@ -27,6 +29,9 @@ defaults write com.knollsoft.Rectangle smaller         '{}'
 defaults write com.knollsoft.Rectangle topHalf         '{ keyCode = 126; modifierFlags = 1835008; }'
 defaults write com.knollsoft.Rectangle topLeft         '{}'
 defaults write com.knollsoft.Rectangle topRight        '{}'
+
+# https://stackoverflow.com/questions/77248249/disable-macos-sonoma-text-insertion-point-cursor-caps-lock-indicator/77296786#77296786
+sudo defaults write /Library/Preferences/FeatureFlags/Domain/UIKit.plist redesigned_text_cursor -dict-add Enabled -bool false
 
 # reload Rectangle
 pkill Rectangle && open -a Rectangle
