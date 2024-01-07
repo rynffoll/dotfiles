@@ -6,8 +6,13 @@
 defaults write NSGlobalDomain CGFontRenderingFontSmoothingDisabled -bool false
 defaults write NSGlobalDomain ApplePressAndHoldEnabled             -bool false
 
+# https://stackoverflow.com/questions/77248249/disable-macos-sonoma-text-insertion-point-cursor-caps-lock-indicator/77296786#77296786
+sudo defaults write /Library/Preferences/FeatureFlags/Domain/UIKit.plist redesigned_text_cursor -dict-add Enabled -bool false
+
+# iTerm2
 defaults write com.googlecode.iterm2 JiggleTTYSizeOnClearBuffer -bool true
 
+# Rectangle
 defaults write com.knollsoft.Rectangle bottomHalf      '{ keyCode = 125; modifierFlags = 1835008; }'
 defaults write com.knollsoft.Rectangle bottomLeft      '{}'
 defaults write com.knollsoft.Rectangle bottomRight     '{}'
@@ -30,11 +35,13 @@ defaults write com.knollsoft.Rectangle topHalf         '{ keyCode = 126; modifie
 defaults write com.knollsoft.Rectangle topLeft         '{}'
 defaults write com.knollsoft.Rectangle topRight        '{}'
 
-# https://stackoverflow.com/questions/77248249/disable-macos-sonoma-text-insertion-point-cursor-caps-lock-indicator/77296786#77296786
-sudo defaults write /Library/Preferences/FeatureFlags/Domain/UIKit.plist redesigned_text_cursor -dict-add Enabled -bool false
-
-# reload Rectangle
 pkill Rectangle && open -a Rectangle
+
+# Raycast
+defaults write com.raycast.macos raycastPreferredWindowMode -string 'compact'
+defaults write com.raycast.macos navigationCommandStyleIdentifierKey -string 'vim'
+
+pkill Raycast && open -a Raycast
 
 # dictionaries
 curl -sS -C - -o ~/Library/Spelling/ru_RU.aff "https://raw.githubusercontent.com/LibreOffice/dictionaries/master/ru_RU/ru_RU.aff"
