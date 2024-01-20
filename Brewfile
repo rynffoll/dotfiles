@@ -38,6 +38,7 @@ brew "hunspell"
 brew "hurl"
 brew "imagemagick"
 brew "jq"
+brew "just"
 brew "kcat"
 brew "kustomize"
 brew "languagetool", link: false
