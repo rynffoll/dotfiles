@@ -11,6 +11,9 @@ defaults write -g KeyRepeat                -int 2  # Key repeat rate
 
 defaults write kCFPreferencesAnyApplication TSMLanguageIndicatorEnabled -int 0 # Sonoma: Disable language popup
 
+# https://macos-defaults.com/keyboard/applefnusagetype.html
+defaults write com.apple.HIToolbox AppleFnUsageType -int 0 # FN: Change input source -> Do nothing
+
 # Dock
 defaults write com.apple.dock autohide -bool true
 
