@@ -12,3 +12,5 @@ Host *
   ControlPersist 1h
 
 Include config.d/*
+
+Include ~/.colima/ssh_config
