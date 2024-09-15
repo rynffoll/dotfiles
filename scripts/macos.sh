@@ -32,6 +32,9 @@ defaults write com.apple.Safari ShowFullURLInSmartSearchField -bool true
 
 killall Safari && open -a Safari
 
+# Emacs
+defaults write org.gnu.Emacs AppleFontSmoothing -int 0
+
 # iTerm2
 defaults write com.googlecode.iterm2 TabViewType                 -int 2     # Appearance / General / Tab bar location - Left
 defaults write com.googlecode.iterm2 TabStyleWithAutomaticOption -int 5     # Appearance / General / Theme - Minimal
