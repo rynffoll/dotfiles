@@ -48,6 +48,7 @@ brew "imagemagick"
 brew "jq"
 brew "just"
 brew "k9s"
+brew "kaskade"
 brew "kcat"
 brew "kustomize"
 brew "languagetool", link: false
