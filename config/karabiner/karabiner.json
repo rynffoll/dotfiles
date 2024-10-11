@@ -130,7 +130,6 @@
             "description": "fn + number keys to media keys",
             "manipulators": [
               {
-                "type": "basic",
                 "from": {
                   "key_code": "1",
                   "modifiers": {
@@ -146,10 +145,10 @@
                   {
                     "consumer_key_code": "display_brightness_decrement"
                   }
-                ]
+                ],
+                "type": "basic"
               },
               {
-                "type": "basic",
                 "from": {
                   "key_code": "2",
                   "modifiers": {
@@ -165,10 +164,10 @@
                   {
                     "consumer_key_code": "display_brightness_increment"
                   }
-                ]
+                ],
+                "type": "basic"
               },
               {
-                "type": "basic",
                 "from": {
                   "key_code": "3",
                   "modifiers": {
@@ -184,10 +183,10 @@
                   {
                     "key_code": "mission_control"
                   }
-                ]
+                ],
+                "type": "basic"
               },
               {
-                "type": "basic",
                 "from": {
                   "key_code": "4",
                   "modifiers": {
@@ -203,10 +202,10 @@
                   {
                     "apple_vendor_keyboard_key_code": "spotlight"
                   }
-                ]
+                ],
+                "type": "basic"
               },
               {
-                "type": "basic",
                 "from": {
                   "key_code": "5",
                   "modifiers": {
@@ -222,10 +221,10 @@
                   {
                     "consumer_key_code": "dictation"
                   }
-                ]
+                ],
+                "type": "basic"
               },
               {
-                "type": "basic",
                 "from": {
                   "key_code": "6",
                   "modifiers": {
@@ -241,10 +240,10 @@
                   {
                     "key_code": "f6"
                   }
-                ]
+                ],
+                "type": "basic"
               },
               {
-                "type": "basic",
                 "from": {
                   "key_code": "7",
                   "modifiers": {
@@ -260,10 +259,10 @@
                   {
                     "consumer_key_code": "rewind"
                   }
-                ]
+                ],
+                "type": "basic"
               },
               {
-                "type": "basic",
                 "from": {
                   "key_code": "8",
                   "modifiers": {
@@ -279,10 +278,10 @@
                   {
                     "consumer_key_code": "play_or_pause"
                   }
-                ]
+                ],
+                "type": "basic"
               },
               {
-                "type": "basic",
                 "from": {
                   "key_code": "9",
                   "modifiers": {
@@ -298,10 +297,10 @@
                   {
                     "consumer_key_code": "fastforward"
                   }
-                ]
+                ],
+                "type": "basic"
               },
               {
-                "type": "basic",
                 "from": {
                   "key_code": "0",
                   "modifiers": {
@@ -317,10 +316,10 @@
                   {
                     "consumer_key_code": "mute"
                   }
-                ]
+                ],
+                "type": "basic"
               },
               {
-                "type": "basic",
                 "from": {
                   "key_code": "hyphen",
                   "modifiers": {
@@ -336,10 +335,10 @@
                   {
                     "consumer_key_code": "volume_decrement"
                   }
-                ]
+                ],
+                "type": "basic"
               },
               {
-                "type": "basic",
                 "from": {
                   "key_code": "equal_sign",
                   "modifiers": {
@@ -355,7 +354,8 @@
                   {
                     "consumer_key_code": "volume_increment"
                   }
-                ]
+                ],
+                "type": "basic"
               }
             ]
           }
@@ -368,11 +368,16 @@
           "from": {
             "key_code": "caps_lock"
           },
-          "to": {
-            "key_code": "left_control"
-          }
+          "to": [
+            {
+              "key_code": "left_control"
+            }
+          ]
         }
-      ]
+      ],
+      "virtual_hid_keyboard": {
+        "keyboard_type_v2": "ansi"
+      }
     }
   ]
 }
