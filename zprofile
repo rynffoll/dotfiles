@@ -5,4 +5,4 @@ export LANG=en_US.UTF-8
 [ -f /usr/local/bin/brew ] && eval "$(/usr/local/bin/brew shellenv)"
 [ -f /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv)"
 
-export PATH=$PATH:$HOME/bin:$(go env GOPATH)/bin
+export PATH=$PATH:$HOME/bin:$HOME/go/bin:$HOME/.cargo/bin
