@@ -1,1 +1,28 @@
-* Dotfiles
+#+title: Dotfiles
+* Table of Contents :TOC:
+- [[#installation][Installation]]
+- [[#browser-extensions][Browser Extensions]]
+  - [[#vimium][Vimium]]
+
+* Installation
+Clone the dotfiles repository:
+#+begin_src sh
+git clone git@github.com:rynffoll/dotfiles.git ~/Projects/dotfiles
+#+end_src
+
+Install the dotfiles:
+#+begin_src sh
+make # install all
+#+end_src
+
+* Browser Extensions
+** Vimium
+Custom key mappings:
+#+begin_src vimrc
+unmap J
+unmap K
+
+map J nextTab
+map K previousTab
+#+end_src
+
