@@ -52,6 +52,7 @@ brew "kcat"
 brew "kustomize"
 brew "languagetool", link: false
 brew "libgccjit"
+brew "libvterm"
 brew "lua-language-server"
 brew "mas"
 brew "maven"
