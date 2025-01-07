@@ -1,0 +1,23 @@
+# -*- mode: conf -*-
+
+macos-titlebar-style = tabs
+
+# ghostty +list-fonts
+font-family = Cascadia Code NF
+font-size = 16
+
+cursor-invert-fg-bg = true
+# cursor-style = block
+cursor-style-blink = false
+# shell-integration-features = no-cursor
+
+unfocused-split-opacity = 0.5
+
+# ghostty +list-themes
+# theme = catppuccin-mocha
+theme = custom-gruvbox-dark
+
+# ghostty +list-keybinds
+keybind = cmd+shift+r=reload_config
+
+keybind = ctrl+[=esc:

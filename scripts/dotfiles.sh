@@ -28,4 +28,8 @@ ln -sv "$(pwd)/config/karabiner/karabiner.json" ~/.config/karabiner/karabiner.js
 mkdir -pv ~/.config/direnv
 ln -sv "$(pwd)/config/direnv/direnv.toml" ~/.config/direnv/direnv.toml
 
+mkdir -pv ~/.config/ghostty
+ln -sv "$(pwd)/config/ghostty/config" ~/.config/ghostty/config
+ln -sv "$(pwd)/config/ghostty/themes" ~/.config/ghostty/themes
+
 [ ! -d ~/Org ] && ln -sv ~/Library/Mobile\ Documents/com~apple~CloudDocs/Org ~/Org
