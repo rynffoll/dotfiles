@@ -2,5 +2,9 @@
 [user]
 	name = Ruslan Kamashev
 	email = rynffoll@gmail.com
+
 [core]
 	excludesfile = ~/.gitignore
+
+[includeIf "gitdir:~/Projects/work/"]
+	path = "~/Projects/work/.gitconfig"
