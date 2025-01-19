@@ -49,9 +49,3 @@ defaults write com.raycast.macos raycastPreferredWindowMode -string 'compact'
 defaults write com.raycast.macos navigationCommandStyleIdentifierKey -string 'vim'
 
 killall Raycast && open -a Raycast
-
-# Dictionaries
-curl -sS -C - -o ~/Library/Spelling/ru_RU.aff "https://raw.githubusercontent.com/LibreOffice/dictionaries/master/ru_RU/ru_RU.aff"
-curl -sS -C - -o ~/Library/Spelling/ru_RU.dic "https://raw.githubusercontent.com/LibreOffice/dictionaries/master/ru_RU/ru_RU.dic"
-curl -sS -C - -o ~/Library/Spelling/en_US.aff "https://raw.githubusercontent.com/LibreOffice/dictionaries/master/en/en_US.aff"
-curl -sS -C - -o ~/Library/Spelling/en_US.dic "https://raw.githubusercontent.com/LibreOffice/dictionaries/master/en/en_US.dic"
