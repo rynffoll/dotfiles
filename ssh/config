@@ -1,6 +1,5 @@
 # -*- mode: ssh-config -*-
 Host *
-  IdentityFile ~/.ssh/id_rsa
   ServerAliveInterval 60
   ServerAliveCountMax 2
   IdentitiesOnly yes
