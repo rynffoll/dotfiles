@@ -5,7 +5,8 @@ macos-titlebar-style = tabs
 term = xterm-256color
 
 # ghostty +list-fonts
-font-family = Cascadia Code NF
+# font-family = Cascadia Code NF
+font-family = Iosevka
 font-size = 16
 
 cursor-invert-fg-bg = true
