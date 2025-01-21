@@ -6,7 +6,8 @@ term = xterm-256color
 
 # ghostty +list-fonts
 # font-family = Cascadia Code NF
-font-family = Iosevka
+# font-family = Iosevka
+font-family = Iosevka Term
 font-size = 16
 
 cursor-invert-fg-bg = true
