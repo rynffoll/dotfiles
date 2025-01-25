@@ -6,6 +6,8 @@ ln -sv "$(pwd)/bashrc" ~/.bashrc
 ln -sv "$(pwd)/zprofile" ~/.zprofile
 ln -sv "$(pwd)/zshrc" ~/.zshrc
 
+ln -sv "$(pwd)/config/fish/config.fish" ~/.config/fish/config.fish
+
 ln -sv "$(pwd)/tmux.conf" ~/.tmux.conf
 
 ln -sv "$(pwd)/gitconfig" ~/.gitconfig
