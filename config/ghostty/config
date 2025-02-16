@@ -1,5 +1,7 @@
 # -*- mode: conf -*-
 
+command = /opt/homebrew/bin/fish
+
 macos-titlebar-style = tabs
 
 term = xterm-256color
