@@ -88,6 +88,13 @@ jdk() {
 [[ $(command -v kubectl) ]] && source <(kubectl completion zsh)
 [[ $(command -v kustomize) ]] && complete -o nospace -C $(brew --prefix)/bin/kustomize kustomize
 
+# emacs-libvterm
+if [[ "$INSIDE_EMACS" = 'vterm' ]] \
+       && [[ -n ${EMACS_VTERM_PATH} ]] \
+       && [[ -f ${EMACS_VTERM_PATH}/etc/emacs-vterm-zsh.sh ]]; then
+    source ${EMACS_VTERM_PATH}/etc/emacs-vterm-zsh.sh
+fi
+
 # zsh-completions
 if type brew &>/dev/null; then
     FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
