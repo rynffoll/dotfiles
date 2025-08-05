@@ -24,12 +24,4 @@ if status is-interactive
         echo (tput bold)Current JDK version:(tput sgr0)
         java -version
     end
-
-    # emacs-libvterm
-    if test "$INSIDE_EMACS" = 'vterm'
-        and test -n "$EMACS_VTERM_PATH"
-        and test -f "$EMACS_VTERM_PATH/etc/emacs-vterm.fish"
-        source $EMACS_VTERM_PATH/etc/emacs-vterm.fish
-    end
-
 end
