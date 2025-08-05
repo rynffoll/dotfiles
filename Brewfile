@@ -143,13 +143,12 @@ cask "zulu@11"
 cask "zulu@17"
 cask "zulu@21"
 cask "zulu@8"
-mas "AdGuard for Safari", id: 1440147259
 mas "Bitwarden", id: 1352778147
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
-mas "Vimari", id: 1480933944
+mas "uBlock Origin Lite", id: 6745342698
 mas "Vimlike", id: 1584519802
 mas "WireGuard", id: 1451685025
