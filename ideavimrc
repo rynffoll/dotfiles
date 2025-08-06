@@ -30,7 +30,7 @@ nnoremap <leader>fR :action RenameFile<cr>
 nnoremap <leader>ft :NERDTree<cr>
 
 " project
-nnoremap <leader>pp :action project-opener<cr>
+nnoremap <leader>pp :action ManageRecentProjects<cr>
 
 " search
 nnoremap <leader>/p :action FindInPath<cr>
