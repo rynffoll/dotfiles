@@ -1,4 +1,6 @@
 " -*- mode: vimrc -*-
+let mapleader = " "
+
 set clipboard+=unnamed
 set hls
 set ignorecase smartcase
@@ -10,9 +12,9 @@ set multiple-cursors
 set commentary
 set NERDTree
 
-let mapleader = " "
-
-nnoremap <leader><leader> :action SearchEverywhere<cr>
+set which-key
+let g:WhichKey_ShowVimActions = "true"
+let g:WhichKey_DefaultDelay = 1000
 
 " jump
 nnoremap <leader>jj :action GotoDeclaration<cr>
