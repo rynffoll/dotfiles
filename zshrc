@@ -81,8 +81,8 @@ jdk() {
     java -version
 }
 
-# direnv
-[[ $(command -v direnv) ]] && eval "$(direnv hook zsh)"
+# mise
+[[ $(command -v mise) ]] && eval "$(mise activate zsh)"
 
 # k8s
 [[ $(command -v kubectl) ]] && source <(kubectl completion zsh)

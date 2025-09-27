@@ -10,6 +10,8 @@ fish_add_path $HOME/.local/bin
 fish_add_path $HOME/.lmstudio/bin
 
 if status is-interactive
+    type -q mise; and mise activate fish | source
+
     # plugins
     functions -q _pure_prompt || fisher install pure-fish/pure
 

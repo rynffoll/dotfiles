@@ -38,8 +38,8 @@ jdk() {
     java -version
 }
 
-# direnv
-[[ $(command -v direnv) ]] && eval "$(direnv hook bash)"
+# mise
+[[ $(command -v mise) ]] && eval "$(mise activate bash)"
 
 # k8s
 [[ $(command -v kubectl) ]] && source <(kubectl completion bash)

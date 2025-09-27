@@ -27,11 +27,11 @@ ln -sv "$(pwd)/clojure/deps.edn" ~/.clojure/deps.edn
 mkdir -pv ~/.config/karabiner
 ln -sv "$(pwd)/config/karabiner/karabiner.json" ~/.config/karabiner/karabiner.json
 
-mkdir -pv ~/.config/direnv
-ln -sv "$(pwd)/config/direnv/direnv.toml" ~/.config/direnv/direnv.toml
-
 mkdir -pv ~/.config/ghostty
 ln -sv "$(pwd)/config/ghostty/config" ~/.config/ghostty/config
 ln -sv "$(pwd)/config/ghostty/themes" ~/.config/ghostty/themes
+
+mkdri -pv ~/.config/mise
+ln -sv "$(pwd)/config/mise/config.toml" ~/.config/mise/config.toml
 
 [ ! -d ~/Org ] && ln -sv ~/Library/Mobile\ Documents/com~apple~CloudDocs/Org ~/Org

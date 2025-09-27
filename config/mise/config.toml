@@ -1,0 +1,4 @@
+[settings]
+experimental = true
+env_file = '.env'
+trusted_config_paths = [ "~/Projects" ]
