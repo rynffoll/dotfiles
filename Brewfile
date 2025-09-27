@@ -56,7 +56,6 @@ brew "just"
 brew "k9s"
 brew "kaskade"
 brew "kcat"
-brew "kustomize"
 brew "languagetool", link: false
 brew "lazycontainer"
 brew "lazydocker"

@@ -86,7 +86,6 @@ jdk() {
 
 # k8s
 [[ $(command -v kubectl) ]] && source <(kubectl completion zsh)
-[[ $(command -v kustomize) ]] && complete -o nospace -C $(brew --prefix)/bin/kustomize kustomize
 
 # zsh-completions
 if type brew &>/dev/null; then
