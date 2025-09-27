@@ -95,6 +95,7 @@ brew "d12frosted/emacs-plus/emacs-plus@30", args: ["with-imagemagick", "with-xwi
 cask "anki"
 cask "authy"
 cask "chatgpt"
+cask "claude"
 cask "dbeaver-community"
 cask "ente-auth"
 cask "firefox"
