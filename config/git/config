@@ -4,10 +4,33 @@
 	email = rynffoll@gmail.com
 
 [init]
+	defaultBranch = main
 	templateDir = ~/.config/git/template
 
-[core]
-	excludesfile = ~/.config/git/ignore
+[push]
+	autoSetupRemote = true
+	followTags = true
+
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true
+
+[diff]
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
+
+[column]
+	ui = auto
+
+[merge]
+	conflictstyle = zdiff3
+
+[rerere]
+	enabled = true
+	autoupdate = true
 
 [includeIf "gitdir:~/Projects/work/"]
 	path = "~/Projects/work/.gitconfig"
