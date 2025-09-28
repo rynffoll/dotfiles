@@ -2,10 +2,21 @@
 [user]
 	name = Ruslan Kamashev
 	email = rynffoll@gmail.com
+	signingkey = ~/.ssh/id_ed25519.pub
 
 [init]
 	defaultBranch = main
 	templateDir = ~/.config/git/template
+
+[gpg]
+	format = ssh
+
+[gpg "ssh"]
+	# ./scripts/gen_ssh_allowed_signers.sh
+	allowedSignersFile = ~/.ssh/allowed_signers
+
+[commit]
+	gpgsign = true
 
 [push]
 	autoSetupRemote = true
