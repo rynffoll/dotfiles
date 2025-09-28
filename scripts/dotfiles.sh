@@ -10,8 +10,11 @@ ln -sv "$(pwd)/config/fish/config.fish" ~/.config/fish/config.fish
 
 ln -sv "$(pwd)/tmux.conf" ~/.tmux.conf
 
-ln -sv "$(pwd)/gitconfig" ~/.gitconfig
-ln -sv "$(pwd)/gitignore" ~/.gitignore
+mkdir -v ~/.config/git
+ln -sv "$(pwd)/config/git/config" ~/.config/git/config
+ln -sv "$(pwd)/config/git/ignore" ~/.config/git/ignore
+ln -svh "$(pwd)/config/git/template" ~/.config/git/template
+# pre-commit init-templatedir ~/.config/git/template
 
 ln -sv "$(pwd)/ideavimrc" ~/.ideavimrc
 

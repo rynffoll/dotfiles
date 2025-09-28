@@ -3,8 +3,11 @@
 	name = Ruslan Kamashev
 	email = rynffoll@gmail.com
 
+[init]
+	templateDir = ~/.config/git/template
+
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = ~/.config/git/ignore
 
 [includeIf "gitdir:~/Projects/work/"]
 	path = "~/Projects/work/.gitconfig"
