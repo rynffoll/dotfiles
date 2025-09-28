@@ -1,5 +1,7 @@
 # -*- mode: gitignore -*-
 .DS_Store
+
+.env
 .envrc
 
 **/.claude/settings.local.json
