@@ -4,9 +4,6 @@
 	email = rynffoll@gmail.com
 	signingkey = ~/.ssh/id_ed25519.pub
 
-[init]
-	templateDir = ~/.config/git/template
-
 [gpg]
 	format = ssh
 
