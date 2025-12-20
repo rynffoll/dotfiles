@@ -9,7 +9,7 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 defaults write -g InitialKeyRepeat         -int 15 # Delay until repeat
 defaults write -g KeyRepeat                -int 2  # Key repeat rate
 
-defaults write kCFPreferencesAnyApplication TSMLanguageIndicatorEnabled -int 0 # Sonoma: Disable language popup
+# defaults write kCFPreferencesAnyApplication TSMLanguageIndicatorEnabled -bool false # Disable language indicator
 
 # Dock
 defaults write com.apple.dock autohide -bool true
