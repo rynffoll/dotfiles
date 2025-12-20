@@ -7,6 +7,7 @@ ln -sv "$(pwd)/zprofile" ~/.zprofile
 ln -sv "$(pwd)/zshrc" ~/.zshrc
 
 ln -sv "$(pwd)/config/fish/config.fish" ~/.config/fish/config.fish
+ln -sv "$(pwd)/config/fish/fish_plugins" ~/.config/fish/fish_plugins
 
 ln -sv "$(pwd)/tmux.conf" ~/.tmux.conf
 

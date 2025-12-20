@@ -12,7 +12,12 @@ if status is-interactive
     type -q mise; and mise activate fish | source
 
     # plugins
-    functions -q _pure_prompt || fisher install pure-fish/pure
+    if test -f ~/.config/fish/fish_plugins
+        set -l installed (fisher list | sort)
+        set -l expected (cat ~/.config/fish/fish_plugins | sort)
+
+        test "$installed" = "$expected"; or fisher update
+    end
 
     # functions
     function jdk
