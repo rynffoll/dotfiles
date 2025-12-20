@@ -6,8 +6,17 @@
 
 # https://mac-key-repeat.zaymon.dev/
 defaults write -g ApplePressAndHoldEnabled -bool false
-defaults write -g InitialKeyRepeat         -int 15 # Delay until repeat
-defaults write -g KeyRepeat                -int 2  # Key repeat rate
+
+# Keyboard > Key repeat rate > Fast
+defaults write -g InitialKeyRepeat -int 15
+# Keyboard > Delay until repeat > Short
+defaults write -g KeyRepeat -int 2
+
+# Keyboard > Text Input > Input Sources > Edit > Automatically switch to a document's input source
+defaults write com.apple.HIToolbox AppleGlobalTextInputProperties -dict-add "TextInputGlobalPropertyPerContextInput" -bool true
+
+# Keyboard > Keyboard Navigation
+defaults write NSGlobalDomain AppleKeyboardUIMode -int "2"
 
 # defaults write kCFPreferencesAnyApplication TSMLanguageIndicatorEnabled -bool false # Disable language indicator
 
