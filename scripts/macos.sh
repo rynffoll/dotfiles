@@ -35,15 +35,6 @@ killall Safari && open -a Safari
 # Emacs
 defaults write org.gnu.Emacs AppleFontSmoothing -int 0
 
-# iTerm2
-defaults write com.googlecode.iterm2 TabViewType                 -int 2     # Appearance / General / Tab bar location - Left
-defaults write com.googlecode.iterm2 TabStyleWithAutomaticOption -int 5     # Appearance / General / Theme - Minimal
-defaults write com.googlecode.iterm2 SwitchPaneModifier          -int 5     # Keys / Navigation Shortcuts / Shorcut to choose a split pane - ⌥ Number
-defaults write com.googlecode.iterm2 JiggleTTYSizeOnClearBuffer  -bool true # Respects multi-line prompt on clear buffer
-
-/usr/libexec/PlistBuddy -c "Delete :'New Bookmarks':0:'Unlimited Scrollback'" ~/Library/Preferences/com.googlecode.iterm2.plist
-/usr/libexec/PlistBuddy -c "Add :'New Bookmarks':0:'Unlimited Scrollback' bool true" ~/Library/Preferences/com.googlecode.iterm2.plist
-
 # Raycast
 defaults write com.raycast.macos raycastPreferredWindowMode -string 'compact'
 defaults write com.raycast.macos navigationCommandStyleIdentifierKey -string 'vim'
