@@ -36,4 +36,7 @@ ln -svh "$(pwd)/config/ghostty/themes" ~/.config/ghostty/themes
 mkdir -pv ~/.config/mise
 ln -sv "$(pwd)/config/mise/config.toml" ~/.config/mise/config.toml
 
+mkdir -pv ~/.config/emacs-plus
+ln -sv "$(pwd)/config/emacs-plus/build.yml" ~/.config/emacs-plus/build.yml
+
 [ ! -d ~/Org ] && ln -sv ~/Library/Mobile\ Documents/com~apple~CloudDocs/Org ~/Org
