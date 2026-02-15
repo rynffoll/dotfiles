@@ -20,9 +20,6 @@ ln -sv "$(pwd)/ideavimrc" ~/.ideavimrc
 mkdir -v ~/.ssh && chmod 700 ~/.ssh
 ln -sv "$(pwd)/ssh/config" ~/.ssh/config
 
-mkdir -v ~/.gnupg && chmod 700 ~/.gnupg
-ln -sv "$(pwd)/gnupg/gpg-agent.conf" ~/.gnupg/gpg-agent.conf
-
 mkdir -v ~/.clojure
 ln -sv "$(pwd)/clojure/deps.edn" ~/.clojure/deps.edn
 
