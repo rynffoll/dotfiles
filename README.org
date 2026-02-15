@@ -25,4 +25,3 @@ unmap K
 map J nextTab
 map K previousTab
 #+end_src
-
