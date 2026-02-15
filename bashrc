@@ -38,6 +38,9 @@ jdk() {
     java -version
 }
 
+# fzf
+[[ $(command -v fzf) ]] && eval "$(fzf --bash)"
+
 # mise
 [[ $(command -v mise) ]] && eval "$(mise activate bash)"
 

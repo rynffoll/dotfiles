@@ -81,6 +81,9 @@ jdk() {
     java -version
 }
 
+# fzf
+[[ $(command -v fzf) ]] && source <(fzf --zsh)
+
 # mise
 [[ $(command -v mise) ]] && eval "$(mise activate zsh)"
 

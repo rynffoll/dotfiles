@@ -9,6 +9,8 @@ fish_add_path $HOME/.cargo/bin
 fish_add_path $HOME/.local/bin
 
 if status is-interactive
+    type -q fzf; and fzf --fish | source
+
     type -q mise; and mise activate fish | source
 
     # plugins
