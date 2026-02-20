@@ -17,3 +17,6 @@ shell-integration-features = no-cursor, ssh-env
 cursor-invert-fg-bg = true
 cursor-style = block
 cursor-style-blink = false
+
+# https://github.com/ghostty-org/ghostty/discussions/5071
+keybind = ctrl+[=esc:
