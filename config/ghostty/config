@@ -3,23 +3,17 @@
 command = /opt/homebrew/bin/fish
 
 macos-titlebar-style = tabs
+macos-option-as-alt = true
 
-term = xterm-256color
+theme = custom-gruvbox-dark
 
-# ghostty +list-fonts
 font-family = Iosevka Term
 font-size = 16
 
-shell-integration-features = no-cursor
+window-save-state = always
+
+shell-integration-features = no-cursor, ssh-env
 
 cursor-invert-fg-bg = true
 cursor-style = block
 cursor-style-blink = false
-
-# ghostty +list-themes
-theme = custom-gruvbox-dark
-
-bold-is-bright = true
-
-# ghostty +list-keybinds
-keybind = ctrl+[=esc:
