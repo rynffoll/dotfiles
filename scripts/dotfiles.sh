@@ -28,7 +28,6 @@ ln -sv "$(pwd)/config/karabiner/karabiner.json" ~/.config/karabiner/karabiner.js
 
 mkdir -pv ~/.config/ghostty
 ln -sv "$(pwd)/config/ghostty/config" ~/.config/ghostty/config
-ln -svh "$(pwd)/config/ghostty/themes" ~/.config/ghostty/themes
 
 mkdir -pv ~/.config/mise
 ln -sv "$(pwd)/config/mise/config.toml" ~/.config/mise/config.toml
