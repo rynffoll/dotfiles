@@ -5,7 +5,8 @@ command = /opt/homebrew/bin/fish
 macos-titlebar-style = tabs
 macos-option-as-alt = true
 
-theme = custom-gruvbox-dark
+# theme = Gruvbox Material Dark
+theme = Catppuccin Macchiato
 
 font-family = Iosevka Term
 font-size = 16
