@@ -167,3 +167,5 @@ mas "RabbitHole", id: 6683309629
 mas "uBlock Origin Lite", id: 6745342698
 mas "Vimlike", id: 1584519802
 mas "WireGuard", id: 1451685025
+go "github.com/go-delve/delve/cmd/dlv"
+go "golang.org/x/tools/gopls"

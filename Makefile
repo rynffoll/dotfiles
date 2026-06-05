@@ -10,7 +10,7 @@ dotfiles:
 
 # Homebrew
 brewfile_dump:
-	brew bundle dump --force --global --formula --casks --taps --mas
+	brew bundle dump --force --global
 
 brewfile_cleanup:
-	brew bundle cleanup --force --global --formula --casks --taps --mas
+	brew bundle cleanup --force --global
