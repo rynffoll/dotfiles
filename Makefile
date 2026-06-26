@@ -10,7 +10,7 @@ dotfiles:
 
 # Homebrew
 brewfile_dump:
-	brew bundle dump --force --global
+	brew bundle dump --force --global --no-describe
 
 brewfile_cleanup:
 	brew bundle cleanup --force --global
