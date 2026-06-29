@@ -1,6 +1,7 @@
 tap "borkdude/brew", trusted: true
 tap "clojure/tools", trusted: true
 tap "d12frosted/emacs-plus", trusted: true
+tap "detachhead/tap"
 brew "tree"
 brew "ansible"
 brew "ansible-lint"
@@ -141,6 +142,7 @@ cask "logseq"
 cask "mongodb-compass"
 cask "podman-desktop"
 cask "raycast"
+cask "detachhead/tap/rebased", trusted: true
 cask "resilio-sync"
 cask "slack"
 cask "tailscale-app"
