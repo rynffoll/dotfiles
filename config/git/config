@@ -14,8 +14,8 @@
 [commit]
 	gpgsign = true
 
-[includeIf "gitdir:~/Projects/work/"]
-	path = "~/Projects/work/.gitconfig"
+[includeIf "gitdir:~/Developer/work/"]
+	path = "~/Developer/work/.gitconfig"
 
 # https://github.com/j178/prek/blob/master/docs/cookbook.md#enable-a-global-hook-with-git-config
 [hook "prek-pre-commit"]
