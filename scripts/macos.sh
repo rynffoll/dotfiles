@@ -20,6 +20,11 @@ defaults write NSGlobalDomain AppleKeyboardUIMode -int "2"
 
 # defaults write kCFPreferencesAnyApplication TSMLanguageIndicatorEnabled -bool false # Disable language indicator
 
+# Windows
+
+# Desktop & Dock > Windows > Prefer tabs when opening documents > Always
+defaults write NSGlobalDomain AppleWindowTabbingMode -string always
+
 # Dock
 defaults write com.apple.dock autohide -bool true
 
