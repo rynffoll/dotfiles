@@ -8,8 +8,8 @@ macos-option-as-alt = true
 # config-file = ?auto/theme.ghostty
 # theme = Gruvbox Material Dark
 # theme = Catppuccin Macchiato
-theme = light:Modus Operandi,dark:Modus Vivendi
-# theme = light:Modus Operandi Tinted,dark:Modus Vivendi Tinted
+# theme = light:Modus Operandi,dark:Modus Vivendi
+theme = light:Modus Operandi Tinted,dark:Modus Vivendi Tinted
 
 font-family = Iosevka Term
 font-size = 16
