@@ -1,0 +1,9 @@
+#+title: Vimium
+Options → Custom key mappings:
+#+begin_src vimrc
+unmap J
+unmap K
+
+map J nextTab
+map K previousTab
+#+end_src

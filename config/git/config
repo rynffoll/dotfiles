@@ -8,7 +8,6 @@
 	format = ssh
 
 [gpg "ssh"]
-	# ./scripts/gen_ssh_allowed_signers.sh
 	allowedSignersFile = ~/.ssh/allowed_signers
 
 [commit]

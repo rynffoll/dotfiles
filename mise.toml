@@ -1,0 +1,57 @@
+[dotfiles]
+"~/.Brewfile" = "Brewfile"
+"~/.bash_profile" = "bash_profile"
+"~/.bashrc" = "bashrc"
+"~/.zprofile" = "zprofile"
+"~/.zshrc" = "zshrc"
+"~/.ssh" = { permissions = "0700" }
+"~/.ssh/config" = "ssh/config"
+"~/.clojure/deps.edn" = "clojure/deps.edn"
+"~/.config" = { source = "config", mode = "symlink-each" }
+"~/Org" = "~/Library/Mobile Documents/com~apple~CloudDocs/Org"
+
+# https://mac-key-repeat.zaymon.dev/
+[bootstrap.macos.keyboard]
+press_and_hold = false
+key_repeat = 2          # Keyboard > Key repeat rate > Fast
+initial_key_repeat = 15 # Keyboard > Delay until repeat > Short
+
+[bootstrap.macos.dock]
+autohide = true
+mru_spaces = false # Mission Control > Automatically rearrange Spaces based on most recent use
+
+[bootstrap.macos.finder]
+show_pathbar = true
+
+# https://macos-defaults.com/
+[bootstrap.macos.defaults.NSGlobalDomain]
+AppleKeyboardUIMode = 2           # Keyboard > Keyboard Navigation
+AppleWindowTabbingMode = "always" # Desktop & Dock > Windows > Prefer tabs when opening documents > Always
+AppleShowAllExtensions = true     # Finder > Show all filename extensions
+
+[bootstrap.macos.defaults."com.apple.Safari"]
+ShowFullURLInSmartSearchField = true
+
+[bootstrap.macos.defaults."org.gnu.Emacs"]
+AppleFontSmoothing = 0
+
+[bootstrap.macos.defaults."com.raycast.macos"]
+raycastPreferredWindowMode = "compact"
+navigationCommandStyleIdentifierKey = "vim"
+
+[[bootstrap.macos.defaults_entries]] # Keyboard > Text Input > Input Sources > Edit > Automatically switch to a document's input source
+domain = "com.apple.HIToolbox"
+key = "AppleGlobalTextInputProperties"
+path = ["TextInputGlobalPropertyPerContextInput"]
+value = true
+
+# [bootstrap.macos.defaults.kCFPreferencesAnyApplication]
+# TSMLanguageIndicatorEnabled = false # Disable language indicator
+
+[bootstrap.hooks]
+post-packages = "brew bundle install --no-upgrade --quiet --file {{config_root}}/Brewfile"
+post-dotfiles = "{{config_root}}/scripts/gen_allowed_signers.sh"
+
+[tasks]
+brewfile-dump = "brew bundle dump --force --global --no-describe"
+brewfile-cleanup = "brew bundle cleanup --force --global"

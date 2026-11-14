@@ -1,27 +1,23 @@
 #+title: Dotfiles
 * Table of Contents :TOC:
 - [[#installation][Installation]]
-- [[#browser-extensions][Browser Extensions]]
-  - [[#vimium][Vimium]]
+- [[#manual-setup][Manual Setup]]
 
 * Installation
-Clone the dotfiles repository:
+Install [[https://brew.sh][Homebrew]].
+
+Install [[https://mise.jdx.dev][mise]] and git:
+#+begin_src sh
+brew install mise git
+#+end_src
+
+Clone and bootstrap:
 #+begin_src sh
 git clone git@github.com:rynffoll/dotfiles.git ~/Developer/dotfiles
+cd ~/Developer/dotfiles
+mise trust
+mise bootstrap
 #+end_src
 
-Install the dotfiles:
-#+begin_src sh
-make # install all
-#+end_src
-
-* Browser Extensions
-** Vimium
-Custom key mappings:
-#+begin_src vimrc
-unmap J
-unmap K
-
-map J nextTab
-map K previousTab
-#+end_src
+* Manual Setup
+- [[file:docs/vimium.org][Vimium]]
